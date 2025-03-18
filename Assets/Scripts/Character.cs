@@ -1,14 +1,25 @@
 using UnityEngine;
 
-public class Character : MonoBehaviour
+public abstract class Character : MonoBehaviour
 {
-    void Start()
-    {
+    public float moveSpeed = 5f; //이동 속도
+    public int health = 2; //체력
+    public int atkPower = 2; //공격력
+    public float atkSpeed = 1f; //공격 속도
 
+    //피격 메서드
+    public virtual void TakeDamage(int damage)
+    {
+        health -= damage;
+        if(health <= 0)
+        {
+            Death();
+        }
     }
 
-    void Update()
-    {
-        
-    }
+    //사망 메서드
+    protected abstract void Death();
+
+    //이동 메서드
+    protected abstract void Move();
 }
