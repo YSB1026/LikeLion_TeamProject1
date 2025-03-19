@@ -7,6 +7,23 @@ public class PoolManager : SingletonComponent<PoolManager>
     //프리팹 이름을 키로 사용하는 딕셔너리
     private Dictionary<string, ObjectPool> pools = new Dictionary<string, ObjectPool>();
 
+    #region Singleton
+    protected override void AwakeInstance()
+    {
+
+    }
+
+    protected override bool InitInstance()
+    {
+        return true;
+    }
+
+    protected override void ReleaseInstance()
+    {
+
+    }
+    #endregion
+
     //새로운 오브젝트 풀을 생성하는 메서드
     //prefab: 풀링할 프리팹, initialSize: 초기 풀 크기
     public void CreatePool(GameObject prefab, int initialSize)
@@ -42,20 +59,5 @@ public class PoolManager : SingletonComponent<PoolManager>
         {
             Destroy(obj);
         }
-    }
-
-    protected override void AwakeInstance()
-    {
-
-    }
-
-    protected override bool InitInstance()
-    {
-        return true;
-    }
-
-    protected override void ReleaseInstance()
-    {
-
     }
 }
