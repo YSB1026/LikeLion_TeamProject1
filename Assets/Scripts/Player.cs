@@ -2,22 +2,16 @@ using UnityEngine;
 
 public class Player : Character
 {
-    Rigidbody2D rb;
-    Collider2D collider;
     Animator animator;
-    float speed = 5f;
-    float projectileSpeed = 15f;
+    public float speed = 5f;
     float moveX, moveY, lastMoveX = 1f, lastMoveY = 0f; // 마지막 입력 방향 (Idle 전환 시 유지)
     bool isMoving;
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        collider = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
     }
     void Start()
     {
-        
     }
     void Update()
     {
@@ -39,6 +33,7 @@ public class Player : Character
         (moveX, moveY) = (Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         transform.Translate(new Vector2(moveX, moveY).normalized * speed * Time.deltaTime);
     }
+
     private void SetAnimParams()
     {
         isMoving = moveX != 0 || moveY != 0;
