@@ -1,6 +1,6 @@
 using Singleton.Component;
-using Unity.Cinemachine;
 using UnityEngine;
+
 
 public class MouseManager : SingletonComponent<MouseManager>
 {
@@ -10,7 +10,7 @@ public class MouseManager : SingletonComponent<MouseManager>
     #region Singleton
     protected override void AwakeInstance()
     {
-        
+
     }
 
     protected override bool InitInstance()
@@ -20,7 +20,7 @@ public class MouseManager : SingletonComponent<MouseManager>
 
     protected override void ReleaseInstance()
     {
-        
+
     }
     #endregion
 
