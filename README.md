@@ -12,7 +12,14 @@
   ![Unity](https://img.shields.io/badge/-Unity-100000?style=flat-square&logo=unity&logoColor=white)
 
 - **팀원**
-![GitHub collaborators](https://img.shields.io/github/collaborators/YSB1026/LikeLion_TeamProject1)
+
+|    팀원    |                      GitHub                       |
+| :--------: | :---------------------------------------------: |
+| **YSB1026** | [@YSB1026](https://github.com/YSB1026) |
+| **Mitaro900** | [@Mitaro900](https://github.com/Mitaro900) |
+| **devUn9** | [@devUn9](https://github.com/devUn9) |
+| **jundev5796** | [@jundev5796](https://github.com/jundev5796) |
+| **whyunat** | [@whyunat](https://github.com/whyunat) |
 
 <br>
 
