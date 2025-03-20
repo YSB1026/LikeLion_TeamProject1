@@ -24,15 +24,11 @@ public class MouseManager : MonoBehaviour
             Debug.LogError("메인 카메라를 찾을 수 없습니다.");
         }
     }
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
         Vector3 mousePos = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.transform.position.z));
-        Debug.Log(mousePos);
+        //Debug.Log(mousePos);
         Vector3 targetPos = (player.position + mousePos);
 
         targetPos.x = Mathf.Clamp(targetPos.x, -threshold + player.position.x, threshold+player.position.x);
