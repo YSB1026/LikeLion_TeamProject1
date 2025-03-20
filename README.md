@@ -12,9 +12,8 @@
   ![Unity](https://img.shields.io/badge/-Unity-100000?style=flat-square&logo=unity&logoColor=white)
 
 - **팀원**
-  <p>
+![GitHub collaborators](https://img.shields.io/github/collaborators/YSB1026/LikeLion_TeamProject1)
 
-</p>
 <br>
 
 # Notion Link
