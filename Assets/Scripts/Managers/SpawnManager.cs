@@ -1,5 +1,7 @@
 using Singleton.Component;
 using System.Collections;
+using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnManager : SingletonComponent<SpawnManager>
@@ -63,6 +65,7 @@ public class SpawnManager : SingletonComponent<SpawnManager>
                 break;
         }
         randomPosition = Camera.main.ViewportToWorldPoint(randomPosition);
+        Debug.Log(randomPosition);
 
         return randomPosition;
     }
