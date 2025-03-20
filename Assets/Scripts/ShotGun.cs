@@ -23,9 +23,10 @@ public class ShotGun : MonoBehaviour
     {
         if (isFire)
         {
+            ;
             //월드 좌표 기준으로 회전 적용
             //transform.rotation = MouseManager.Instance.GetRotationInfo() * Quaternion.Inverse(transform.parent.rotation);
-            transform.rotation = MouseManager.Instance.GetRotationInfo();
+            //transform.rotation = MouseManager.Instance.GetRotationInfo();
             // 투사체 생성 코드
         }
     }
