@@ -623,7 +623,26 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      shotgun2-Sheet_0: -8301890313372660126
+      shotgun2-Sheet_1: -3982711071556926980
+      shotgun2-Sheet_10: 3039994537776435583
+      shotgun2-Sheet_11: -2546705966819694837
+      shotgun2-Sheet_12: 502264234656101329
+      shotgun2-Sheet_13: -2410125587860861345
+      shotgun2-Sheet_14: 3863276330109865102
+      shotgun2-Sheet_15: 6613329391358460926
+      shotgun2-Sheet_16: 7536980027272034379
+      shotgun2-Sheet_17: 226035485710435139
+      shotgun2-Sheet_18: 2130966404470633019
+      shotgun2-Sheet_2: 1067486093945803441
+      shotgun2-Sheet_3: -690943174849042487
+      shotgun2-Sheet_4: 3344446096615576227
+      shotgun2-Sheet_5: -1140130331190869238
+      shotgun2-Sheet_6: 760322758283140281
+      shotgun2-Sheet_7: 4311089710886423587
+      shotgun2-Sheet_8: 2196651672167149870
+      shotgun2-Sheet_9: 8561354959878728622
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
