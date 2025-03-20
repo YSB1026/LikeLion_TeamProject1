@@ -5,11 +5,16 @@ public class Player : Character
     float moveX, moveY, lastMoveX = 1f, lastMoveY = 0f;
     bool isMoving;
 
+    Animator pAnimator;
+    Rigidbody2D pRig2D;
+    SpriteRenderer sp;
+    Collider2D collider;
+
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        pRig2D = GetComponent<Rigidbody2D>();
         collider = GetComponent<Collider2D>();
-        animator = GetComponent<Animator>();
+        pAnimator = GetComponent<Animator>();
     }
 
     protected override void Death()
@@ -20,7 +25,7 @@ public class Player : Character
     {
         //플레이어 움직임
         (moveX, moveY) = (Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        transform.Translate(new Vector2(moveX, moveY).normalized * speed * Time.deltaTime);
+        transform.Translate(new Vector2(moveX, moveY).normalized * moveSpeed * Time.deltaTime);
     }
     private void SetAnimParams()
     {
@@ -33,9 +38,9 @@ public class Player : Character
             lastMoveY = moveY;
         }
 
-        animator.SetFloat("dirX", isMoving ? moveX : lastMoveX);
-        animator.SetFloat("dirY", isMoving ? moveY : lastMoveY);
-        animator.SetBool("isWalking", isMoving);
+        pAnimator.SetFloat("dirX", isMoving ? moveX : lastMoveX);
+        pAnimator.SetFloat("dirY", isMoving ? moveY : lastMoveY);
+        pAnimator.SetBool("isWalking", isMoving);
     }
 
     void Update()
