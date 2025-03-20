@@ -34,9 +34,10 @@ public class MouseManager : MonoBehaviour
         //mousePos = -mousePos;
         transform.position = new Vector3(mousePos.x, mousePos.y, 0);
     }
-    public Quaternion GetRotationInfo()
+    public Vector2 GetRotationInfo()
     {
         //Debug.Log(Quaternion.AngleAxis(angle - 90, Vector3.forward));
-        return Quaternion.AngleAxis(90, Vector3.forward);
+        //return Quaternion.AngleAxis(90, Vector3.forward);
+        return Vector3.up;
     }
 }
