@@ -11,6 +11,11 @@
   <br> ![C#](https://img.shields.io/badge/-C%23-239120?style=flat-square&logo=csharp&logoColor=white)
   ![Unity](https://img.shields.io/badge/-Unity-100000?style=flat-square&logo=unity&logoColor=white)
 
+- **팀원**
+  <p>
+  <a href="https://github.com/pastarobber/Maze/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=pastarobber/Maze" style="zoom: 100%;"/></a>
+
 </p>
 <br>
 
