@@ -1,5 +1,7 @@
 using Singleton.Component;
 using System.Collections;
+using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnManager : SingletonComponent<SpawnManager>
@@ -30,8 +32,11 @@ public class SpawnManager : SingletonComponent<SpawnManager>
         while(count > 0)
         {
             yield return new WaitForSeconds(delay);
-            GameObject mob = PoolManager.Instance.Get(prefab);
-            mob.transform.position = GetRandomPosition();
+            for(int i = 0; i < amount; i++)
+            {
+                GameObject mob = PoolManager.Instance.Get(prefab);
+                mob.transform.position = GetRandomPosition();
+            }
             count--;
         }
     }
@@ -60,6 +65,7 @@ public class SpawnManager : SingletonComponent<SpawnManager>
                 break;
         }
         randomPosition = Camera.main.ViewportToWorldPoint(randomPosition);
+        Debug.Log(randomPosition);
 
         return randomPosition;
     }
