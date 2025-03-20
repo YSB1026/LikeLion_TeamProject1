@@ -2,7 +2,27 @@ fileFormatVersion: 2
 guid: 82ae0985e9316154a8983df1798ea0c5
 ScriptedImporter:
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: idle
+    second: {fileID: 7400000, guid: fcd80c40b23a81941b6fb9ff296c1535, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: racking
+    second: {fileID: 7400000, guid: 46eaba591a7a2404c9c890b90ded1401, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: reload
+    second: {fileID: 7400000, guid: 6b5512927dbecfa4bae1f353357553d6, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: shoot
+    second: {fileID: 7400000, guid: c1d707e1eabc34a4b9eba57e188e5ce6, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -98,7 +118,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638780149325738789
+  platformSettingsDirtyTick: 638780869607030752
   textureAssetName: 
   singleSpriteImportData:
   - name: 
