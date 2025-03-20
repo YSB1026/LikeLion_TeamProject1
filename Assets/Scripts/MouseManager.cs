@@ -5,7 +5,7 @@ public class MouseManager : MonoBehaviour
 {
     [SerializeField] Transform player;
     [SerializeField] Camera cam;
-    [SerializeField] float threshold;//시네머신 카메라가 플레이어 따라갈 때 threshold를 줘서 뭔가 하는거가 같음.
+    [SerializeField] float threshold;//threshold -> clamp(min,max) 줄 값.
     public static MouseManager Instance { get; private set; }
 
     private void Awake()
@@ -27,14 +27,12 @@ public class MouseManager : MonoBehaviour
 
     void Update()
     {
-        Vector3 mousePos = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.transform.position.z));
-        //Debug.Log(mousePos);
-        Vector3 targetPos = (player.position + mousePos);
-
-        targetPos.x = Mathf.Clamp(targetPos.x, -threshold + player.position.x, threshold+player.position.x);
-        targetPos.y = Mathf.Clamp(targetPos.y, -threshold + player.position.y, threshold + player.position.y);
-
-        this.transform.position = targetPos;
+        Vector3 mousePos = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Mathf.Abs(cam.transform.position.z)));
+        //Vector3 target = -mousePos; //나중에 알아보기 왜 반대로 되는지, 느낌상 z값이 음수라서 그런거같음.
+        //target.x = Mathf.Clamp(target.x, -threshold + player.position.x, threshold + player.position.x);
+        //target.y = Mathf.Clamp(target.y, -threshold + player.position.y, threshold + player.position.y);
+        //mousePos = -mousePos;
+        transform.position = new Vector3(mousePos.x, mousePos.y, 0);
     }
     public Quaternion GetRotationInfo()
     {
