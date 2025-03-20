@@ -13,8 +13,6 @@
 
 - **팀원**
   <p>
-  <a href="https://github.com/pastarobber/Maze/graphs/contributors">
-  <img src="" style="zoom: 100%;"/></a>
 
 </p>
 <br>
