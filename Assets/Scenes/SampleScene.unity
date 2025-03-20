@@ -763,9 +763,15 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
+<<<<<<< Updated upstream
   field of view: 155
   orthographic: 1
   orthographic size: 8
+=======
+  field of view: 80
+  orthographic: 0
+  orthographic size: 4.5
+>>>>>>> Stashed changes
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -993,8 +999,13 @@ MonoBehaviour:
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
+<<<<<<< Updated upstream
     FieldOfView: 155
     OrthographicSize: 8
+=======
+    FieldOfView: 80
+    OrthographicSize: 4.5
+>>>>>>> Stashed changes
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -1046,11 +1057,14 @@ MonoBehaviour:
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
   FollowOffset: {x: 0, y: 0, z: -10}
+<<<<<<< Updated upstream
 --- !u!4 &1123752511 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2171106512766256762, guid: 9e8684a4054072349948da3ab64efcc1, type: 3}
   m_PrefabInstance: {fileID: 2216777452961457686}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1344171563
 GameObject:
   m_ObjectHideFlags: 0
