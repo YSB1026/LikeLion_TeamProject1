@@ -6133,7 +6133,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 983610025}
-  - {fileID: 1711353048}
   - {fileID: 1531527580}
   - {fileID: 288661943}
   - {fileID: 1804910657}
