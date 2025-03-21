@@ -1,64 +1,67 @@
 fileFormatVersion: 2
-guid: 3bfa26f6e91387a498490a28b41b4352
+guid: 351a01cf9b5a80f4ab49a2cf2c549971
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8301890313372660126
-    second: shotgun2-Sheet_0
+      213: -6970990344372159568
+    second: Slime2_Hurt_shadow_0
   - first:
-      213: -3982711071556926980
-    second: shotgun2-Sheet_1
+      213: 2703160366652655642
+    second: Slime2_Hurt_shadow_1
   - first:
-      213: 1067486093945803441
-    second: shotgun2-Sheet_2
+      213: -8058459764412425793
+    second: Slime2_Hurt_shadow_2
   - first:
-      213: -690943174849042487
-    second: shotgun2-Sheet_3
+      213: -4569914818612128204
+    second: Slime2_Hurt_shadow_3
   - first:
-      213: 3344446096615576227
-    second: shotgun2-Sheet_4
+      213: 8644086073916736563
+    second: Slime2_Hurt_shadow_4
   - first:
-      213: -1140130331190869238
-    second: shotgun2-Sheet_5
+      213: 2740114038320358144
+    second: Slime2_Hurt_shadow_5
   - first:
-      213: 760322758283140281
-    second: shotgun2-Sheet_6
+      213: 2219518265201029990
+    second: Slime2_Hurt_shadow_6
   - first:
-      213: 4311089710886423587
-    second: shotgun2-Sheet_7
+      213: 2647493906737877576
+    second: Slime2_Hurt_shadow_7
   - first:
-      213: 2196651672167149870
-    second: shotgun2-Sheet_8
+      213: 8449461787834408278
+    second: Slime2_Hurt_shadow_8
   - first:
-      213: 8561354959878728622
-    second: shotgun2-Sheet_9
+      213: 5057456728696973683
+    second: Slime2_Hurt_shadow_9
   - first:
-      213: 3039994537776435583
-    second: shotgun2-Sheet_10
+      213: 3060929068835787834
+    second: Slime2_Hurt_shadow_10
   - first:
-      213: -2546705966819694837
-    second: shotgun2-Sheet_11
+      213: -6419645231487546115
+    second: Slime2_Hurt_shadow_11
   - first:
-      213: 502264234656101329
-    second: shotgun2-Sheet_12
+      213: -6688895186004236581
+    second: Slime2_Hurt_shadow_12
   - first:
-      213: -2410125587860861345
-    second: shotgun2-Sheet_13
+      213: 3256758063102820343
+    second: Slime2_Hurt_shadow_13
   - first:
-      213: 3863276330109865102
-    second: shotgun2-Sheet_14
+      213: 2332975991875064417
+    second: Slime2_Hurt_shadow_14
   - first:
-      213: 6613329391358460926
-    second: shotgun2-Sheet_15
+      213: -4491114678933855293
+    second: Slime2_Hurt_shadow_15
   - first:
-      213: 7536980027272034379
-    second: shotgun2-Sheet_16
+      213: -1780861968112907391
+    second: Slime2_Hurt_shadow_16
   - first:
-      213: 226035485710435139
-    second: shotgun2-Sheet_17
+      213: -8317724027476579488
+    second: Slime2_Hurt_shadow_17
   - first:
-      213: 2130966404470633019
-    second: shotgun2-Sheet_18
+      213: -2843138608775282351
+    second: Slime2_Hurt_shadow_18
+  - first:
+      213: -6090912855454360931
+    second: Slime2_Hurt_shadow_19
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -193,12 +196,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shotgun2-Sheet_0
+      name: Slime2_Hurt_shadow_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 108
-        width: 33
+        x: 23
+        y: 213
+        width: 19
         height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -208,129 +211,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 26e8a2bceb2c9cc80800000000000000
-      internalID: -8301890313372660126
+      spriteID: 0bbf4073731124f90800000000000000
+      internalID: -6970990344372159568
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun2-Sheet_1
+      name: Slime2_Hurt_shadow_1
       rect:
         serializedVersion: 2
-        x: 7
-        y: 76
-        width: 43
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cf185d8b1619ab8c0800000000000000
-      internalID: -3982711071556926980
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shotgun2-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 69
-        y: 77
-        width: 33
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1b21f4852f870de00800000000000000
-      internalID: 1067486093945803441
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shotgun2-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 102
-        y: 77
-        width: 12
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9c7642fd7d64966f0800000000000000
-      internalID: -690943174849042487
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shotgun2-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 133
-        y: 76
-        width: 33
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3a29637510cd96e20800000000000000
-      internalID: 3344446096615576227
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shotgun2-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 77
-        width: 12
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a0348b321817d20f0800000000000000
-      internalID: -1140130331190869238
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shotgun2-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 199
-        y: 74
-        width: 33
+        x: 87
+        y: 213
+        width: 19
         height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -340,63 +233,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9bc9c1235853d8a00800000000000000
-      internalID: 760322758283140281
+      spriteID: a180f31180e838520800000000000000
+      internalID: 2703160366652655642
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun2-Sheet_7
+      name: Slime2_Hurt_shadow_2
       rect:
         serializedVersion: 2
-        x: 235
-        y: 77
-        width: 11
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 32c0a3c304114db30800000000000000
-      internalID: 4311089710886423587
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shotgun2-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 263
-        y: 75
-        width: 48
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e217ac6be031c7e10800000000000000
-      internalID: 2196651672167149870
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shotgun2-Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 43
-        width: 33
+        x: 151
+        y: 213
+        width: 19
         height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -406,19 +255,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eaba99bd9fa00d670800000000000000
-      internalID: 8561354959878728622
+      spriteID: fb95b613a899a2090800000000000000
+      internalID: -8058459764412425793
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun2-Sheet_10
+      name: Slime2_Hurt_shadow_3
       rect:
         serializedVersion: 2
-        x: 70
-        y: 43
-        width: 33
+        x: 215
+        y: 213
+        width: 19
         height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -428,19 +277,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f71da4fecea303a20800000000000000
-      internalID: 3039994537776435583
+      spriteID: 43694d65fa66490c0800000000000000
+      internalID: -4569914818612128204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun2-Sheet_11
+      name: Slime2_Hurt_shadow_4
       rect:
         serializedVersion: 2
-        x: 136
-        y: 43
-        width: 33
+        x: 279
+        y: 213
+        width: 19
         height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -450,19 +299,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b07285c8a6848acd0800000000000000
-      internalID: -2546705966819694837
+      spriteID: 33445b36c76f5f770800000000000000
+      internalID: 8644086073916736563
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun2-Sheet_12
+      name: Slime2_Hurt_shadow_5
       rect:
         serializedVersion: 2
-        x: 200
-        y: 44
-        width: 33
+        x: 23
+        y: 149
+        width: 19
         height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -472,19 +321,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1d37f0a09a668f600800000000000000
-      internalID: 502264234656101329
+      spriteID: 003652a3337d60620800000000000000
+      internalID: 2740114038320358144
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun2-Sheet_13
+      name: Slime2_Hurt_shadow_6
       rect:
         serializedVersion: 2
-        x: 263
-        y: 44
-        width: 33
+        x: 87
+        y: 149
+        width: 19
         height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -494,107 +343,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f5e49771c838d8ed0800000000000000
-      internalID: -2410125587860861345
+      spriteID: 6637cc94a105dce10800000000000000
+      internalID: 2219518265201029990
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun2-Sheet_14
+      name: Slime2_Hurt_shadow_7
       rect:
         serializedVersion: 2
-        x: 7
-        y: 10
-        width: 33
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e8c8f5d8a5d1d9530800000000000000
-      internalID: 3863276330109865102
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shotgun2-Sheet_15
-      rect:
-        serializedVersion: 2
-        x: 71
-        y: 11
-        width: 33
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ef34292ea0447cb50800000000000000
-      internalID: 6613329391358460926
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shotgun2-Sheet_16
-      rect:
-        serializedVersion: 2
-        x: 135
-        y: 13
-        width: 33
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b4873c4f66bb89860800000000000000
-      internalID: 7536980027272034379
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shotgun2-Sheet_17
-      rect:
-        serializedVersion: 2
-        x: 199
-        y: 12
-        width: 33
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3434760a31a032300800000000000000
-      internalID: 226035485710435139
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shotgun2-Sheet_18
-      rect:
-        serializedVersion: 2
-        x: 263
-        y: 12
-        width: 33
+        x: 151
+        y: 149
+        width: 19
         height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -604,8 +365,272 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b3273ce87a6b29d10800000000000000
-      internalID: 2130966404470633019
+      spriteID: 8425f106ea9cdb420800000000000000
+      internalID: 2647493906737877576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime2_Hurt_shadow_8
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 149
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65d5b179ab4824570800000000000000
+      internalID: 8449461787834408278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime2_Hurt_shadow_9
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 149
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37964e46912bf2640800000000000000
+      internalID: 5057456728696973683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime2_Hurt_shadow_10
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 85
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a34df9645ca9a7a20800000000000000
+      internalID: 3060929068835787834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime2_Hurt_shadow_11
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 85
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfc8729bca6d8e6a0800000000000000
+      internalID: -6419645231487546115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime2_Hurt_shadow_12
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 85
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd6a56284454c23a0800000000000000
+      internalID: -6688895186004236581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime2_Hurt_shadow_13
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 85
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fff1ae0434523d20800000000000000
+      internalID: 3256758063102820343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime2_Hurt_shadow_14
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 85
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1625a31dd45606020800000000000000
+      internalID: 2332975991875064417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime2_Hurt_shadow_15
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 21
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c3ea949efa5ca1c0800000000000000
+      internalID: -4491114678933855293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime2_Hurt_shadow_16
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 21
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18b80a4b97b1947e0800000000000000
+      internalID: -1780861968112907391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime2_Hurt_shadow_17
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 21
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06be682f012819c80800000000000000
+      internalID: -8317724027476579488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime2_Hurt_shadow_18
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 21
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15140c8bf742b88d0800000000000000
+      internalID: -2843138608775282351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime2_Hurt_shadow_19
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 21
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9a58cc670bb87ba0800000000000000
+      internalID: -6090912855454360931
       vertices: []
       indices: 
       edges: []
@@ -623,26 +648,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      shotgun2-Sheet_0: -8301890313372660126
-      shotgun2-Sheet_1: -3982711071556926980
-      shotgun2-Sheet_10: 3039994537776435583
-      shotgun2-Sheet_11: -2546705966819694837
-      shotgun2-Sheet_12: 502264234656101329
-      shotgun2-Sheet_13: -2410125587860861345
-      shotgun2-Sheet_14: 3863276330109865102
-      shotgun2-Sheet_15: 6613329391358460926
-      shotgun2-Sheet_16: 7536980027272034379
-      shotgun2-Sheet_17: 226035485710435139
-      shotgun2-Sheet_18: 2130966404470633019
-      shotgun2-Sheet_2: 1067486093945803441
-      shotgun2-Sheet_3: -690943174849042487
-      shotgun2-Sheet_4: 3344446096615576227
-      shotgun2-Sheet_5: -1140130331190869238
-      shotgun2-Sheet_6: 760322758283140281
-      shotgun2-Sheet_7: 4311089710886423587
-      shotgun2-Sheet_8: 2196651672167149870
-      shotgun2-Sheet_9: 8561354959878728622
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,67 +1,115 @@
 fileFormatVersion: 2
-guid: c890aa28e696e2c41a93429dd6fabf3f
+guid: 4af2479bb699f8b43abd85bb7d1ee656
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4926808636134849640
-    second: shotgun1-Sheet_0
+      213: -2863241958341551144
+    second: Slime2_Idle_full_0
   - first:
-      213: 1148113755553035655
-    second: shotgun1-Sheet_1
+      213: -8882515719388884255
+    second: Slime2_Idle_full_1
   - first:
-      213: -6030357019131013507
-    second: shotgun1-Sheet_2
+      213: 4206346205758365428
+    second: Slime2_Idle_full_2
   - first:
-      213: 4474125106245383883
-    second: shotgun1-Sheet_3
+      213: 3022541160891300747
+    second: Slime2_Idle_full_3
   - first:
-      213: -1451602806442532209
-    second: shotgun1-Sheet_4
+      213: -7187047705502351437
+    second: Slime2_Idle_full_4
   - first:
-      213: 495192150736745791
-    second: shotgun1-Sheet_5
+      213: -4530494155580437179
+    second: Slime2_Idle_full_5
   - first:
-      213: -6034717046932544384
-    second: shotgun1-Sheet_6
+      213: -2086395433048276416
+    second: Slime2_Idle_full_6
   - first:
-      213: 4739688541075596799
-    second: shotgun1-Sheet_7
+      213: -795752899432801410
+    second: Slime2_Idle_full_7
   - first:
-      213: -2231248703444537179
-    second: shotgun1-Sheet_8
+      213: -1016491708359510145
+    second: Slime2_Idle_full_8
   - first:
-      213: -8914321923085898478
-    second: shotgun1-Sheet_9
+      213: 8789853872826664712
+    second: Slime2_Idle_full_9
   - first:
-      213: 8206055512529890453
-    second: shotgun1-Sheet_10
+      213: -42055914921386403
+    second: Slime2_Idle_full_10
   - first:
-      213: 8377854939861823889
-    second: shotgun1-Sheet_11
+      213: 3145378269622423184
+    second: Slime2_Idle_full_11
   - first:
-      213: 716324525105003462
-    second: shotgun1-Sheet_12
+      213: 2464864660424014275
+    second: Slime2_Idle_full_12
   - first:
-      213: -5049714763534415604
-    second: shotgun1-Sheet_13
+      213: -5072349328869539228
+    second: Slime2_Idle_full_13
   - first:
-      213: 8639620990306742678
-    second: shotgun1-Sheet_14
+      213: -9183467084967557638
+    second: Slime2_Idle_full_14
   - first:
-      213: -1040373658299356897
-    second: shotgun1-Sheet_15
+      213: -8298055543652332021
+    second: Slime2_Idle_full_15
   - first:
-      213: 6979076479483744427
-    second: shotgun1-Sheet_16
+      213: 3958115977454141503
+    second: Slime2_Idle_full_16
   - first:
-      213: 3347432093039617478
-    second: shotgun1-Sheet_17
+      213: 23429139622779269
+    second: Slime2_Idle_full_17
   - first:
-      213: -2846433228783591076
-    second: shotgun1-Sheet_18
+      213: 32478028409201770
+    second: Slime2_Idle_full_18
   - first:
-      213: 8463254151287935970
-    second: shotgun1-Sheet_19
+      213: 8986970846686926353
+    second: Slime2_Idle_full_19
+  - first:
+      213: -1201178379332078552
+    second: Slime2_Idle_full_20
+  - first:
+      213: 6896415025798468294
+    second: Slime2_Idle_full_21
+  - first:
+      213: -1981675265002439623
+    second: Slime2_Idle_full_22
+  - first:
+      213: 590539053569494501
+    second: Slime2_Idle_full_23
+  - first:
+      213: 7170645571801306422
+    second: Slime2_Idle_full_24
+  - first:
+      213: 6467166504959742082
+    second: Slime2_Idle_full_25
+  - first:
+      213: 7081464806362470939
+    second: Slime2_Idle_full_26
+  - first:
+      213: 6567459692856246646
+    second: Slime2_Idle_full_27
+  - first:
+      213: -8953664836530347366
+    second: Slime2_Idle_full_28
+  - first:
+      213: -1824358085016987189
+    second: Slime2_Idle_full_29
+  - first:
+      213: -569970972876552319
+    second: Slime2_Idle_full_30
+  - first:
+      213: 7954916426916811996
+    second: Slime2_Idle_full_31
+  - first:
+      213: 5391540756747432825
+    second: Slime2_Idle_full_32
+  - first:
+      213: 521420470681035470
+    second: Slime2_Idle_full_33
+  - first:
+      213: -7563438844834271006
+    second: Slime2_Idle_full_34
+  - first:
+      213: 80245556605852446
+    second: Slime2_Idle_full_35
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -94,7 +142,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -108,7 +156,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -196,441 +244,529 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shotgun1-Sheet_0
+      name: Slime2_Idle_full_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 78
-        width: 33
-        height: 12
+        x: 0
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 86cf429e95a8f5440800000000000000
-      internalID: 4926808636134849640
+      spriteID: 95761eb01d4e3634595b2aab469170d4
+      internalID: -93674247
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun1-Sheet_1
+      name: Slime2_Idle_full_1
       rect:
         serializedVersion: 2
-        x: 8
-        y: 53
-        width: 43
-        height: 14
+        x: 64
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7857a71b06beeef00800000000000000
-      internalID: 1148113755553035655
+      spriteID: f6b6241a2609e7f4192b58cc95767651
+      internalID: -619528971
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun1-Sheet_2
+      name: Slime2_Idle_full_2
       rect:
         serializedVersion: 2
-        x: 71
-        y: 55
-        width: 33
-        height: 18
+        x: 128
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d7699e5cd3edf4ca0800000000000000
-      internalID: -6030357019131013507
+      spriteID: bc50968ce57651a49990ba33b1f4737e
+      internalID: 546940271
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun1-Sheet_3
+      name: Slime2_Idle_full_3
       rect:
         serializedVersion: 2
-        x: 102
-        y: 56
-        width: 13
-        height: 14
+        x: 192
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: bc6b9664419471e30800000000000000
-      internalID: 4474125106245383883
+      spriteID: 423662dd1954c6e429b47c1a760430f6
+      internalID: -646475632
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun1-Sheet_4
+      name: Slime2_Idle_full_4
       rect:
         serializedVersion: 2
-        x: 135
-        y: 54
-        width: 33
-        height: 18
+        x: 256
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f82680f30fedadbe0800000000000000
-      internalID: -1451602806442532209
+      spriteID: 918efab086821664089741ec55fccf2a
+      internalID: -1529253408
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun1-Sheet_5
+      name: Slime2_Idle_full_5
       rect:
         serializedVersion: 2
-        x: 169
-        y: 56
-        width: 12
-        height: 14
+        x: 320
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f35b93033a64fd600800000000000000
-      internalID: 495192150736745791
+      spriteID: 24bec48039ab8864ba4b78566f3aefe4
+      internalID: -1599215760
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun1-Sheet_6
+      name: Slime2_Idle_full_6
       rect:
         serializedVersion: 2
-        x: 200
-        y: 51
-        width: 33
-        height: 12
+        x: 0
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0846791b1d0604ca0800000000000000
-      internalID: -6034717046932544384
+      spriteID: 01dcbecd7ef68864dae2b1ad16697211
+      internalID: -1809484849
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun1-Sheet_7
+      name: Slime2_Idle_full_7
       rect:
         serializedVersion: 2
-        x: 233
-        y: 56
-        width: 14
-        height: 14
+        x: 64
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ff5ecccbd91c6c140800000000000000
-      internalID: 4739688541075596799
+      spriteID: 4e4d62cc092692e4f9a780e7cb70fd09
+      internalID: 1814704019
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun1-Sheet_8
+      name: Slime2_Idle_full_8
       rect:
         serializedVersion: 2
-        x: 264
-        y: 52
-        width: 33
-        height: 12
+        x: 128
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5a033a930230901e0800000000000000
-      internalID: -2231248703444537179
+      spriteID: 4a3e228ebdd7bef4f93f64362525cfb7
+      internalID: 255430398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun1-Sheet_9
+      name: Slime2_Idle_full_9
       rect:
         serializedVersion: 2
-        x: 298
-        y: 56
-        width: 14
-        height: 13
+        x: 192
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 21decf8e077f94480800000000000000
-      internalID: -8914321923085898478
+      spriteID: 760a24e1845f33e4591220f008b2e752
+      internalID: -1353748774
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun1-Sheet_10
+      name: Slime2_Idle_full_10
       rect:
         serializedVersion: 2
-        x: 7
-        y: 27
-        width: 33
-        height: 12
+        x: 256
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 59cea77d204c1e170800000000000000
-      internalID: 8206055512529890453
+      spriteID: 83bc8af2143180342ac6d6c420a4007c
+      internalID: -1356051655
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun1-Sheet_11
+      name: Slime2_Idle_full_11
       rect:
         serializedVersion: 2
-        x: 71
-        y: 27
-        width: 33
-        height: 12
+        x: 320
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 19137361eae144470800000000000000
-      internalID: 8377854939861823889
+      spriteID: 6a9551e32bd461748a18dc73052c8d5d
+      internalID: -403378204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun1-Sheet_12
+      name: Slime2_Idle_full_12
       rect:
         serializedVersion: 2
-        x: 137
-        y: 27
-        width: 33
-        height: 12
+        x: 0
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6cbb8ce3c55e0f900800000000000000
-      internalID: 716324525105003462
+      spriteID: a81c10be681f1fd4e88b4a35a45cb879
+      internalID: -1064695112
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun1-Sheet_13
+      name: Slime2_Idle_full_13
       rect:
         serializedVersion: 2
-        x: 201
-        y: 28
-        width: 33
-        height: 12
+        x: 64
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c094c765d2fcbe9b0800000000000000
-      internalID: -5049714763534415604
+      spriteID: bb53e6ecbed494e468a6a41a093affce
+      internalID: -417013238
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun1-Sheet_14
+      name: Slime2_Idle_full_14
       rect:
         serializedVersion: 2
-        x: 264
-        y: 28
-        width: 33
-        height: 12
+        x: 128
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 691fd39148916e770800000000000000
-      internalID: 8639620990306742678
+      spriteID: c248dc08576f0964397fd318958c4a1a
+      internalID: 631331127
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun1-Sheet_15
+      name: Slime2_Idle_full_15
       rect:
         serializedVersion: 2
-        x: 8
-        y: 2
-        width: 33
-        height: 13
+        x: 192
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f19a46f7ba9df81f0800000000000000
-      internalID: -1040373658299356897
+      spriteID: df6940833c5959c41b8d9696b8d3ee0d
+      internalID: 2047012620
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun1-Sheet_16
+      name: Slime2_Idle_full_16
       rect:
         serializedVersion: 2
-        x: 72
-        y: 3
-        width: 33
-        height: 12
+        x: 256
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ba099e3d419aad060800000000000000
-      internalID: 6979076479483744427
+      spriteID: 0e53f32b7acbd9d4aac49bf58dc90577
+      internalID: 261066533
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun1-Sheet_17
+      name: Slime2_Idle_full_17
       rect:
         serializedVersion: 2
-        x: 136
-        y: 4
-        width: 33
-        height: 13
+        x: 320
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6c56e5fc0c7747e20800000000000000
-      internalID: 3347432093039617478
+      spriteID: 6a732b2e0ecd8e84ca0f79da2c7e6e25
+      internalID: 575667472
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun1-Sheet_18
+      name: Slime2_Idle_full_18
       rect:
         serializedVersion: 2
-        x: 200
-        y: 3
-        width: 33
-        height: 13
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c516c793f007f78d0800000000000000
-      internalID: -2846433228783591076
+      spriteID: 8376fa53ef7e7954089ef8f88eae5faa
+      internalID: -901665410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shotgun1-Sheet_19
+      name: Slime2_Idle_full_19
       rect:
         serializedVersion: 2
-        x: 264
-        y: 3
-        width: 33
-        height: 12
+        x: 64
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2e31e537fc4837570800000000000000
-      internalID: 8463254151287935970
+      spriteID: 690a8595dab29904f9133a6a31ad58d1
+      internalID: 1303975931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime2_Idle_full_20
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e4e437fdbc20bf46bcfd94332dcadbe
+      internalID: -1706153632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime2_Idle_full_21
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a41c7d89a5fb4643bef32406f522e26
+      internalID: 2126788094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime2_Idle_full_22
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43f869059a742a8449f0277f04e548be
+      internalID: 830361177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime2_Idle_full_23
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b265d2b1b6756e84ea754eb861ddd1de
+      internalID: -810006140
       vertices: []
       indices: 
       edges: []
@@ -639,7 +775,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: bd2dc64f2e79f66438c83ed057700992
     internalID: 0
     vertices: []
     indices: 
@@ -649,26 +785,30 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      shotgun1-Sheet_0: 4926808636134849640
-      shotgun1-Sheet_1: 1148113755553035655
-      shotgun1-Sheet_10: 8206055512529890453
-      shotgun1-Sheet_11: 8377854939861823889
-      shotgun1-Sheet_12: 716324525105003462
-      shotgun1-Sheet_13: -5049714763534415604
-      shotgun1-Sheet_14: 8639620990306742678
-      shotgun1-Sheet_15: -1040373658299356897
-      shotgun1-Sheet_16: 6979076479483744427
-      shotgun1-Sheet_17: 3347432093039617478
-      shotgun1-Sheet_18: -2846433228783591076
-      shotgun1-Sheet_19: 8463254151287935970
-      shotgun1-Sheet_2: -6030357019131013507
-      shotgun1-Sheet_3: 4474125106245383883
-      shotgun1-Sheet_4: -1451602806442532209
-      shotgun1-Sheet_5: 495192150736745791
-      shotgun1-Sheet_6: -6034717046932544384
-      shotgun1-Sheet_7: 4739688541075596799
-      shotgun1-Sheet_8: -2231248703444537179
-      shotgun1-Sheet_9: -8914321923085898478
+      Slime2_Idle_full_0: -93674247
+      Slime2_Idle_full_1: -619528971
+      Slime2_Idle_full_10: -1356051655
+      Slime2_Idle_full_11: -403378204
+      Slime2_Idle_full_12: -1064695112
+      Slime2_Idle_full_13: -417013238
+      Slime2_Idle_full_14: 631331127
+      Slime2_Idle_full_15: 2047012620
+      Slime2_Idle_full_16: 261066533
+      Slime2_Idle_full_17: 575667472
+      Slime2_Idle_full_18: -901665410
+      Slime2_Idle_full_19: 1303975931
+      Slime2_Idle_full_2: 546940271
+      Slime2_Idle_full_20: -1706153632
+      Slime2_Idle_full_21: 2126788094
+      Slime2_Idle_full_22: 830361177
+      Slime2_Idle_full_23: -810006140
+      Slime2_Idle_full_3: -646475632
+      Slime2_Idle_full_4: -1529253408
+      Slime2_Idle_full_5: -1599215760
+      Slime2_Idle_full_6: -1809484849
+      Slime2_Idle_full_7: 1814704019
+      Slime2_Idle_full_8: 255430398
+      Slime2_Idle_full_9: -1353748774
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
