@@ -245,10 +245,10 @@ TextureImporter:
       name: SawBladeSuriken_4
       rect:
         serializedVersion: 2
-        x: 5
-        y: 69
-        width: 22
-        height: 22
+        x: 4
+        y: 68
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,10 +267,10 @@ TextureImporter:
       name: SawBladeSuriken_5
       rect:
         serializedVersion: 2
-        x: 30
-        y: 70
-        width: 20
-        height: 20
+        x: 28
+        y: 68
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,7 +289,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e944e0f147f12c64f98d2c7e332d3bb6
     internalID: 0
     vertices: []
     indices: 
