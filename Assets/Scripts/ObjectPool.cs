@@ -37,7 +37,6 @@ public class ObjectPool
     //풀이 비어있으면 새로 생성
     public GameObject Get()
     {
-        Debug.Log(pool.Count);
         if (pool.Count == 0)
         {
             CreateNewObject();
