@@ -7,6 +7,14 @@ public abstract class Character : MonoBehaviour
     public int atkPower = 2; //공격력
     public float atkSpeed = 1f; //공격 속도
 
+    protected virtual void Update()
+    {
+        Move();
+    }
+
+    //이동 메서드
+    protected abstract void Move();
+
     //피격 메서드
     public virtual void TakeDamage(int damage)
     {
@@ -19,7 +27,4 @@ public abstract class Character : MonoBehaviour
 
     //사망 메서드
     protected abstract void Death();
-
-    //이동 메서드
-    protected abstract void Move();
 }

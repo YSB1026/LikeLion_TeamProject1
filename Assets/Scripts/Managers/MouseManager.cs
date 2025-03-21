@@ -5,6 +5,7 @@ using UnityEngine;
 public class MouseManager : SingletonComponent<MouseManager>
 {
     [SerializeField] float threshold;//threshold -> clamp(min,max) 줄 값.
+    public Vector3 mousePos;
 
     #region Singleton
     protected override void AwakeInstance()
@@ -25,7 +26,8 @@ public class MouseManager : SingletonComponent<MouseManager>
 
     void Update()
     {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+        mousePos = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+        mousePos.z = 0;
         transform.position = mousePos;
     }
 }

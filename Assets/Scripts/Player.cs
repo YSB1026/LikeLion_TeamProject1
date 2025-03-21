@@ -10,20 +10,25 @@ public int atkPower = 2; //공격력
 public float atkSpeed = 1f; //공격 속도
 */
     public float projectileSpeed = 10f;
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private Transform firePos;
 
     private Animator animator;
     private float moveX, moveY, lastMoveX = 1f, lastMoveY = 0f; // 마지막 입력 방향 (Idle 전환 시 유지)
     private bool isMoving;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        PoolManager.Instance.CreatePool(projectilePrefab, 10);
+        StartCoroutine(FireProjectile());
     }
     void Start()
     {
     }
-    void Update()
+    protected override void Update()
     {
-        Move();
+        base.Update();
         SetAnimParams();
     }
     private void FixedUpdate()
@@ -67,6 +72,17 @@ public float atkSpeed = 1f; //공격 속도
         animator.SetFloat("dirX", isMoving ? moveX : lastMoveX);
         animator.SetFloat("dirY", isMoving ? moveY : lastMoveY);
         animator.SetBool("isWalking", isMoving);
+    }
+
+    IEnumerator FireProjectile()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(atkSpeed);
+            GameObject projectile = PoolManager.Instance.Get(projectilePrefab);
+            projectile.transform.position = firePos.position;
+            projectile.GetComponent<PlayerProjectile>().direction = (MouseManager.Instance.mousePos - firePos.position).normalized;
+        }
     }
 
     IEnumerator TakeDamageRoutine()
