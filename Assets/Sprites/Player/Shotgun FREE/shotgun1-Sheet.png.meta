@@ -1,79 +1,67 @@
 fileFormatVersion: 2
-guid: 3c2d683f90ed9ad46862ebae419d0506
+guid: c890aa28e696e2c41a93429dd6fabf3f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8296385383580801948
-    second: walk_0
+      213: 4926808636134849640
+    second: shotgun1-Sheet_0
   - first:
-      213: 3218353051568008401
-    second: walk_1
+      213: 1148113755553035655
+    second: shotgun1-Sheet_1
   - first:
-      213: 6971375644381031630
-    second: walk_2
+      213: -6030357019131013507
+    second: shotgun1-Sheet_2
   - first:
-      213: -3714987382563562326
-    second: walk_3
+      213: 4474125106245383883
+    second: shotgun1-Sheet_3
   - first:
-      213: -2044624726750869082
-    second: walk_4
+      213: -1451602806442532209
+    second: shotgun1-Sheet_4
   - first:
-      213: -1800561202758830752
-    second: walk_5
+      213: 495192150736745791
+    second: shotgun1-Sheet_5
   - first:
-      213: -7072565547094396234
-    second: walk_6
+      213: -6034717046932544384
+    second: shotgun1-Sheet_6
   - first:
-      213: -6780060589664581786
-    second: walk_7
+      213: 4739688541075596799
+    second: shotgun1-Sheet_7
   - first:
-      213: 2251703588619409307
-    second: walk_8
+      213: -2231248703444537179
+    second: shotgun1-Sheet_8
   - first:
-      213: -5224373444711448209
-    second: walk_9
+      213: -8914321923085898478
+    second: shotgun1-Sheet_9
   - first:
-      213: 8428286525173097495
-    second: walk_10
+      213: 8206055512529890453
+    second: shotgun1-Sheet_10
   - first:
-      213: -2787140197056013511
-    second: walk_11
+      213: 8377854939861823889
+    second: shotgun1-Sheet_11
   - first:
-      213: -8260419473583676578
-    second: walk_12
+      213: 716324525105003462
+    second: shotgun1-Sheet_12
   - first:
-      213: 6000581766031926614
-    second: walk_13
+      213: -5049714763534415604
+    second: shotgun1-Sheet_13
   - first:
-      213: -6959915571989194883
-    second: walk_14
+      213: 8639620990306742678
+    second: shotgun1-Sheet_14
   - first:
-      213: 960921020097805623
-    second: walk_15
+      213: -1040373658299356897
+    second: shotgun1-Sheet_15
   - first:
-      213: -3336701548478254045
-    second: walk_16
+      213: 6979076479483744427
+    second: shotgun1-Sheet_16
   - first:
-      213: -5400053455435091454
-    second: walk_17
+      213: 3347432093039617478
+    second: shotgun1-Sheet_17
   - first:
-      213: 4408406346810168619
-    second: walk_18
+      213: -2846433228783591076
+    second: shotgun1-Sheet_18
   - first:
-      213: -485737157877676475
-    second: walk_19
-  - first:
-      213: -5106187503225981072
-    second: walk_20
-  - first:
-      213: 4312765686203540801
-    second: walk_21
-  - first:
-      213: 5251978615751408329
-    second: walk_22
-  - first:
-      213: 2965599932687856292
-    second: walk_23
+      213: 8463254151287935970
+    second: shotgun1-Sheet_19
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,7 +94,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -120,7 +108,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -144,7 +132,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -208,13 +196,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walk_0
+      name: shotgun1-Sheet_0
       rect:
         serializedVersion: 2
-        x: 32
-        y: 192
-        width: 15
-        height: 16
+        x: 8
+        y: 78
+        width: 33
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,20 +211,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4646ce323715ddc80800000000000000
-      internalID: -8296385383580801948
+      spriteID: 86cf429e95a8f5440800000000000000
+      internalID: 4926808636134849640
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_1
+      name: shotgun1-Sheet_1
       rect:
         serializedVersion: 2
-        x: 112
-        y: 192
-        width: 15
-        height: 15
+        x: 8
+        y: 53
+        width: 43
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,20 +233,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1dc61808c03e9ac20800000000000000
-      internalID: 3218353051568008401
+      spriteID: 7857a71b06beeef00800000000000000
+      internalID: 1148113755553035655
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_2
+      name: shotgun1-Sheet_2
       rect:
         serializedVersion: 2
-        x: 192
-        y: 192
-        width: 15
-        height: 15
+        x: 71
+        y: 55
+        width: 33
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,20 +255,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ecc242f663d4fb060800000000000000
-      internalID: 6971375644381031630
+      spriteID: d7699e5cd3edf4ca0800000000000000
+      internalID: -6030357019131013507
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_3
+      name: shotgun1-Sheet_3
       rect:
         serializedVersion: 2
-        x: 273
-        y: 192
+        x: 102
+        y: 56
         width: 13
-        height: 16
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,20 +277,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aac9d3d88a6b17cc0800000000000000
-      internalID: -3714987382563562326
+      spriteID: bc6b9664419471e30800000000000000
+      internalID: 4474125106245383883
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_4
+      name: shotgun1-Sheet_4
       rect:
         serializedVersion: 2
-        x: 353
-        y: 192
-        width: 13
-        height: 16
+        x: 135
+        y: 54
+        width: 33
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,20 +299,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6a9c807d4a800a3e0800000000000000
-      internalID: -2044624726750869082
+      spriteID: f82680f30fedadbe0800000000000000
+      internalID: -1451602806442532209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_5
+      name: shotgun1-Sheet_5
       rect:
         serializedVersion: 2
-        x: 433
-        y: 192
-        width: 13
-        height: 15
+        x: 169
+        y: 56
+        width: 12
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -333,20 +321,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 065b539302f1307e0800000000000000
-      internalID: -1800561202758830752
+      spriteID: f35b93033a64fd600800000000000000
+      internalID: 495192150736745791
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_6
+      name: shotgun1-Sheet_6
       rect:
         serializedVersion: 2
-        x: 513
-        y: 192
-        width: 13
-        height: 15
+        x: 200
+        y: 51
+        width: 33
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -355,20 +343,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6b2b5c26b1339dd90800000000000000
-      internalID: -7072565547094396234
+      spriteID: 0846791b1d0604ca0800000000000000
+      internalID: -6034717046932544384
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_7
+      name: shotgun1-Sheet_7
       rect:
         serializedVersion: 2
-        x: 593
-        y: 192
-        width: 13
-        height: 16
+        x: 233
+        y: 56
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -377,20 +365,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 667ca65e0d268e1a0800000000000000
-      internalID: -6780060589664581786
+      spriteID: ff5ecccbd91c6c140800000000000000
+      internalID: 4739688541075596799
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_8
+      name: shotgun1-Sheet_8
       rect:
         serializedVersion: 2
-        x: 32
-        y: 112
-        width: 15
-        height: 16
+        x: 264
+        y: 52
+        width: 33
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -399,20 +387,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b97d12bdb78af3f10800000000000000
-      internalID: 2251703588619409307
+      spriteID: 5a033a930230901e0800000000000000
+      internalID: -2231248703444537179
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_9
+      name: shotgun1-Sheet_9
       rect:
         serializedVersion: 2
-        x: 112
-        y: 112
-        width: 15
-        height: 15
+        x: 298
+        y: 56
+        width: 14
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -421,20 +409,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f618dfd280c4f77b0800000000000000
-      internalID: -5224373444711448209
+      spriteID: 21decf8e077f94480800000000000000
+      internalID: -8914321923085898478
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_10
+      name: shotgun1-Sheet_10
       rect:
         serializedVersion: 2
-        x: 192
-        y: 112
-        width: 15
-        height: 15
+        x: 7
+        y: 27
+        width: 33
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -443,20 +431,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 714672e80f947f470800000000000000
-      internalID: 8428286525173097495
+      spriteID: 59cea77d204c1e170800000000000000
+      internalID: 8206055512529890453
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_11
+      name: shotgun1-Sheet_11
       rect:
         serializedVersion: 2
-        x: 272
-        y: 112
-        width: 15
-        height: 16
+        x: 71
+        y: 27
+        width: 33
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -465,20 +453,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 93b9347f1c61259d0800000000000000
-      internalID: -2787140197056013511
+      spriteID: 19137361eae144470800000000000000
+      internalID: 8377854939861823889
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_12
+      name: shotgun1-Sheet_12
       rect:
         serializedVersion: 2
-        x: 352
-        y: 112
-        width: 15
-        height: 16
+        x: 137
+        y: 27
+        width: 33
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -487,20 +475,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e53635d11481d5d80800000000000000
-      internalID: -8260419473583676578
+      spriteID: 6cbb8ce3c55e0f900800000000000000
+      internalID: 716324525105003462
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_13
+      name: shotgun1-Sheet_13
       rect:
         serializedVersion: 2
-        x: 432
-        y: 112
-        width: 15
-        height: 15
+        x: 201
+        y: 28
+        width: 33
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -509,20 +497,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 655e402e259564350800000000000000
-      internalID: 6000581766031926614
+      spriteID: c094c765d2fcbe9b0800000000000000
+      internalID: -5049714763534415604
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_14
+      name: shotgun1-Sheet_14
       rect:
         serializedVersion: 2
-        x: 512
-        y: 112
-        width: 15
-        height: 15
+        x: 264
+        y: 28
+        width: 33
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -531,20 +519,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d77dfd899a9696f90800000000000000
-      internalID: -6959915571989194883
+      spriteID: 691fd39148916e770800000000000000
+      internalID: 8639620990306742678
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_15
+      name: shotgun1-Sheet_15
       rect:
         serializedVersion: 2
-        x: 592
-        y: 112
-        width: 15
-        height: 16
+        x: 8
+        y: 2
+        width: 33
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -553,20 +541,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 73db22c9390e55d00800000000000000
-      internalID: 960921020097805623
+      spriteID: f19a46f7ba9df81f0800000000000000
+      internalID: -1040373658299356897
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_16
+      name: shotgun1-Sheet_16
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 15
-        height: 16
+        x: 72
+        y: 3
+        width: 33
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -575,20 +563,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3243579ce97a1b1d0800000000000000
-      internalID: -3336701548478254045
+      spriteID: ba099e3d419aad060800000000000000
+      internalID: 6979076479483744427
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_17
+      name: shotgun1-Sheet_17
       rect:
         serializedVersion: 2
-        x: 112
-        y: 32
-        width: 15
-        height: 15
+        x: 136
+        y: 4
+        width: 33
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -597,20 +585,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 202bba43ef72f05b0800000000000000
-      internalID: -5400053455435091454
+      spriteID: 6c56e5fc0c7747e20800000000000000
+      internalID: 3347432093039617478
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_18
+      name: shotgun1-Sheet_18
       rect:
         serializedVersion: 2
-        x: 192
-        y: 32
-        width: 15
-        height: 15
+        x: 200
+        y: 3
+        width: 33
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -619,20 +607,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b259237373ecd2d30800000000000000
-      internalID: 4408406346810168619
+      spriteID: c516c793f007f78d0800000000000000
+      internalID: -2846433228783591076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_19
+      name: shotgun1-Sheet_19
       rect:
         serializedVersion: 2
-        x: 272
-        y: 32
-        width: 15
-        height: 16
+        x: 264
+        y: 3
+        width: 33
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -641,96 +629,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5464e72e0a05249f0800000000000000
-      internalID: -485737157877676475
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walk_20
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 32
-        width: 15
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0773da1058d2329b0800000000000000
-      internalID: -5106187503225981072
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walk_21
-      rect:
-        serializedVersion: 2
-        x: 432
-        y: 32
-        width: 15
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 145e7a5aa850adb30800000000000000
-      internalID: 4312765686203540801
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walk_22
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 32
-        width: 15
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9ca7fcf89b6c2e840800000000000000
-      internalID: 5251978615751408329
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walk_23
-      rect:
-        serializedVersion: 2
-        x: 592
-        y: 32
-        width: 15
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4a238c52d6de72920800000000000000
-      internalID: 2965599932687856292
+      spriteID: 2e31e537fc4837570800000000000000
+      internalID: 8463254151287935970
       vertices: []
       indices: 
       edges: []
@@ -749,30 +649,26 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      walk_0: -8296385383580801948
-      walk_1: 3218353051568008401
-      walk_10: 8428286525173097495
-      walk_11: -2787140197056013511
-      walk_12: -8260419473583676578
-      walk_13: 6000581766031926614
-      walk_14: -6959915571989194883
-      walk_15: 960921020097805623
-      walk_16: -3336701548478254045
-      walk_17: -5400053455435091454
-      walk_18: 4408406346810168619
-      walk_19: -485737157877676475
-      walk_2: 6971375644381031630
-      walk_20: -5106187503225981072
-      walk_21: 4312765686203540801
-      walk_22: 5251978615751408329
-      walk_23: 2965599932687856292
-      walk_3: -3714987382563562326
-      walk_4: -2044624726750869082
-      walk_5: -1800561202758830752
-      walk_6: -7072565547094396234
-      walk_7: -6780060589664581786
-      walk_8: 2251703588619409307
-      walk_9: -5224373444711448209
+      shotgun1-Sheet_0: 4926808636134849640
+      shotgun1-Sheet_1: 1148113755553035655
+      shotgun1-Sheet_10: 8206055512529890453
+      shotgun1-Sheet_11: 8377854939861823889
+      shotgun1-Sheet_12: 716324525105003462
+      shotgun1-Sheet_13: -5049714763534415604
+      shotgun1-Sheet_14: 8639620990306742678
+      shotgun1-Sheet_15: -1040373658299356897
+      shotgun1-Sheet_16: 6979076479483744427
+      shotgun1-Sheet_17: 3347432093039617478
+      shotgun1-Sheet_18: -2846433228783591076
+      shotgun1-Sheet_19: 8463254151287935970
+      shotgun1-Sheet_2: -6030357019131013507
+      shotgun1-Sheet_3: 4474125106245383883
+      shotgun1-Sheet_4: -1451602806442532209
+      shotgun1-Sheet_5: 495192150736745791
+      shotgun1-Sheet_6: -6034717046932544384
+      shotgun1-Sheet_7: 4739688541075596799
+      shotgun1-Sheet_8: -2231248703444537179
+      shotgun1-Sheet_9: -8914321923085898478
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
