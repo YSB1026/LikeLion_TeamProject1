@@ -3,7 +3,6 @@ using UnityEngine;
 public class Player : Character
 {
     Animator animator;
-    public float speed = 5f;
     float moveX, moveY, lastMoveX = 1f, lastMoveY = 0f; // 마지막 입력 방향 (Idle 전환 시 유지)
     bool isMoving;
     private void Awake()
@@ -31,7 +30,7 @@ public class Player : Character
     {
         //플레이어 움직임
         (moveX, moveY) = (Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        transform.Translate(new Vector2(moveX, moveY).normalized * speed * Time.deltaTime);
+        transform.Translate(new Vector2(moveX, moveY).normalized * moveSpeed * Time.deltaTime);
     }
 
     private void SetAnimParams()
