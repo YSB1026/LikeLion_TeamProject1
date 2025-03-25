@@ -1,6 +1,8 @@
 using Singleton.Component;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PoolManager : SingletonComponent<PoolManager>
 {
@@ -10,7 +12,8 @@ public class PoolManager : SingletonComponent<PoolManager>
     #region Singleton
     protected override void AwakeInstance()
     {
-
+        SceneManager.activeSceneChanged += OnActiveSceneChanged;
+        Initialize();
     }
 
     protected override bool InitInstance()
@@ -20,7 +23,11 @@ public class PoolManager : SingletonComponent<PoolManager>
 
     protected override void ReleaseInstance()
     {
-
+        foreach (var item in pools)
+        {
+            item.Value.Reset();
+        }
+        SceneManager.activeSceneChanged -= OnActiveSceneChanged;
     }
     #endregion
 
@@ -58,6 +65,14 @@ public class PoolManager : SingletonComponent<PoolManager>
         else
         {
             Destroy(obj);
+        }
+    }
+
+    private void OnActiveSceneChanged(Scene arg0, Scene arg1)
+    {
+        foreach(var item in pools)
+        {
+            item.Value.Reset();
         }
     }
 }

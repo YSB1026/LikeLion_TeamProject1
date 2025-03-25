@@ -3,15 +3,17 @@ using UnityEngine;
 
 public class Player : Character
 {
-    /* Character.cs에서 상속받음
-public float moveSpeed = 5f; //이동 속도
-public int health = 2; //체력
-public int atkPower = 2; //공격력
-public float atkSpeed = 1f; //공격 속도
-*/
+    /*
+    Character.cs에서 상속받음
+    public float moveSpeed = 5f; //이동 속도
+    public int health = 2; //체력
+    public int atkPower = 2; //공격력
+    public float atkSpeed = 1f; //공격 속도
+    */
+
+    public float projectileSpeed = 10f;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform firePos;
-    public float projectileSpeed = 10f;
 
     private Animator animator;
     private float moveX, moveY, lastMoveX = 1f, lastMoveY = 0f; // 마지막 입력 방향 (Idle 전환 시 유지)
@@ -26,12 +28,15 @@ public float atkSpeed = 1f; //공격 속도
     void Start()
     {
     }
-    protected override void Update()
+    void Update()
     {
-        base.Update();
+        Move();
         SetAnimParams();
     }
+    private void FixedUpdate()
+    {
 
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //회복처리
@@ -76,9 +81,9 @@ public float atkSpeed = 1f; //공격 속도
         while (true)
         {
             yield return new WaitForSeconds(atkSpeed);
-            GameObject projectile = PoolManager.Instance.Get(projectilePrefab);
-            projectile.transform.position = firePos.position;
-            projectile.GetComponent<PlayerProjectile>().direction = (MouseManager.Instance.mousePos - firePos.position).normalized;
+            PlayerProjectile projectile = PoolManager.Instance.Get(projectilePrefab).GetComponent<PlayerProjectile>();
+            Vector3 dir = (MouseManager.Instance.mousePos - firePos.position).normalized;
+            projectile.SetProjectileStat(firePos.position, dir, projectileSpeed, atkPower);
         }
     }
 

@@ -52,7 +52,7 @@ public class Monster_HW : Character
 
     void Update()
     {
-        Move();    
+        Move();
     }
     
     // 충돌처리, 추후 플레이어 공격
