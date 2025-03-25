@@ -26,11 +26,12 @@ public class ObjectPool
     }
 
     //새로운 오브젝트를 생성해서 풀에 추가하는 private 메서드
-    private void CreateNewObject()
+    private GameObject CreateNewObject()
     {
         GameObject obj = GameObject.Instantiate(prefab, parent);
         obj.SetActive(false);
         pool.Add(obj);
+        return obj;
     }
 
     //풀에서 사용 가능한 오브젝트를 가져오는 메서드
@@ -42,9 +43,17 @@ public class ObjectPool
             CreateNewObject();
         }
 
-        GameObject obj = pool[0];
-        obj.SetActive(true);
-        pool.RemoveAt(0);
+        foreach(GameObject item in pool)
+        {
+            if (!item.activeInHierarchy)
+            {
+                item.SetActive(true);
+                return item;
+            }
+        }
+
+        GameObject obj = CreateNewObject();
+
         return obj;
     }
 
@@ -52,6 +61,13 @@ public class ObjectPool
     public void Return(GameObject obj)
     {
         obj.SetActive(false);
-        pool.Add(obj);
+    }
+
+    public void Reset()
+    {
+        foreach (GameObject item in pool)
+        {
+            item.SetActive(false);
+        }
     }
 }

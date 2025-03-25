@@ -7,11 +7,6 @@ public abstract class Character : MonoBehaviour
     public int atkPower = 2; //공격력
     public float atkSpeed = 1f; //공격 속도
 
-    protected virtual void Update()
-    {
-        Move();
-    }
-
     //이동 메서드
     protected abstract void Move();
 

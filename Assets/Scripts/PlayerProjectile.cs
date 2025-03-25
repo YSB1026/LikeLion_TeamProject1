@@ -2,7 +2,20 @@ using UnityEngine;
 
 public class PlayerProjectile : Projectile
 {
-    public Vector3 direction;
+    private Vector3 direction;
+
+    void Update()
+    {
+        Move();
+    }
+
+    public void SetProjectileStat(Vector3 pos, Vector3 dir, float _projectileSpeed, int _damage)
+    {
+        transform.position = pos;
+        direction = dir;
+        projectileSpeed = _projectileSpeed;
+        damage = _damage;
+    }
 
     protected override void Move()
     {
