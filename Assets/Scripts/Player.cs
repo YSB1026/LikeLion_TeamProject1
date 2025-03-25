@@ -9,9 +9,9 @@ public int health = 2; //체력
 public int atkPower = 2; //공격력
 public float atkSpeed = 1f; //공격 속도
 */
-    public float projectileSpeed = 10f;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform firePos;
+    public float projectileSpeed = 10f;
 
     private Animator animator;
     private float moveX, moveY, lastMoveX = 1f, lastMoveY = 0f; // 마지막 입력 방향 (Idle 전환 시 유지)
@@ -31,10 +31,7 @@ public float atkSpeed = 1f; //공격 속도
         base.Update();
         SetAnimParams();
     }
-    private void FixedUpdate()
-    {
 
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //회복처리
