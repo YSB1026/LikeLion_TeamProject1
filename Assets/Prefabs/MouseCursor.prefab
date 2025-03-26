@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   threshold: 5
+  mousePos: {x: 0, y: 0, z: 0}
 --- !u!212 &5359973392766632697
 SpriteRenderer:
   m_ObjectHideFlags: 0
