@@ -1,20 +1,26 @@
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerProjectile : Projectile
 {
-    private Vector3 direction;
+    /*Projectile에서 상속받음
+    public float projectileSpeed = 8f; //투사체 속도
+    public int damage = 1; //투사체 피해
+    */
+    public float knockbackPower;//투사체 넉백 계수
+    public int pentration; //관통력
+    public Vector3 direction;
 
-    void Update()
+    public void Initialize(Player player)
+    {
+        damage = player.atkPower;
+        knockbackPower = player.knockbackPower;
+        pentration = player.projectilePenetration;
+    }
+    private void Update()
     {
         Move();
-    }
-
-    public void SetProjectileStat(Vector3 pos, Vector3 dir, float _projectileSpeed, int _damage)
-    {
-        transform.position = pos;
-        direction = dir;
-        projectileSpeed = _projectileSpeed;
-        damage = _damage;
     }
 
     protected override void Move()
@@ -22,12 +28,17 @@ public class PlayerProjectile : Projectile
         rb.linearVelocity = direction * projectileSpeed;
     }
 
-    protected override void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Monster"))
+        if (collision.CompareTag("Monster"))
         {
-            collision.GetComponent<Monster>().TakeDamage(damage);
-            PoolManager.Instance.Return(gameObject);
+            collision.GetComponent<Monster_HW>().TakeDamage(damage);
+            //넉백 처리 해야함.
+            pentration--;
+            if (pentration <= 0)
+            {
+                PoolManager.Instance.Return(gameObject);  // 충돌 시 풀로 반환
+            }
         }
     }
 }

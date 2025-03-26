@@ -3,51 +3,59 @@ using UnityEngine;
 
 public class Player : Character
 {
-    /*
-    Character.cs에서 상속받음
-    public float moveSpeed = 5f; //이동 속도
-    public int health = 2; //체력
-    public int atkPower = 2; //공격력
-    public float atkSpeed = 1f; //공격 속도
-    */
+    /* Character.cs에서 상속받음
+public float moveSpeed = 5f; //이동 속도
+public int health = 2; //체력
+public int atkPower = 2; //공격력
+public float atkSpeed = 1f; //공격 속도
+*/
+    public int maxHealth = 2;//플레이어 최대 체력
+    public float evasionChance = 0;//플레이어 회피 확률
+    public float projectileSpeed = 10f;//플레이어 투사체 속도
+    public float knockbackPower = 1f;//플레이어 투사체 넉백
+    public int projectilePenetration = 1; //플레이어 투사체 관통력
+    public int projectileCount = 1;//플레이어 투사체 개수
+    public int experience = 0;//플레이어 경험치
 
-    public float projectileSpeed = 10f;
+    public SkillManager skillManager;
     [SerializeField] private GameObject projectilePrefab;
-    [SerializeField] private Transform firePos;
+    //[SerializeField] private Transform firePos; //player랑 같은위치, 특별한 스크립트가 있는게 아니면 필요 없을듯 합니다.
 
     private Animator animator;
-    private float moveX, moveY, lastMoveX = 1f, lastMoveY = 0f; // 마지막 입력 방향 (Idle 전환 시 유지)
-    private bool isMoving;
+    private float moveX, moveY;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
         PoolManager.Instance.CreatePool(projectilePrefab, 10);
         StartCoroutine(FireProjectile());
+        skillManager = new SkillManager(this);
     }
-    void Start()
+    private void Update()
     {
+        Move();//움직임 처리
+        SetAnimParams();//애니메이터 파라미터 설정
+        HandleSkillLevelUp();//스킬 레벨업 처리
+        ApplyMaxHealthPerkDamage();
     }
-    void Update()
-    {
-        Move();
-        SetAnimParams();
-    }
-    private void FixedUpdate()
-    {
 
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //회복처리
-        //아이템, 경험치 처리
-        //
     }
     public override void TakeDamage(int damage)
     {
+        if (skillManager.moveSpeedSkill.hasPerk && Random.value * 100 < evasionChance)//이동속도 특전이 있는경우 30퍼센트(임시) 확률로 회피
+        {
+            Debug.Log("회피 성공");
+            //뭔가 이펙트가 있어야할지도..
+            return;
+        }
+
         base.TakeDamage(damage);
         StartCoroutine(TakeDamageRoutine());
     }
+
     protected override void Death()
     {
         //플레이어 사망처리
@@ -62,18 +70,18 @@ public class Player : Character
 
     private void SetAnimParams()
     {
-        isMoving = moveX != 0 || moveY != 0;
-        if (isMoving)//키를 땠을때 어느 방향을 보고있는지 저장하기 위한 로직
-        {
-            if (Mathf.Abs(moveX) > Mathf.Abs(moveY)) moveY = 0;
-            else moveX = 0;
-            lastMoveX = moveX;
-            lastMoveY = moveY;
-        }
+        Vector3 direction = (MouseManager.Instance.transform.position - transform.position).normalized;
 
-        animator.SetFloat("dirX", isMoving ? moveX : lastMoveX);
-        animator.SetFloat("dirY", isMoving ? moveY : lastMoveY);
-        animator.SetBool("isWalking", isMoving);
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))            // 좌우
+        {
+            animator.SetFloat("dirX", direction.x > 0 ? 1f : -1f);
+            animator.SetFloat("dirY", 0f);
+        }
+        else// 상하
+        {
+            animator.SetFloat("dirY", direction.y > 0 ? 1f : -1f);
+            animator.SetFloat("dirX", 0f);
+        }
     }
 
     IEnumerator FireProjectile()
@@ -81,14 +89,64 @@ public class Player : Character
         while (true)
         {
             yield return new WaitForSeconds(atkSpeed);
-            PlayerProjectile projectile = PoolManager.Instance.Get(projectilePrefab).GetComponent<PlayerProjectile>();
-            Vector3 dir = (MouseManager.Instance.mousePos - firePos.position).normalized;
-            projectile.SetProjectileStat(firePos.position, dir, projectileSpeed, atkPower);
+            //PlayerProjectile projectile = PoolManager.Instance.Get(projectilePrefab).GetComponent<PlayerProjectile>();
+            Vector3 baseDirection = (MouseManager.Instance.mousePos - transform.position).normalized;
+            if (skillManager.attackSpeedSkill.hasPerk)//공격 속도 특전, 투사체 개수 증가(좌우로 하나씩 추가)
+            {
+                float angleOffset = 5f; // 좌우 발사 각도 차이
+                for (int i = -1; i <= 1; i++)
+                {
+                    float angle = i * angleOffset;
+                    Vector3 rotatedDirection = Quaternion.Euler(0, 0, angle) * baseDirection;
+                    FireProjectile(rotatedDirection);
+                }
+            }
+            else
+            {
+                FireProjectile(baseDirection);
+            }
         }
+    }
+    void FireProjectile(Vector3 direction)
+    {
+        PlayerProjectile projectile = PoolManager.Instance.Get(projectilePrefab).GetComponent<PlayerProjectile>();
+        projectile.Initialize(this);
+        projectile.transform.position = transform.position;
+        projectile.direction = direction;
     }
 
     IEnumerator TakeDamageRoutine()
     {
+        //이후 구현
         yield return null;
+    }
+
+    private void HandleSkillLevelUp()
+    {
+        Skill skill = null;
+        //추후에 UI로 변경
+        if (Input.GetKeyDown(KeyCode.Alpha1)) skill = skillManager.attackPowerSkill;//공격력
+        if (Input.GetKeyDown(KeyCode.Alpha2)) skill = skillManager.moveSpeedSkill;//이동속도
+        if (Input.GetKeyDown(KeyCode.Alpha3)) skill = skillManager.attackSpeedSkill;//공격속도
+        if (Input.GetKeyDown(KeyCode.Alpha4)) skill = skillManager.projectileSpeedSkill;//투사체 속도
+        if (Input.GetKeyDown(KeyCode.Alpha5)) skill = skillManager.maxHealthIncreaseSkill;//최대체력 증가
+
+        if (skill != null)
+        {
+            skillManager.TryLevelUpSkill(skill, experience);
+        }
+    }
+
+    private void ApplyMaxHealthPerkDamage()
+    {
+        if (skillManager.maxHealthIncreaseSkill.hasPerk) // 최대 체력 특전이 있을 때
+        {
+            //나중에 프리팹 하나 만들어서 사용.
+            //Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, 2.0f, LayerMask.GetMask("Monster"));
+            //foreach (Collider2D enemy in hitEnemies)
+            //{
+            //    enemy.GetComponent<Character>()?.TakeDamage(2);
+            //}
+        }
     }
 }
