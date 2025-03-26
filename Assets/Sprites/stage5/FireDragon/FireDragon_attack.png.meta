@@ -1398,7 +1398,57 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FireDragon_attack_0: -4907108676533874612
+      FireDragon_attack_1: 1365160225854167809
+      FireDragon_attack_10: 4055511496861090153
+      FireDragon_attack_11: -4135351622926496996
+      FireDragon_attack_12: -8941268176955565499
+      FireDragon_attack_13: -3402239237028432364
+      FireDragon_attack_14: 2494389162222123558
+      FireDragon_attack_15: 7854541167508414384
+      FireDragon_attack_16: -397242800262679484
+      FireDragon_attack_17: -2708940821591954148
+      FireDragon_attack_18: 2629395573486806939
+      FireDragon_attack_19: -672865538152363170
+      FireDragon_attack_2: 9148748837883017494
+      FireDragon_attack_20: -1189316365012958142
+      FireDragon_attack_21: -6085361610903721901
+      FireDragon_attack_22: 7067790020997573046
+      FireDragon_attack_23: 6515387072426179723
+      FireDragon_attack_24: -5057747456577521708
+      FireDragon_attack_25: -916001101738131555
+      FireDragon_attack_26: -6371575199337521604
+      FireDragon_attack_27: -6580786506461520051
+      FireDragon_attack_28: -7112108432870290569
+      FireDragon_attack_29: -5730411621500881199
+      FireDragon_attack_3: -7888416257254922392
+      FireDragon_attack_30: 866026606980994766
+      FireDragon_attack_31: 8610273404326709928
+      FireDragon_attack_32: 7776359798720846845
+      FireDragon_attack_33: 6912726910906626063
+      FireDragon_attack_34: 4257890702387639740
+      FireDragon_attack_35: -4207380533580301055
+      FireDragon_attack_36: -8876011555749692735
+      FireDragon_attack_37: 6857717992701986166
+      FireDragon_attack_38: 8223638192892537298
+      FireDragon_attack_39: -6267365996871996325
+      FireDragon_attack_4: 6751218523597307508
+      FireDragon_attack_40: 3046553106649389397
+      FireDragon_attack_41: -148367827161210455
+      FireDragon_attack_42: 8554415906437323333
+      FireDragon_attack_43: -7162830495699031237
+      FireDragon_attack_44: -8117293849592890723
+      FireDragon_attack_45: 4466905648011993450
+      FireDragon_attack_46: -6549243212719920375
+      FireDragon_attack_47: 1942231610734120895
+      FireDragon_attack_48: -3857991173332656463
+      FireDragon_attack_49: 6993116160811717596
+      FireDragon_attack_5: 7861306765802519171
+      FireDragon_attack_6: 1313143966719739545
+      FireDragon_attack_7: -2176741253354135805
+      FireDragon_attack_8: -4291039396961218862
+      FireDragon_attack_9: 8865045844900411621
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

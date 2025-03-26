@@ -1,25 +1,30 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : Character
 {
-    /* Character.cs에서 상속받음
-public float moveSpeed = 5f; //이동 속도
-public int health = 2; //체력
-public int atkPower = 2; //공격력
-public float atkSpeed = 1f; //공격 속도
-*/
-    public int maxHealth = 2;//플레이어 최대 체력
-    public float evasionChance = 0;//플레이어 회피 확률
-    public float projectileSpeed = 10f;//플레이어 투사체 속도
-    public float knockbackPower = 1f;//플레이어 투사체 넉백
+    /*
+    Character.cs에서 상속받음
+    public float moveSpeed = 5f; //이동 속도
+    public int health = 2; //체력
+    public int atkPower = 2; //공격력
+    public float atkSpeed = 1f; //공격 속도
+    */
+
+    public int maxHealth = 2; //플레이어 최대 체력
+    public float evasionChance = 0; //플레이어 회피 확률
+    public float projectileSpeed = 10f; //플레이어 투사체 속도
+    public float knockbackPower = 1f; //플레이어 투사체 넉백
     public int projectilePenetration = 1; //플레이어 투사체 관통력
-    public int projectileCount = 1;//플레이어 투사체 개수
-    public int experience = 0;//플레이어 경험치
+    public int projectileCount = 1; //플레이어 투사체 개수
+    public int experience = 0; //플레이어 경험치
 
     public SkillManager skillManager;
     [SerializeField] private GameObject projectilePrefab;
     //[SerializeField] private Transform firePos; //player랑 같은위치, 특별한 스크립트가 있는게 아니면 필요 없을듯 합니다.
+
+    [SerializeField] private Slider healthBar;
 
     private Animator animator;
     private float moveX, moveY;
@@ -31,12 +36,39 @@ public float atkSpeed = 1f; //공격 속도
         StartCoroutine(FireProjectile());
         skillManager = new SkillManager(this);
     }
+
+    private void Start()
+    {
+        SetMaxHealth(maxHealth);
+    }
+
     private void Update()
     {
         Move();//움직임 처리
         SetAnimParams();//애니메이터 파라미터 설정
         HandleSkillLevelUp();//스킬 레벨업 처리
         ApplyMaxHealthPerkDamage();
+    }
+
+    public void SetMaxHealth(int maxHp)
+    {
+        int diff = maxHp - maxHealth;
+        maxHealth = maxHp;
+        healthBar.maxValue = maxHealth;
+        if(diff > 0)
+        {
+            health += diff;
+        }
+        else if(health > maxHealth)
+        {
+            health = maxHealth;
+        }
+        SetHealth(health);
+    }
+
+    private void SetHealth(int hp)
+    {
+        healthBar.value = hp;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -53,6 +85,7 @@ public float atkSpeed = 1f; //공격 속도
         }
 
         base.TakeDamage(damage);
+        SetHealth(health);
         StartCoroutine(TakeDamageRoutine());
     }
 
