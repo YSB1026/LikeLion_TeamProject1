@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sharp-shuriken_0: 4891330899197375352
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -14,7 +14,7 @@ public abstract class Character : MonoBehaviour
     public virtual void TakeDamage(int damage)
     {
         health -= damage;
-        if(health <= 0)
+        if (health <= 0)
         {
             Death();
         }
