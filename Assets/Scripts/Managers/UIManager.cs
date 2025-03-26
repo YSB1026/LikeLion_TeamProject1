@@ -6,6 +6,12 @@ public class UIManager : SingletonComponent<UIManager>
 {
     [SerializeField] private EventSystem eventSystem;
     [SerializeField] private bool isMenuOpen = false;
+    [SerializeField] private GameObject menuPanel;
+    [SerializeField] private bool isSkillTreeOpen = false;
+    [SerializeField] private GameObject skillTreePanel;
+
+    public bool IsMenuOpen { get => isMenuOpen; }
+    public bool IsSkillTreeOpen { get => isSkillTreeOpen; }
 
     #region Singleton
     protected override void AwakeInstance()
