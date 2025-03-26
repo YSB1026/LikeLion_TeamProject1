@@ -1,20 +1,20 @@
 using System.Collections;
-using System.ComponentModel;
-using System.Threading;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 public class Monster_HW : Character
 {
+    [Header("몬스터 속성")]
     public GameObject player;
     public float speed = 1.5f;
     public GameObject[] expOrb;
+    public float attackDistance = 5f;
 
     private bool isDeath = false;
+    private bool isAttack = false;
 
     private SpriteRenderer spriteRenderer;
     Animator animator;
-    
+
     protected override void Death()
     {
         animator.SetBool("isDeath", true);
@@ -22,18 +22,20 @@ public class Monster_HW : Character
         StartCoroutine(ReturnToPoolAfterDelay(0.7f)); // 0.7초후 풀반환
 
         CreateExpOrb();
-
     }
     protected override void Move()
     {
         if (isDeath == false) // 몬스터가 살아있을 때만
         {
-            // 플레이어의 위치로 이동
-            Vector3 direction = (player.transform.position - transform.position).normalized;
-            transform.position += direction * speed * Time.deltaTime;
+            if (isAttack == false) // 몬스터가 공격중이 아닐 때
+            {
+                // 플레이어의 위치로 이동
+                Vector3 direction = (player.transform.position - gameObject.transform.position).normalized;
+                transform.Translate(direction * speed * Time.deltaTime);
 
-            // 플레이어의 위치에 따라 스프라이트 방향 설정, 몬스터가 왼쪽에 있으면 flip
-            spriteRenderer.flipX = transform.position.x < player.transform.position.x;
+                // 플레이어의 위치에 따라 스프라이트 방향 설정, 몬스터가 왼쪽에 있으면 flip
+                spriteRenderer.flipX = transform.position.x < player.transform.position.x;
+            }
         }
     }
 
@@ -44,6 +46,7 @@ public class Monster_HW : Character
         PoolManager.Instance.Return(gameObject);
     }
 
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -53,15 +56,16 @@ public class Monster_HW : Character
     void Update()
     {
         Move();
+        Attack();
     }
-    
+
     // 충돌처리, 추후 플레이어 공격
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("Player"))
         {
             Death();
-        }
+        }  
     }
 
     void CreateExpOrb()
@@ -81,6 +85,22 @@ public class Monster_HW : Character
         {
             expOrbInstance = Instantiate(expOrb[2], gameObject.transform.position, Quaternion.identity);
             Destroy(expOrbInstance, 5f);
+        }
+
+    }
+
+    void Attack()
+    {
+        float realDistance = Vector3.Distance(transform.position, player.transform.position);
+        if (realDistance <= attackDistance)
+        {
+            isAttack = true;
+            animator.SetTrigger("Attack");
+        }
+        else
+        {
+
+            isAttack = false;
         }
 
     }
