@@ -22,7 +22,7 @@ public class Player : Character
 
     private bool isAlive = true; //플레이어 생존 여부
 
-    public SkillManager skillManager;
+    [SerializeField] private PlayerSkill playerSkill;
     [SerializeField] private GameObject projectilePrefab;
     //[SerializeField] private Transform firePos; //player랑 같은위치, 특별한 스크립트가 있는게 아니면 필요 없을듯 합니다.
 
@@ -36,7 +36,6 @@ public class Player : Character
         animator = GetComponent<Animator>();
         PoolManager.Instance.CreatePool(projectilePrefab, 10);
         StartCoroutine(FireProjectile());
-        skillManager = new SkillManager(this);
     }
 
     private void Start()
@@ -84,7 +83,7 @@ public class Player : Character
 
     public override void TakeDamage(int damage)
     {
-        if (skillManager.moveSpeedSkill.hasPerk && Random.value * 100 < evasionChance)//이동속도 특전이 있는경우 30퍼센트(임시) 확률로 회피
+        if (playerSkill.moveSpeedSkill.hasPerk && Random.value * 100 < evasionChance)//이동속도 특전이 있는경우 30퍼센트(임시) 확률로 회피
         {
             Debug.Log("회피 성공");
             //뭔가 이펙트가 있어야할지도..
@@ -132,7 +131,7 @@ public class Player : Character
             yield return new WaitForSeconds(atkSpeed);
             //PlayerProjectile projectile = PoolManager.Instance.Get(projectilePrefab).GetComponent<PlayerProjectile>();
             Vector3 baseDirection = (MouseManager.Instance.mousePos - transform.position).normalized;
-            if (skillManager.attackSpeedSkill.hasPerk)//공격 속도 특전, 투사체 개수 증가(좌우로 하나씩 추가)
+            if (playerSkill.attackSpeedSkill.hasPerk)//공격 속도 특전, 투사체 개수 증가(좌우로 하나씩 추가)
             {
                 float angleOffset = 5f; // 좌우 발사 각도 차이
                 for (int i = -1; i <= 1; i++)
@@ -166,21 +165,21 @@ public class Player : Character
     {
         Skill skill = null;
         //추후에 UI로 변경
-        if (Input.GetKeyDown(KeyCode.Alpha1)) skill = skillManager.attackPowerSkill;//공격력
-        if (Input.GetKeyDown(KeyCode.Alpha2)) skill = skillManager.moveSpeedSkill;//이동속도
-        if (Input.GetKeyDown(KeyCode.Alpha3)) skill = skillManager.attackSpeedSkill;//공격속도
-        if (Input.GetKeyDown(KeyCode.Alpha4)) skill = skillManager.projectileSpeedSkill;//투사체 속도
-        if (Input.GetKeyDown(KeyCode.Alpha5)) skill = skillManager.maxHealthIncreaseSkill;//최대체력 증가
+        if (Input.GetKeyDown(KeyCode.Alpha1)) skill = playerSkill.attackPowerSkill;//공격력
+        if (Input.GetKeyDown(KeyCode.Alpha2)) skill = playerSkill.moveSpeedSkill;//이동속도
+        if (Input.GetKeyDown(KeyCode.Alpha3)) skill = playerSkill.attackSpeedSkill;//공격속도
+        if (Input.GetKeyDown(KeyCode.Alpha4)) skill = playerSkill.projectileSpeedSkill;//투사체 속도
+        if (Input.GetKeyDown(KeyCode.Alpha5)) skill = playerSkill.maxHealthIncreaseSkill;//최대체력 증가
 
         if (skill != null)
         {
-            skillManager.TryLevelUpSkill(skill, experience);
+            playerSkill.TryLevelUpSkill(skill, experience);
         }
     }
 
     private void ApplyMaxHealthPerkDamage()
     {
-        if (skillManager.maxHealthIncreaseSkill.hasPerk) // 최대 체력 특전이 있을 때
+        if (playerSkill.maxHealthIncreaseSkill.hasPerk) // 최대 체력 특전이 있을 때
         {
             //나중에 프리팹 하나 만들어서 사용.
             //Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, 2.0f, LayerMask.GetMask("Monster"));

@@ -12,7 +12,7 @@ public class Skill
     {
         SkillName = skillName;
         Level = 0;
-        MaxLevel = maxLevel;
+        MaxLevel = maxLevel - 1;
     }
     //max 레벨이 아니고, 경험치가 충분하면 레벨업 가능
     public bool CanLevelUp(int experience)

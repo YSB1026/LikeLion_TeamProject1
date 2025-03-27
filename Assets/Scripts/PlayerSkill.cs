@@ -1,15 +1,22 @@
-public class SkillManager
+using UnityEngine;
+
+[RequireComponent(typeof(Player))]
+public class PlayerSkill : MonoBehaviour
 {
-    private Player player;
+    [SerializeField] private Player player;
     public Skill attackPowerSkill;
     public Skill moveSpeedSkill;
     public Skill attackSpeedSkill;
     public Skill projectileSpeedSkill;
     public Skill maxHealthIncreaseSkill;
-    public SkillManager(Player player)
-    {
-        this.player = player;
 
+    private void OnValidate()
+    {
+        player = GetComponent<Player>();
+    }
+
+    private void Start()
+    {
         // 스킬 초기화
         attackPowerSkill = new Skill("AttackPower", 3);//공격력
         moveSpeedSkill = new Skill("MoveSpeed", 3);//이동속도
@@ -42,17 +49,17 @@ public class SkillManager
                 break;
 
             case "MoveSpeed"://이동속도
-                player.moveSpeed = 5f + skill.Level;
+                player.moveSpeed = 5f * (1f + skill.Level * 0.1f);
                 if (skill.hasPerk) player.evasionChance = 30f; // 특전: 회피 확률 증가
                 break;
 
             case "AttackSpeed"://공격속도
-                player.atkSpeed = 1f - (skill.Level * 0.1f);
+                player.atkSpeed = 1f * (1f - skill.Level * 0.1f);
                 if (skill.hasPerk) player.projectileCount += 2; // 특전: 투사체 추가
                 break;
 
             case "ProjectileSpeed"://투사체 속도
-                player.projectileSpeed = 10f + skill.Level * 2f;
+                player.projectileSpeed = 10f * (1f + skill.Level * 0.2f);
                 if (skill.hasPerk) player.projectilePenetration += 2; // 특전: 투사체 관통 증가
                 break;
 
