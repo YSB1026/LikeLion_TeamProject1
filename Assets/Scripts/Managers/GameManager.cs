@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class GameManager : SingletonComponent<GameManager>
 {
+    [SerializeField] private bool isGamePaused = false;
+
+    public bool IsGamePaused { get => isGamePaused; }
+
+    #region Singleton
     protected override void AwakeInstance()
     {
-        Debug.Log("게임매니저 테스트");
+
     }
 
     protected override bool InitInstance()
@@ -17,5 +22,12 @@ public class GameManager : SingletonComponent<GameManager>
     protected override void ReleaseInstance()
     {
         
+    }
+    #endregion
+
+    public void PauseGame(bool pauseBool)
+    {
+        isGamePaused = pauseBool;
+        Time.timeScale = isGamePaused ? 0f : 1f;
     }
 }
