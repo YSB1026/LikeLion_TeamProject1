@@ -73,7 +73,7 @@ public class UIManager : SingletonComponent<UIManager>
     {
         isMenuOpen = menuBool;
         menu.GetComponent<Canvas>().enabled = menuBool;
-        GameManager.Instance.PauseGame(menuBool);
+        GameManager.Instance.SetPause(menuBool);
     }
 
     public void ReturnToMain()
