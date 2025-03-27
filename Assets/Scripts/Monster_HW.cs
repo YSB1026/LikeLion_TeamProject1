@@ -1,19 +1,20 @@
 using System.Collections;
 using UnityEngine;
 
-public class Monster_HW : Character
+public class Monster_HW : Monster
 {
+    /*
     [Header("몬스터 속성")]
-    public GameObject player;
     public float speed = 1.5f;
     public GameObject[] expOrb;
     public float attackDistance = 5f;
 
-    private bool isDeath = false;
-    private bool isAttack = false;
-
-    private SpriteRenderer spriteRenderer;
-    Animator animator;
+    public GameObject player;
+    protected bool isDeath = false;
+    protected bool isAttack = false;
+    protected SpriteRenderer spriteRenderer;
+    protected Animator animator;
+    */
 
     protected override void Death()
     {
@@ -68,6 +69,9 @@ public class Monster_HW : Character
         }  
     }
 
+    //수정 해야 함,
+    //GameObject[] expOrb; 대신 expOrb만 생성하거나,
+    //확률적으로 expOrb 0~2를 생성하고싶으면 Random함수로 구현
     void CreateExpOrb()
     {
         GameObject expOrbInstance;
@@ -99,10 +103,7 @@ public class Monster_HW : Character
         }
         else
         {
-
             isAttack = false;
         }
-
     }
-
 }

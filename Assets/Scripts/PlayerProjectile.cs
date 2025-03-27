@@ -32,7 +32,7 @@ public class PlayerProjectile : Projectile
     {
         if (collision.CompareTag("Monster"))
         {
-            collision.GetComponent<Monster_HW>().TakeDamage(damage);
+            collision.GetComponent<Monster>().TakeDamage(damage);
             //넉백 처리 해야함.
             pentration--;
             if (pentration <= 0)
