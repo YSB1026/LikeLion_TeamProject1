@@ -65,7 +65,7 @@ public class Monster_HW : Monster
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-            Death();
+            collider.GetComponent<Player>().TakeDamage(atkPower);
         }  
     }
 
@@ -74,23 +74,13 @@ public class Monster_HW : Monster
     //확률적으로 expOrb 0~2를 생성하고싶으면 Random함수로 구현
     void CreateExpOrb()
     {
-        GameObject expOrbInstance;
-        if (gameObject.CompareTag("Monster1"))
-        {
-            expOrbInstance = Instantiate(expOrb[0], gameObject.transform.position, Quaternion.identity);
-            Destroy(expOrbInstance, 5f);
-        }
-        else if (gameObject.CompareTag("Monster2"))
-        {
-            expOrbInstance = Instantiate(expOrb[1], gameObject.transform.position, Quaternion.identity);
-            Destroy(expOrbInstance, 5f);
-        }
-        else
-        {
-            expOrbInstance = Instantiate(expOrb[2], gameObject.transform.position, Quaternion.identity);
-            Destroy(expOrbInstance, 5f);
-        }
+        if (expOrb.Length == 0) return; // expOrb 배열이 비어 있으면 실행하지 않음
 
+        int randomIndex = Random.Range(0, expOrb.Length); // 0 ~ 배열 길이-1 사이에서 랜덤 선택
+
+        GameObject expOrbInstance = Instantiate(expOrb[randomIndex], gameObject.transform.position, Quaternion.identity);
+
+        Destroy(expOrbInstance, 5f); // 5초 후 제거
     }
 
     void Attack()
@@ -100,6 +90,7 @@ public class Monster_HW : Monster
         {
             isAttack = true;
             animator.SetTrigger("Attack");
+            
         }
         else
         {
