@@ -28,8 +28,9 @@ public class PlayerProjectile : Projectile
         rb.linearVelocity = direction * projectileSpeed;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
+        base.OnTriggerEnter2D(collision);
         if (collision.CompareTag("Monster"))
         {
             collision.GetComponent<Monster_HW>().TakeDamage(damage);

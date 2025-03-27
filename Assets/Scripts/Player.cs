@@ -20,6 +20,8 @@ public class Player : Character
     public int projectileCount = 1; //플레이어 투사체 개수
     public int experience = 0; //플레이어 경험치
 
+    private bool isAlive = true; //플레이어 생존 여부
+
     public SkillManager skillManager;
     [SerializeField] private GameObject projectilePrefab;
     //[SerializeField] private Transform firePos; //player랑 같은위치, 특별한 스크립트가 있는게 아니면 필요 없을듯 합니다.
@@ -44,10 +46,14 @@ public class Player : Character
 
     private void Update()
     {
-        Move();//움직임 처리
-        SetAnimParams();//애니메이터 파라미터 설정
+        KeyInput();
+        if (CanAct())
+        {
+            Move();//움직임 처리
+            SetAnimParams();//애니메이터 파라미터 설정
+            ApplyMaxHealthPerkDamage();
+        }
         HandleSkillLevelUp();//스킬 레벨업 처리
-        ApplyMaxHealthPerkDamage();
     }
 
     public void SetMaxHealth(int maxHp)
@@ -75,6 +81,7 @@ public class Player : Character
     {
         //회복처리
     }
+
     public override void TakeDamage(int damage)
     {
         if (skillManager.moveSpeedSkill.hasPerk && Random.value * 100 < evasionChance)//이동속도 특전이 있는경우 30퍼센트(임시) 확률로 회피
@@ -92,6 +99,7 @@ public class Player : Character
     protected override void Death()
     {
         //플레이어 사망처리
+        isAlive = false;
     }
 
     protected override void Move()
@@ -105,12 +113,12 @@ public class Player : Character
     {
         Vector3 direction = (MouseManager.Instance.transform.position - transform.position).normalized;
 
-        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))            // 좌우
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y)) // 좌우
         {
             animator.SetFloat("dirX", direction.x > 0 ? 1f : -1f);
             animator.SetFloat("dirY", 0f);
         }
-        else// 상하
+        else //상하
         {
             animator.SetFloat("dirY", direction.y > 0 ? 1f : -1f);
             animator.SetFloat("dirX", 0f);
@@ -180,6 +188,41 @@ public class Player : Character
             //{
             //    enemy.GetComponent<Character>()?.TakeDamage(2);
             //}
+        }
+    }
+
+    private void KeyInput()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(!UIManager.Instance.IsEscapeMenuOpen && !UIManager.Instance.IsMenuOpen)
+            {
+                UIManager.Instance.ToggleEscapeMenu();
+            }
+            else if (UIManager.Instance.IsMenuOpen)
+            {
+                UIManager.Instance.ToggleMenu();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if(CanAct() || UIManager.Instance.IsSkillTreeOpen)
+            {
+                UIManager.Instance.ToggleSkillTree();
+            }
+        }
+    }
+
+    private bool CanAct()
+    {
+        if(GameManager.Instance.IsGamePaused || !isAlive)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
         }
     }
 }

@@ -190,4 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 8
   damage: 1
+  rb: {fileID: -8954215272075144043}
+  knockbackPower: 0
+  pentration: 0
   direction: {x: 0, y: 0, z: 0}
