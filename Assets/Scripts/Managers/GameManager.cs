@@ -25,7 +25,7 @@ public class GameManager : SingletonComponent<GameManager>
     }
     #endregion
 
-    public void PauseGame(bool pauseBool)
+    public void SetPause(bool pauseBool)
     {
         isGamePaused = pauseBool;
         Time.timeScale = isGamePaused ? 0f : 1f;
