@@ -18,7 +18,7 @@ public class PlayerProjectile : Projectile
         knockbackPower = player.knockbackPower;
         pentration = player.projectilePenetration;
     }
-    private void Update()
+    private void FixedUpdate()
     {
         Move();
     }

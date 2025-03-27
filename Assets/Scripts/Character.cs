@@ -2,6 +2,7 @@ using UnityEngine;
 
 public abstract class Character : MonoBehaviour
 {
+    [Header("케릭터 기본 속성")]
     public float moveSpeed = 5f; //이동 속도
     public int health = 2; //체력
     public int atkPower = 2; //공격력

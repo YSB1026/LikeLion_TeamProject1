@@ -32,7 +32,7 @@ public class Monster_HW : Monster
             {
                 // 플레이어의 위치로 이동
                 Vector3 direction = (player.transform.position - gameObject.transform.position).normalized;
-                transform.Translate(direction * speed * Time.deltaTime);
+                transform.Translate(direction * moveSpeed * Time.deltaTime);
 
                 // 플레이어의 위치에 따라 스프라이트 방향 설정, 몬스터가 왼쪽에 있으면 flip
                 spriteRenderer.flipX = transform.position.x < player.transform.position.x;
@@ -70,7 +70,7 @@ public class Monster_HW : Monster
     }
 
     //수정 해야 함,
-    //GameObject[] expOrb; 대신 expOrb만 생성하거나,
+    //배열 대신 expOrb로만 구현 하거나, 배열로 구현하고 싶으면,
     //확률적으로 expOrb 0~2를 생성하고싶으면 Random함수로 구현
     void CreateExpOrb()
     {
