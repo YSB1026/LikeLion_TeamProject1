@@ -6,7 +6,6 @@ public abstract class Projectile : MonoBehaviour
     public int damage = 1; //투사체 피해
 
     [SerializeField] protected Rigidbody2D rb;
-
     //투사체 이동 메서드
     protected abstract void Move();
 
