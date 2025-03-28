@@ -64,7 +64,8 @@ public class PlayerSkill : MonoBehaviour
                 break;
 
             case "MaxHealthIncrease"://최대체력 증가
-                player.maxHealth = 2 + skill.Level;
+                player.maxHealth += skill.Level;
+                player.health = player.health < player.maxHealth ? player.health+1 : player.health;
                 if (skill.hasPerk) player.health = player.maxHealth; // 특전: 주변 데미지
                 break;
         }

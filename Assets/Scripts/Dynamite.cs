@@ -29,17 +29,13 @@ public class Dynamite : Projectile
         Move();
     }
 
-    private void OnDisable()
-    {
-        PoolManager.Instance.Return(gameObject);
-    }
     IEnumerator ExplosionRoutine()
     {
         yield return new WaitForSeconds(lifeTime);
 
-        PoolManager.Instance.Return(gameObject);
         GameObject go = Instantiate(explosion, transform.position, Quaternion.identity);
         go.GetComponent<Explosion>().SetDamage(damage);
+        PoolManager.Instance.Return(gameObject);
     }
 
     protected override void Move()

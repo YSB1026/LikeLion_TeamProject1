@@ -11,8 +11,8 @@ public class Skill
     public Skill(string skillName, int maxLevel)
     {
         SkillName = skillName;
-        Level = 0;
-        MaxLevel = maxLevel - 1;
+        Level = 0;//처음엔 0레벨이고, 스킬 업을하면 1레벨, 2레벨, 3레벨 순서로 가야합니다.
+        MaxLevel = maxLevel;//따라서 MaxLevel은 -1할필요 없어요
     }
     //max 레벨이 아니고, 경험치가 충분하면 레벨업 가능
     public bool CanLevelUp(int experience)
@@ -22,7 +22,7 @@ public class Skill
     }
 
     public void LevelUp()
-    {
+    {//0 1 2 (1레벨, 2레벨 3레벨)
         if (Level < MaxLevel)
         {
             Level++;
