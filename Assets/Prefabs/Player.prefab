@@ -269,10 +269,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  health: 1000
+  health: 2
   atkPower: 2
   atkSpeed: 1
-  maxHealth: 1000
+  maxHealth: 2
   evasionChance: 0
   projectileSpeed: 10
   knockbackPower: 1

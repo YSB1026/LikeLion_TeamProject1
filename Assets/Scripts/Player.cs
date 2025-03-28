@@ -12,7 +12,7 @@ public class Player : Character
     public float atkSpeed = 1f; //공격 속도
     */
     [Header("플레이어 속성")]
-    public int maxHealth = 2; //플레이어 최대 체력
+    public int maxHealth;//플레이어 최대 체력
     public float evasionChance = 0; //플레이어 회피 확률
     public float projectileSpeed = 10f; //플레이어 투사체 속도
     public float knockbackPower = 1f; //플레이어 투사체 넉백
@@ -33,6 +33,7 @@ public class Player : Character
 
     private void Awake()
     {
+        maxHealth = health; //최대체력 초기화
         animator = GetComponent<Animator>();
         PoolManager.Instance.CreatePool(projectilePrefab, 10);
         StartCoroutine(FireProjectile());
