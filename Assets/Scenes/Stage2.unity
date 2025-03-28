@@ -6281,6 +6281,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &2063683953 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5870622045842614218, guid: 773bf76a76c24ec4e85e77b3f4dd43f3, type: 3}
+  m_PrefabInstance: {fileID: 2122306031}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2113097336
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6388,6 +6393,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4141685240145733450, guid: 773bf76a76c24ec4e85e77b3f4dd43f3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255341840601947699, guid: 773bf76a76c24ec4e85e77b3f4dd43f3, type: 3}
+      propertyPath: health
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255341840601947699, guid: 773bf76a76c24ec4e85e77b3f4dd43f3, type: 3}
+      propertyPath: maxHealth
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255341840601947699, guid: 773bf76a76c24ec4e85e77b3f4dd43f3, type: 3}
+      propertyPath: auraEffect
+      value: 
+      objectReference: {fileID: 2063683953}
+    - target: {fileID: 5255341840601947699, guid: 773bf76a76c24ec4e85e77b3f4dd43f3, type: 3}
+      propertyPath: experience
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6470436247702351075, guid: 773bf76a76c24ec4e85e77b3f4dd43f3, type: 3}
+      propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8596303638197331918, guid: 773bf76a76c24ec4e85e77b3f4dd43f3, type: 3}
