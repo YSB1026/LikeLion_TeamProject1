@@ -847,6 +847,55 @@ MonoBehaviour:
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
   FollowOffset: {x: 0, y: 0, z: -10}
+--- !u!1 &1373400602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1373400604}
+  - component: {fileID: 1373400603}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1373400603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373400602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97b28ace0bd953146a97c31144c71ea2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGamePaused: 0
+  experience: 0
+  killScore: 0
+  portalPrefab: {fileID: 4710660716068642652, guid: fd3021844c82a354e8500ba2e41a7d63, type: 3}
+  portalSpawnPosition: {x: 0, y: 0}
+--- !u!4 &1373400604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373400602}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1531527578
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,6 +997,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5255341840601947699, guid: 773bf76a76c24ec4e85e77b3f4dd43f3, type: 3}
+      propertyPath: playerSkill
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8596303638197331918, guid: 773bf76a76c24ec4e85e77b3f4dd43f3, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -956,7 +1009,8 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4243501901844939, guid: 773bf76a76c24ec4e85e77b3f4dd43f3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6445,3 +6499,4 @@ SceneRoots:
   - {fileID: 3187748721419570510}
   - {fileID: 4828375282924147330}
   - {fileID: 2008449742}
+  - {fileID: 1373400604}

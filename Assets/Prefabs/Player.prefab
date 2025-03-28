@@ -101,9 +101,9 @@ GameObject:
   - component: {fileID: 6470436247702351075}
   - component: {fileID: 475075144294564182}
   - component: {fileID: 3335162433206658340}
-  - component: {fileID: 5255341840601947699}
-  - component: {fileID: 4243501901844939}
   - component: {fileID: 7353858105780882010}
+  - component: {fileID: 5255341840601947699}
+  - component: {fileID: 1333454984495930731}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -256,46 +256,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.48, y: 0.6}
   m_EdgeRadius: 0
---- !u!114 &5255341840601947699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3775561853089801426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3c2e4018f63464280a35f1dc4a273b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  health: 2
-  atkPower: 2
-  atkSpeed: 1
-  maxHealth: 2
-  evasionChance: 0
-  projectileSpeed: 10
-  knockbackPower: 1
-  projectilePenetration: 1
-  projectileCount: 1
-  experience: 1000
-  playerSkill: {fileID: 4243501901844939}
-  projectilePrefab: {fileID: 9078127285163815211, guid: 173fd64c7aff0084eaea64b07a695493, type: 3}
-  auraEffect: {fileID: 5870622045842614218}
-  healthBar: {fileID: 3879723178924054396}
---- !u!114 &4243501901844939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3775561853089801426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8324e6d54661ee04bbec96e58d54103c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 5255341840601947699}
 --- !u!95 &7353858105780882010
 Animator:
   serializedVersion: 7
@@ -318,6 +278,43 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5255341840601947699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3775561853089801426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3c2e4018f63464280a35f1dc4a273b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  health: 2
+  atkPower: 2
+  atkSpeed: 1
+  maxHealth: 2
+  evasionChance: 0
+  projectileSpeed: 10
+  knockbackPower: 1
+  projectilePenetration: 1
+  projectilePrefab: {fileID: 9078127285163815211, guid: 173fd64c7aff0084eaea64b07a695493, type: 3}
+  auraEffect: {fileID: 5870622045842614218}
+  healthBar: {fileID: 3879723178924054396}
+--- !u!114 &1333454984495930731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3775561853089801426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a161b0ea06c3834981f528515a21e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 5255341840601947699}
 --- !u!1 &4367940240235727127
 GameObject:
   m_ObjectHideFlags: 0
