@@ -21,7 +21,7 @@ public class GameManager : SingletonComponent<GameManager>
     public Vector2 portalSpawnPosition; // 포털 생성 위치
 
     public bool IsGamePaused { get => isGamePaused; }
-    public int Experience { get => experience; set => experience = value; }
+    public int Experience { get => experience; }
     public int KillScore { get => killScore; set => killScore = value; }
 
     #region Singleton
@@ -46,6 +46,12 @@ public class GameManager : SingletonComponent<GameManager>
     {
         isGamePaused = pauseBool;
         Time.timeScale = isGamePaused ? 0f : 1f;
+    }
+
+    public void UpdateExp(int amount)
+    {
+        experience += amount;
+        UIManager.Instance.SetExp();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

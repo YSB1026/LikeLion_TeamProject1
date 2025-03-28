@@ -28,7 +28,7 @@ public class SkillManager : SingletonComponent<SkillManager>
     {
         if (skill.CanLevelUp(GameManager.Instance.Experience))//레벨업이 가능하면
         {
-            GameManager.Instance.Experience -= skill.RequiredExp(); //경험치 차감
+            GameManager.Instance.UpdateExp(-skill.RequiredExp()); //경험치 차감
             skill.LevelUp(); //레벨업
             ApplySkillEffect(skill); //효과 적용
             return true; //true 반환
