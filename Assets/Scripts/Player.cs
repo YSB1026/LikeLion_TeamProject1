@@ -111,6 +111,7 @@ public class Player : Character
         isAlive = false;
         StopAllCoroutines();
         auraEffect.SetActive(false);
+        UIManager.Instance.ToggleDeathMessage();
     }
 
     protected override void Move()

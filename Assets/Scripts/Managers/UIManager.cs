@@ -18,9 +18,14 @@ public class UIManager : SingletonComponent<UIManager>
     [SerializeField] private bool isEscapeMenuOpen = false;
     [SerializeField] private GameObject escapeMenuPanel;
 
+    [Header("DeathMessage UI")]
+    [SerializeField] private bool isDeathMessageOpen = false;
+    [SerializeField] private GameObject deathMessagePanel;
+
     public bool IsMenuOpen { get => isMenuOpen; }
     public bool IsSkillTreeOpen { get => isSkillTreeOpen; }
     public bool IsEscapeMenuOpen { get => isEscapeMenuOpen; }
+    public bool IsDeathMessageOpen { get => isDeathMessageOpen; }
 
     #region Singleton
     protected override void AwakeInstance()
@@ -39,7 +44,7 @@ public class UIManager : SingletonComponent<UIManager>
     }
     #endregion
 
-    public void UpdateExp()
+    public void SetExp()
     {
         expText.text = $"경험치: {GameManager.Instance.Experience}";
     }
@@ -74,6 +79,12 @@ public class UIManager : SingletonComponent<UIManager>
     {
         isEscapeMenuOpen = !isEscapeMenuOpen;
         SetBooleans(escapeMenuPanel, isEscapeMenuOpen);
+    }
+
+    public void ToggleDeathMessage()
+    {
+        isDeathMessageOpen = !isDeathMessageOpen;
+        SetBooleans(deathMessagePanel, isDeathMessageOpen);
     }
 
     private void SetBooleans(GameObject menu, bool menuBool)

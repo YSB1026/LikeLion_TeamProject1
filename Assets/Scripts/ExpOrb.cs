@@ -9,7 +9,7 @@ public class ExpOrb : MonoBehaviour
         // 플레이어와 충돌 시
         if (collider.CompareTag("Player")) // 플레이어 태그 확인
         {
-            GameManager.Instance.Experience += expValue;
+            GameManager.Instance.UpdateExp(expValue);
             Destroy(gameObject); // 충돌 후 즉시 파괴
         }
     }
