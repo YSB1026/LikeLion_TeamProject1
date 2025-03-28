@@ -21,23 +21,25 @@ public class Player : Character
     public int experience = 0; //플레이어 경험치
 
     private bool isAlive = true; //플레이어 생존 여부
-    [SerializeField] private PlayerSkill playerSkill;
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
     private float moveX, moveY;
 
     [Header("참조")]
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private GameObject auraEffect;
     [SerializeField] private Slider healthBar;
+    [SerializeField] private PlayerSkill playerSkill;
 
 
     private void Awake()
     {
         maxHealth = health; //최대체력 초기화
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         PoolManager.Instance.CreatePool(projectilePrefab, 10);
         StartCoroutine(FireProjectile());
-        auraEffect.SetActive(false);
+        //auraEffect.SetActive(false);
     }
 
     private void Start()
@@ -92,9 +94,9 @@ public class Player : Character
             return;
         }
 
+        StartCoroutine(TakeDamageRoutine());
         base.TakeDamage(damage);
         SetHealth(health);
-        StartCoroutine(TakeDamageRoutine());
     }
 
     protected override void Death()
@@ -161,8 +163,17 @@ public class Player : Character
 
     IEnumerator TakeDamageRoutine()
     {
-        //이후 구현
-        yield return null;
+        // 원래 색상 저장
+        Color originalColor = spriteRenderer.color;
+        spriteRenderer.color = Color.red;
+
+        Color reducedAlphaColor = spriteRenderer.color;
+        reducedAlphaColor.a = 0.5f;
+        spriteRenderer.color = reducedAlphaColor;
+
+        yield return new WaitForSeconds(0.1f);
+
+        spriteRenderer.color = originalColor;
     }
 
     private void HandleSkillLevelUp()
