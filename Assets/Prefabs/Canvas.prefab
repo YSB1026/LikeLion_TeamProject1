@@ -182,9 +182,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2974316085069887879}
+  - {fileID: 3106827563471884627}
   - {fileID: 4006167403125387402}
   - {fileID: 3156303258749784688}
-  - {fileID: 3106827563471884627}
   m_Father: {fileID: 4331659809914746735}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4306,6 +4306,9 @@ MonoBehaviour:
   skillTreePanel: {fileID: 6434783083957276362}
   isEscapeMenuOpen: 0
   escapeMenuPanel: {fileID: 3807746945375850952}
+  isDeathMessageOpen: 0
+  deathMessagePanel: {fileID: 8609479771681439617}
+  killScoreText: {fileID: 3381539146127693736}
 --- !u!1 &4542843719572637141
 GameObject:
   m_ObjectHideFlags: 0
@@ -4576,7 +4579,7 @@ GameObject:
   - component: {fileID: 3073912046869277140}
   - component: {fileID: 3381539146127693736}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: KillScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
