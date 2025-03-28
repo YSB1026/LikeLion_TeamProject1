@@ -163,17 +163,20 @@ public class Player : Character
 
     private void HandleSkillLevelUp()
     {
-        Skill skill = null;
-        //추후에 UI로 변경
-        if (Input.GetKeyDown(KeyCode.Alpha1)) skill = playerSkill.attackPowerSkill;//공격력
-        if (Input.GetKeyDown(KeyCode.Alpha2)) skill = playerSkill.moveSpeedSkill;//이동속도
-        if (Input.GetKeyDown(KeyCode.Alpha3)) skill = playerSkill.attackSpeedSkill;//공격속도
-        if (Input.GetKeyDown(KeyCode.Alpha4)) skill = playerSkill.projectileSpeedSkill;//투사체 속도
-        if (Input.GetKeyDown(KeyCode.Alpha5)) skill = playerSkill.maxHealthIncreaseSkill;//최대체력 증가
-
-        if (skill != null)
+        if(UIManager.Instance.IsSkillTreeOpen)
         {
-            playerSkill.TryLevelUpSkill(skill, experience);
+            Skill skill = null;
+            //추후에 UI로 변경
+            if (Input.GetKeyDown(KeyCode.Alpha1)) skill = playerSkill.attackPowerSkill;//공격력
+            if (Input.GetKeyDown(KeyCode.Alpha2)) skill = playerSkill.moveSpeedSkill;//이동속도
+            if (Input.GetKeyDown(KeyCode.Alpha3)) skill = playerSkill.attackSpeedSkill;//공격속도
+            if (Input.GetKeyDown(KeyCode.Alpha4)) skill = playerSkill.projectileSpeedSkill;//투사체 속도
+            if (Input.GetKeyDown(KeyCode.Alpha5)) skill = playerSkill.maxHealthIncreaseSkill;//최대체력 증가
+
+            if (skill != null)
+            {
+                playerSkill.TryLevelUpSkill(skill, experience);
+            }
         }
     }
 
