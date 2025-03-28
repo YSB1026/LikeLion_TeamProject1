@@ -21,6 +21,7 @@ public class UIManager : SingletonComponent<UIManager>
     [Header("DeathMessage UI")]
     [SerializeField] private bool isDeathMessageOpen = false;
     [SerializeField] private GameObject deathMessagePanel;
+    [SerializeField] private TextMeshProUGUI killScoreText;
 
     public bool IsMenuOpen { get => isMenuOpen; }
     public bool IsSkillTreeOpen { get => isSkillTreeOpen; }
@@ -85,6 +86,11 @@ public class UIManager : SingletonComponent<UIManager>
     {
         isDeathMessageOpen = !isDeathMessageOpen;
         SetBooleans(deathMessagePanel, isDeathMessageOpen);
+
+        if (isDeathMessageOpen)
+        {
+            killScoreText.text = $"몬스터 킬 수: {GameManager.Instance.KillScore}";
+        }
     }
 
     private void SetBooleans(GameObject menu, bool menuBool)
