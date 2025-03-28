@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -33,8 +33,14 @@ public class PlayerProjectile : Projectile
         base.OnTriggerEnter2D(collision);
         if (collision.CompareTag("Monster"))
         {
-            collision.GetComponent<Monster>().TakeDamage(damage);
-            //넉백 처리 해야함.
+            Monster monster = collision.GetComponent<Monster>();
+            monster.TakeDamage(damage);
+
+            //넉백처리
+            //보스는 넉백 안되게 만들어도 됨.
+            //rigidbody 있으면 add force하면 될 것 같은데
+            //transform 처리?
+
             pentration--;
             if (pentration <= 0)
             {

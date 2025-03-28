@@ -833,6 +833,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1477680231849467460, guid: 21c1cfbb494feb64d9bf4573fdf0ed9f, type: 3}
+      propertyPath: health
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 8182828062506385495, guid: 21c1cfbb494feb64d9bf4573fdf0ed9f, type: 3}
       propertyPath: m_Name
       value: TNT_Red
@@ -5439,7 +5443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 554751203445050598, guid: 416f4663204d2624385e7753e9994abc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 4.15
       objectReference: {fileID: 0}
     - target: {fileID: 554751203445050598, guid: 416f4663204d2624385e7753e9994abc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5480,6 +5484,10 @@ PrefabInstance:
     - target: {fileID: 747357605471954051, guid: 416f4663204d2624385e7753e9994abc, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 747357605471954051, guid: 416f4663204d2624385e7753e9994abc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6296,7 +6304,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7057893830136205301, guid: 762865fe113b3194e84636ed14f2b861, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.97
+      value: 4.31
       objectReference: {fileID: 0}
     - target: {fileID: 7057893830136205301, guid: 762865fe113b3194e84636ed14f2b861, type: 3}
       propertyPath: m_LocalPosition.y

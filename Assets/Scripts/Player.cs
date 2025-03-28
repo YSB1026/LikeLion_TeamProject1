@@ -11,6 +11,11 @@ public class Player : Character
     public int atkPower = 2; //공격력
     public float atkSpeed = 1f; //공격 속도
     */
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
+    private float moveX, moveY;
+    private bool isAlive = true; //플레이어 생존 여부
+    private Coroutine takeDamageRoutine = null;
     [Header("플레이어 속성")]
     public int maxHealth;//플레이어 최대 체력
     public float evasionChance = 0; //플레이어 회피 확률
@@ -19,11 +24,6 @@ public class Player : Character
     public int projectilePenetration = 1; //플레이어 투사체 관통력
     public int projectileCount = 1; //플레이어 투사체 개수
     public int experience = 0; //플레이어 경험치
-
-    private bool isAlive = true; //플레이어 생존 여부
-    private Animator animator;
-    private SpriteRenderer spriteRenderer;
-    private float moveX, moveY;
 
     [Header("참조")]
     [SerializeField] private GameObject projectilePrefab;
@@ -94,7 +94,7 @@ public class Player : Character
             return;
         }
 
-        StartCoroutine(TakeDamageRoutine());
+        takeDamageRoutine ??= StartCoroutine(TakeDamageRoutine());
         base.TakeDamage(damage);
         SetHealth(health);
     }
@@ -171,9 +171,10 @@ public class Player : Character
         reducedAlphaColor.a = 0.5f;
         spriteRenderer.color = reducedAlphaColor;
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
 
         spriteRenderer.color = originalColor;
+        takeDamageRoutine = null;
     }
 
     private void HandleSkillLevelUp()
