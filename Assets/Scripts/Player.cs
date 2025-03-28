@@ -11,7 +11,7 @@ public class Player : Character
     public int atkPower = 2; //공격력
     public float atkSpeed = 1f; //공격 속도
     */
-
+    [Header("플레이어 속성")]
     public int maxHealth = 2; //플레이어 최대 체력
     public float evasionChance = 0; //플레이어 회피 확률
     public float projectileSpeed = 10f; //플레이어 투사체 속도
@@ -21,21 +21,22 @@ public class Player : Character
     public int experience = 0; //플레이어 경험치
 
     private bool isAlive = true; //플레이어 생존 여부
-
     [SerializeField] private PlayerSkill playerSkill;
-    [SerializeField] private GameObject projectilePrefab;
-    //[SerializeField] private Transform firePos; //player랑 같은위치, 특별한 스크립트가 있는게 아니면 필요 없을듯 합니다.
-
-    [SerializeField] private Slider healthBar;
-
     private Animator animator;
     private float moveX, moveY;
+
+    [Header("참조")]
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private GameObject auraEffect;
+    [SerializeField] private Slider healthBar;
+
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
         PoolManager.Instance.CreatePool(projectilePrefab, 10);
         StartCoroutine(FireProjectile());
+        auraEffect.SetActive(false);
     }
 
     private void Start()
@@ -99,6 +100,8 @@ public class Player : Character
     {
         //플레이어 사망처리
         isAlive = false;
+        StopAllCoroutines();
+        auraEffect.SetActive(false);
     }
 
     protected override void Move()
@@ -179,14 +182,10 @@ public class Player : Character
 
     private void ApplyMaxHealthPerkDamage()
     {
-        if (playerSkill.maxHealthIncreaseSkill.hasPerk) // 최대 체력 특전이 있을 때
+        if (playerSkill.maxHealthIncreaseSkill.hasPerk && !auraEffect.activeSelf) // 최대 체력 특전 && auraEffect가 활성화 돼있지 않을 때
         {
-            //나중에 프리팹 하나 만들어서 사용.
-            //Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, 2.0f, LayerMask.GetMask("Monster"));
-            //foreach (Collider2D enemy in hitEnemies)
-            //{
-            //    enemy.GetComponent<Character>()?.TakeDamage(2);
-            //}
+            auraEffect.SetActive(true);
+            auraEffect.GetComponent<PlayerAura>().SetDamage(maxHealth);//최대 체력만큼 데미지
         }
     }
 
