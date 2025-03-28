@@ -11,6 +11,7 @@ public class Player : Character
     public int atkPower = 2; //공격력
     public float atkSpeed = 1f; //공격 속도
     */
+
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private float moveX, moveY;
@@ -18,19 +19,24 @@ public class Player : Character
     private Coroutine takeDamageRoutine = null;
     [Header("플레이어 속성")]
     public int maxHealth;//플레이어 최대 체력
-    public float evasionChance = 0; //플레이어 회피 확률
+    public float evasionChance = 0f; //플레이어 회피 확률
     public float projectileSpeed = 10f; //플레이어 투사체 속도
     public float knockbackPower = 1f; //플레이어 투사체 넉백
     public int projectilePenetration = 1; //플레이어 투사체 관통력
-    public int projectileCount = 1; //플레이어 투사체 개수
-    public int experience = 0; //플레이어 경험치
 
     [Header("참조")]
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private GameObject auraEffect;
     [SerializeField] private Slider healthBar;
-    [SerializeField] private PlayerSkill playerSkill;
 
+    public enum SkillType
+    {
+        AttackPower,
+        MoveSpeed,
+        AttackSpeed,
+        ProjectileSpeed,
+        MaxHealthIncrease
+    }
 
     private void Awake()
     {
@@ -87,7 +93,7 @@ public class Player : Character
 
     public override void TakeDamage(int damage)
     {
-        if (playerSkill.moveSpeedSkill.hasPerk && Random.value * 100 < evasionChance)//이동속도 특전이 있는경우 30퍼센트(임시) 확률로 회피
+        if (SkillManager.Instance.Skills[(int)SkillType.MoveSpeed].hasPerk && Random.value * 100 < evasionChance) //이동속도 특전이 있는경우 30퍼센트(임시) 확률로 회피
         {
             Debug.Log("회피 성공");
             //뭔가 이펙트가 있어야할지도..
@@ -137,7 +143,7 @@ public class Player : Character
             yield return new WaitForSeconds(atkSpeed);
             //PlayerProjectile projectile = PoolManager.Instance.Get(projectilePrefab).GetComponent<PlayerProjectile>();
             Vector3 baseDirection = (MouseManager.Instance.mousePos - transform.position).normalized;
-            if (playerSkill.attackSpeedSkill.hasPerk)//공격 속도 특전, 투사체 개수 증가(좌우로 하나씩 추가)
+            if (SkillManager.Instance.Skills[(int)SkillType.AttackSpeed].hasPerk)//공격 속도 특전, 투사체 개수 증가(좌우로 하나씩 추가)
             {
                 float angleOffset = 5f; // 좌우 발사 각도 차이
                 for (int i = -1; i <= 1; i++)
@@ -183,22 +189,22 @@ public class Player : Character
         {
             Skill skill = null;
             //추후에 UI로 변경
-            if (Input.GetKeyDown(KeyCode.Alpha1)) skill = playerSkill.attackPowerSkill;//공격력
-            if (Input.GetKeyDown(KeyCode.Alpha2)) skill = playerSkill.moveSpeedSkill;//이동속도
-            if (Input.GetKeyDown(KeyCode.Alpha3)) skill = playerSkill.attackSpeedSkill;//공격속도
-            if (Input.GetKeyDown(KeyCode.Alpha4)) skill = playerSkill.projectileSpeedSkill;//투사체 속도
-            if (Input.GetKeyDown(KeyCode.Alpha5)) skill = playerSkill.maxHealthIncreaseSkill;//최대체력 증가
+            if (Input.GetKeyDown(KeyCode.Alpha1)) skill = SkillManager.Instance.Skills[(int)SkillType.AttackPower]; //공격력
+            if (Input.GetKeyDown(KeyCode.Alpha2)) skill = SkillManager.Instance.Skills[(int)SkillType.MoveSpeed]; //이동속도
+            if (Input.GetKeyDown(KeyCode.Alpha3)) skill = SkillManager.Instance.Skills[(int)SkillType.AttackSpeed]; //공격속도
+            if (Input.GetKeyDown(KeyCode.Alpha4)) skill = SkillManager.Instance.Skills[(int)SkillType.ProjectileSpeed]; //투사체 속도
+            if (Input.GetKeyDown(KeyCode.Alpha5)) skill = SkillManager.Instance.Skills[(int)SkillType.MaxHealthIncrease]; //최대체력 증가
 
             if (skill != null)
             {
-                playerSkill.TryLevelUpSkill(skill, experience);
+                SkillManager.Instance.TryLevelUpSkill(skill);
             }
         }
     }
 
     private void ApplyMaxHealthPerkDamage()
     {
-        if (playerSkill.maxHealthIncreaseSkill.hasPerk && !auraEffect.activeSelf) // 최대 체력 특전 && auraEffect가 활성화 돼있지 않을 때
+        if (SkillManager.Instance.Skills[(int)SkillType.MaxHealthIncrease].hasPerk && !auraEffect.activeSelf) // 최대 체력 특전 && auraEffect가 활성화 돼있지 않을 때
         {
             auraEffect.SetActive(true);
             auraEffect.GetComponent<PlayerAura>().SetDamage(maxHealth);//최대 체력만큼 데미지

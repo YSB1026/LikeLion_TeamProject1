@@ -38,6 +38,7 @@ public class Monster : Character
 
     protected override void Death()
     {
+        GameManager.Instance.KillScore++;
         PoolManager.Instance.Return(gameObject);
     }
 }

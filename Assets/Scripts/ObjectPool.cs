@@ -53,6 +53,7 @@ public class ObjectPool
         }
 
         GameObject obj = CreateNewObject();
+        obj.SetActive(true);
 
         return obj;
     }

@@ -633,7 +633,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC124\uBA851"
+  m_text: "\uB808\uBCA82"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
   m_sharedMaterial: {fileID: -5643657355105871865, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
@@ -890,7 +890,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC124\uBA851"
+  m_text: "\uB808\uBCA82"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
   m_sharedMaterial: {fileID: -5643657355105871865, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
@@ -1026,7 +1026,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC124\uBA851"
+  m_text: "\uB808\uBCA83"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
   m_sharedMaterial: {fileID: -5643657355105871865, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
@@ -1107,6 +1107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4565170579054694026}
   - component: {fileID: 2150291101699127555}
+  - component: {fileID: 5784957109519435444}
   m_Layer: 5
   m_Name: AtkSpeedTree
   m_TagString: Untagged
@@ -1164,6 +1165,29 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &5784957109519435444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227356685079999343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f090484d6ea370c419b794a5646ef44e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 2
+  skillName: AttackSpeed
+  upgradeBtn: {fileID: 1254363134749353494}
+  perks:
+  - {fileID: 99803097512934293}
+  - {fileID: 7336905139161953538}
+  - {fileID: 1368983250393990964}
+  perkDescs:
+  - "\uBC1C\uC0AC \uB51C\uB808\uC774 -0.1s"
+  - "\uBC1C\uC0AC \uB51C\uB808\uC774 -0.2s"
+  - "\uBC1C\uC0AC \uB51C\uB808\uC774 -0.3s, \uD22C\uC0AC\uCCB4 \uCD94\uAC00"
 --- !u!1 &1368983250393990964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1383,7 +1407,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC124\uBA851"
+  m_text: "\uB808\uBCA81"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
   m_sharedMaterial: {fileID: -5643657355105871865, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
@@ -1519,7 +1543,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC124\uBA851"
+  m_text: "\uB808\uBCA82"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
   m_sharedMaterial: {fileID: -5643657355105871865, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
@@ -2263,7 +2287,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC124\uBA851"
+  m_text: "\uB808\uBCA83"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
   m_sharedMaterial: {fileID: -5643657355105871865, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
@@ -2852,6 +2876,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2228373255935929867}
   - component: {fileID: 2387962401466252231}
+  - component: {fileID: 7042619415952855419}
   m_Layer: 5
   m_Name: ProjectileSpeedTree
   m_TagString: Untagged
@@ -2909,6 +2934,29 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &7042619415952855419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3305331660273536001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f090484d6ea370c419b794a5646ef44e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 3
+  skillName: ProjectileSpeed
+  upgradeBtn: {fileID: 6474634753455213866}
+  perks:
+  - {fileID: 5866183580626876773}
+  - {fileID: 6919039587334026843}
+  - {fileID: 3177290417505842083}
+  perkDescs:
+  - "\uD22C\uC0AC\uCCB4 \uC18D\uB3C4 +20%"
+  - "\uD22C\uC0AC\uCCB4 \uC18D\uB3C4 +40%"
+  - "\uD22C\uC0AC\uCCB4 \uC18D\uB3C4 +60%, \uAD00\uD1B5 \uCD94\uAC00"
 --- !u!1 &3329683016091710610
 GameObject:
   m_ObjectHideFlags: 0
@@ -3378,13 +3426,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1589074333337300812}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: ToggleSkillTree
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3634,7 +3682,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC124\uBA851"
+  m_text: "\uB808\uBCA83"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
   m_sharedMaterial: {fileID: -5643657355105871865, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
@@ -3770,7 +3818,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC124\uBA851"
+  m_text: "\uB808\uBCA81"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
   m_sharedMaterial: {fileID: -5643657355105871865, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
@@ -4037,6 +4085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventSystem: {fileID: 1519456125239662544}
   isMenuOpen: 0
+  expText: {fileID: 0}
   isSkillTreeOpen: 0
   skillTreePanel: {fileID: 6434783083957276362}
   isEscapeMenuOpen: 0
@@ -4051,6 +4100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6142102351359802338}
   - component: {fileID: 4533222400928208036}
+  - component: {fileID: 5014262484115942203}
   m_Layer: 5
   m_Name: AtkPowerTree
   m_TagString: Untagged
@@ -4108,6 +4158,29 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &5014262484115942203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4542843719572637141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f090484d6ea370c419b794a5646ef44e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
+  skillName: AttackPower
+  upgradeBtn: {fileID: 6867969160863916285}
+  perks:
+  - {fileID: 7660044545379104495}
+  - {fileID: 5616652543587409679}
+  - {fileID: 4833009016592514452}
+  perkDescs:
+  - "\uACF5\uACA9\uB825 +1"
+  - "\uACF5\uACA9\uB825 +2"
+  - "\uACF5\uACA9\uB825 +3, \uB109\uBC31 \uC99D\uAC00"
 --- !u!1 &4833009016592514452
 GameObject:
   m_ObjectHideFlags: 0
@@ -4194,6 +4267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5870137751499957633}
   - component: {fileID: 3250561726342722322}
+  - component: {fileID: 4437891681150398687}
   m_Layer: 5
   m_Name: VitalityTree
   m_TagString: Untagged
@@ -4251,6 +4325,29 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &4437891681150398687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4858613724767027012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f090484d6ea370c419b794a5646ef44e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 4
+  skillName: MaxHealthIncrease
+  upgradeBtn: {fileID: 7624279274627102070}
+  perks:
+  - {fileID: 3329683016091710610}
+  - {fileID: 4253811163624504631}
+  - {fileID: 2993769367073289870}
+  perkDescs:
+  - "\uCD5C\uB300 \uCCB4\uB825 +1"
+  - "\uCD5C\uB300 \uCCB4\uB825 +2"
+  - "\uCD5C\uB300 \uCCB4\uB825 +3, \uC8FC\uBCC0 \uB300\uBBF8\uC9C0"
 --- !u!1 &5389563600231966908
 GameObject:
   m_ObjectHideFlags: 0
@@ -4604,7 +4701,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC124\uBA851"
+  m_text: "\uB808\uBCA83"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
   m_sharedMaterial: {fileID: -5643657355105871865, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
@@ -5073,7 +5170,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC124\uBA851"
+  m_text: "\uB808\uBCA81"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
   m_sharedMaterial: {fileID: -5643657355105871865, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
@@ -5690,7 +5787,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC124\uBA851"
+  m_text: "\uB808\uBCA81"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
   m_sharedMaterial: {fileID: -5643657355105871865, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
@@ -5826,7 +5923,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC124\uBA851"
+  m_text: "\uB808\uBCA82"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
   m_sharedMaterial: {fileID: -5643657355105871865, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
@@ -6194,6 +6291,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1115606286644914977}
   - component: {fileID: 1495652776055136857}
+  - component: {fileID: 4373073287261399779}
   m_Layer: 5
   m_Name: MoveSpeedTree
   m_TagString: Untagged
@@ -6251,6 +6349,29 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &4373073287261399779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7495826328618955293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f090484d6ea370c419b794a5646ef44e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 1
+  skillName: MoveSpeed
+  upgradeBtn: {fileID: 3953110705821899516}
+  perks:
+  - {fileID: 8673756483380178866}
+  - {fileID: 612013652334022623}
+  - {fileID: 5389563600231966908}
+  perkDescs:
+  - "\uC774\uB3D9 \uC18D\uB3C4 +10%"
+  - "\uC774\uB3D9 \uC18D\uB3C4 +20%"
+  - "\uC774\uB3D9 \uC18D\uB3C4 +30%, \uD68C\uD53C\uC728 \uCD94\uAC00"
 --- !u!1 &7660044545379104495
 GameObject:
   m_ObjectHideFlags: 0
@@ -6664,7 +6785,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC124\uBA851"
+  m_text: "\uB808\uBCA81"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
   m_sharedMaterial: {fileID: -5643657355105871865, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
@@ -6800,7 +6921,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC124\uBA851"
+  m_text: "\uB808\uBCA83"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
   m_sharedMaterial: {fileID: -5643657355105871865, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
@@ -7087,7 +7208,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC124\uBA851"
+  m_text: "\uB808\uBCA82"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}
   m_sharedMaterial: {fileID: -5643657355105871865, guid: 3ea9d17d0fd56824080282c0a9273d7a, type: 2}

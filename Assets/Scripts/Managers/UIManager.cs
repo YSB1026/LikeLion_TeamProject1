@@ -1,4 +1,5 @@
 using Singleton.Component;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -7,6 +8,7 @@ public class UIManager : SingletonComponent<UIManager>
 {
     [SerializeField] private EventSystem eventSystem;
     [SerializeField] private bool isMenuOpen = false;
+    [SerializeField] private TextMeshProUGUI expText;
 
     [Header("Skill UI")]
     [SerializeField] private bool isSkillTreeOpen = false;
@@ -36,6 +38,11 @@ public class UIManager : SingletonComponent<UIManager>
         
     }
     #endregion
+
+    public void UpdateExp()
+    {
+        expText.text = $"경험치: {GameManager.Instance.Experience}";
+    }
 
     public void ToggleMenu()
     {
