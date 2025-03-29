@@ -14,9 +14,8 @@ GameObject:
   - component: {fileID: 3041054714330192100}
   - component: {fileID: 6460987979759422118}
   - component: {fileID: 1154611731798632810}
-  - component: {fileID: 632988232751813778}
   - component: {fileID: 576615607322473669}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Spider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +145,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -178,7 +177,6 @@ MonoBehaviour:
   health: 2
   atkPower: 2
   atkSpeed: 1
-  speed: 1.5
   expOrb: []
   attackDistance: 5
   detectionRange: 5
@@ -212,18 +210,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &632988232751813778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785662388132135335}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92ecea21fdfcb80449a1edd7b3f403ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!195 &576615607322473669
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -255,7 +241,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2427163469555224313}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: firepoint
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}

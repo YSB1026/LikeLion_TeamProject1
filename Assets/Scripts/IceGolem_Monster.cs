@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Golem_Monster : Monster
+public class IceGolem_Monster : Monster
 {
     public float attackCooldown = 2f;
     private float attackTimer;
