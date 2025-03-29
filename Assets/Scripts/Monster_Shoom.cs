@@ -40,6 +40,8 @@ public class Monster_Shoom : Monster
         StartCoroutine(ReturnToPoolAfterDelay(0.7f)); // 0.7초후 풀반환
 
         CreateExpOrb();
+
+        GameManager.Instance.KillScore++;
     }
 
     

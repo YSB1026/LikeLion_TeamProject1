@@ -248,7 +248,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      animated_crosshair_cursor_pack 1_0: 6824791260584071173
+      animated_crosshair_cursor_pack 1_1: -6819718325268185987
+      animated_crosshair_cursor_pack 1_2: -597106423031308395
+      animated_crosshair_cursor_pack 1_3: 6058542292034425065
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

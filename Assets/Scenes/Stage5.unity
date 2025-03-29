@@ -530,60 +530,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1722073390
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1722073392}
-  - component: {fileID: 1722073393}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1722073392
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1722073390}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9818872, y: 1.1282542, z: -0.015033064}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1722073393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1722073390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 457bdc88bb8f079439c8d1c1b58fa84b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bgmClip: {fileID: 8300000, guid: 72c49c0b02c72ee4585e02e940d947d7, type: 3}
-  bgmVolume: 0.2
-  sfxClips:
-  - {fileID: 8300000, guid: db9e6d3a0f3f31545a49217f5995eee8, type: 3}
-  - {fileID: 8300000, guid: bd89a868319c242438a8aae09dea6353, type: 3}
-  - {fileID: 8300000, guid: fe6bcb356e5500e4c854aca2cc0911f3, type: 3}
-  - {fileID: 8300000, guid: f54fea5c662d3f746bb45f5a2e8b1e7a, type: 3}
-  - {fileID: 8300000, guid: 51774ef32c67ff040b357d576139b934, type: 3}
-  sfxVolume: 0.5
-  channels: 16
 --- !u!1001 &1769492504
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -780,4 +726,3 @@ SceneRoots:
   - {fileID: 1769492504}
   - {fileID: 8345560139431709660}
   - {fileID: 9157346204747477474}
-  - {fileID: 1722073392}

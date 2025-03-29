@@ -5,24 +5,27 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
 
     [Header("#BGM")]
-    public AudioClip bgmClip;
-    public float bgmVolume;
-    AudioSource bgmPlayer;
+    public AudioClip[] bgmClips;
+    [SerializeField] private float[] bgmVolumes; // 각 BGM별 볼륨 배열
+    private AudioSource bgmPlayer;
 
     [Header("#SFX")]
     public AudioClip[] sfxClips;
-    public float sfxVolume;
+    [SerializeField] private float[] sfxVolumes; // 각 SFX별 볼륨 배열
     public int channels;
-    AudioSource[] sfxPlayers;
-    int channelIndex;
+    private AudioSource[] sfxPlayers;
+    private int channelIndex;
 
-    public enum Sfx { PlayerThrow, Hit, ShoomDie, FireDragonDie, BossThrow}
+    public enum Bgm { Stage1, Stage2, Stage3, Stage4, Stage5 }
+    public enum Sfx { PlayerThrow, Hit, ShoomDie, FireDragonDie, BossThrow }
+    
 
     private void Awake()
     {
         instance = this;
         Init();
     }
+
     void Init()
     {
         // 배경음 플레이어 초기화
@@ -31,9 +34,16 @@ public class AudioManager : MonoBehaviour
         bgmPlayer = bgmObject.AddComponent<AudioSource>();
         bgmPlayer.playOnAwake = false;
         bgmPlayer.loop = true;
-        bgmPlayer.volume = bgmVolume;
-        bgmPlayer.clip = bgmClip;
 
+        // BGM 배열 크기 확인 및 초기화
+        if (bgmVolumes == null || bgmVolumes.Length != (int)Bgm.Stage5 + 1)
+        {
+            bgmVolumes = new float[(int)Bgm.Stage5 + 1];
+            for (int i = 0; i < bgmVolumes.Length; i++)
+            {
+                bgmVolumes[i] = 1f; // 기본값 1로 초기화
+            }
+        }
 
         // 효과음 플레이어 초기화
         GameObject sfxObject = new GameObject("SfxPlayer");
@@ -44,20 +54,60 @@ public class AudioManager : MonoBehaviour
         {
             sfxPlayers[index] = sfxObject.AddComponent<AudioSource>();
             sfxPlayers[index].playOnAwake = false;
-            sfxPlayers[index].volume = sfxVolume;
         }
 
-        if (bgmClip != null)
+        // SFX 배열 크기 확인 및 초기화
+        if (sfxVolumes == null || sfxVolumes.Length != (int)Sfx.BossThrow + 1)
         {
-            bgmPlayer.Play();
-            Debug.Log("bgm 재생");
+            sfxVolumes = new float[(int)Sfx.BossThrow + 1];
+            for (int i = 0; i < sfxVolumes.Length; i++)
+            {
+                sfxVolumes[i] = 1f; // 기본값 1로 초기화
+            }
         }
-            
 
+        
+    }
+
+    public void PlayBgm(Bgm bgm)
+    {
+        int bgmIndex = (int)bgm;
+
+        // bgmClips와 bgmVolumes 배열 범위 체크
+        if (bgmIndex >= bgmClips.Length || bgmClips[bgmIndex] == null)
+        {
+            Debug.LogError($"BGM 클립이 설정되지 않았습니다: {bgm}");
+            return;
+        }
+        if (bgmIndex >= bgmVolumes.Length)
+        {
+            Debug.LogError($"BGM 볼륨이 설정되지 않았습니다: {bgm}");
+            return;
+        }
+
+        bgmPlayer.Stop(); // 기존 BGM 정지
+        bgmPlayer.clip = bgmClips[bgmIndex];
+        bgmPlayer.volume = bgmVolumes[bgmIndex]; // 개별 볼륨 적용
+        bgmPlayer.Play();
+        Debug.Log($"BGM 재생: {bgm}");
     }
 
     public void PlaySfx(Sfx sfx)
     {
+        int sfxIndex = (int)sfx;
+
+        // sfxClips와 sfxVolumes 배열 범위 체크
+        if (sfxIndex >= sfxClips.Length || sfxClips[sfxIndex] == null)
+        {
+            Debug.LogError($"SFX 클립이 설정되지 않았습니다: {sfx}");
+            return;
+        }
+        if (sfxIndex >= sfxVolumes.Length)
+        {
+            Debug.LogError($"SFX 볼륨이 설정되지 않았습니다: {sfx}");
+            return;
+        }
+
         for (int index = 0; index < sfxPlayers.Length; index++)
         {
             int loopIndex = (index + channelIndex) % sfxPlayers.Length;
@@ -66,10 +116,10 @@ public class AudioManager : MonoBehaviour
                 continue;
 
             channelIndex = loopIndex;
-            sfxPlayers[loopIndex].clip = sfxClips[(int)sfx];
+            sfxPlayers[loopIndex].clip = sfxClips[sfxIndex];
+            sfxPlayers[loopIndex].volume = sfxVolumes[sfxIndex]; // 개별 볼륨 적용
             sfxPlayers[loopIndex].Play();
             break;
         }
-        
     }
 }

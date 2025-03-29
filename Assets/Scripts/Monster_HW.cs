@@ -16,6 +16,14 @@ public class Monster_HW : Monster
     protected Animator animator;
     */
 
+    public float velPower = 1.5f;
+
+    private bool isAttacking;
+    private float atkDelay;
+
+    private Rigidbody2D rb;
+
+
     protected override void Death()
     {
         animator.SetBool("isDeath", true);
@@ -23,6 +31,8 @@ public class Monster_HW : Monster
         StartCoroutine(ReturnToPoolAfterDelay(0.7f)); // 0.7초후 풀반환
 
         CreateExpOrb();
+
+        GameManager.Instance.KillScore++;
     }
     protected override void Move()
     {
@@ -52,6 +62,8 @@ public class Monster_HW : Monster
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        AtkDelay(); // 초기 delay 계산
     }
 
     void Update()
@@ -67,6 +79,11 @@ public class Monster_HW : Monster
         {
             collider.GetComponent<Player>().TakeDamage(atkPower);
         }  
+    }
+
+    private void AtkDelay()
+    {
+        atkDelay = 10f / atkSpeed;
     }
 
     //수정 해야 함,
@@ -86,15 +103,36 @@ public class Monster_HW : Monster
     void Attack()
     {
         float realDistance = Vector3.Distance(transform.position, player.transform.position);
-        if (realDistance <= attackDistance)
+        if (realDistance <= attackDistance && isAttacking == false)
         {
             isAttack = true;
+
+            // 플레이어 방향 계산
+            Vector3 direction = (player.transform.position - transform.position).normalized;
+
+            // 힘 적용 velPower
+            rb.linearVelocity = direction * velPower;
+
             animator.SetTrigger("Attack");
-            
+
+
+            StartCoroutine(AttackCooldown(atkDelay));
         }
         else
         {
             isAttack = false;
         }
     }
+    IEnumerator AttackCooldown(float delay)
+    {
+        isAttacking = true; // 공격 중 플래그 설정
+
+        yield return new WaitForSeconds(delay); // 공격 속도만큼 대기
+        isAttacking = false; // 공격 가능 상태로 전환
+
+
+
+    }
+
+
 }

@@ -12,7 +12,7 @@ public class GameManager : SingletonComponent<GameManager>
     [SerializeField] private int killScore = 0; //몬스터 킬 수
 
     [SerializeField] private GameObject portalPrefab; // 포털 프리팹
-    
+
     private GameObject currentPortal; // 현재 포털
     private bool isStageCleared = false;
 
@@ -31,7 +31,7 @@ public class GameManager : SingletonComponent<GameManager>
     protected override void AwakeInstance()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
-        CreatePortalForCurrentStage();
+
     }
 
     protected override bool InitInstance()
@@ -41,7 +41,7 @@ public class GameManager : SingletonComponent<GameManager>
 
     protected override void ReleaseInstance()
     {
-        
+
     }
     #endregion
 
@@ -55,6 +55,12 @@ public class GameManager : SingletonComponent<GameManager>
     {
         experience += amount;
         UIManager.Instance.SetExp();
+    }
+
+    public void UpdatekillScore(int score)
+    {
+        killScore += score;
+        UIManager.Instance.ToggleDeathMessage();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -91,8 +97,12 @@ public class GameManager : SingletonComponent<GameManager>
 
         //isLoading = false;
 
-        if(!isLoading)
+        if (!isLoading)
+        {
             StartCoroutine(LoadSceneRoutine());
+
+        }
+
     }
 
     private IEnumerator LoadSceneRoutine()
@@ -105,6 +115,7 @@ public class GameManager : SingletonComponent<GameManager>
             string nextScene = "Stage" + currentStage;
             Debug.Log($"다음 스테이지로 이동: {nextScene}");
             SceneManager.LoadScene(nextScene);
+            BgmController(currentStage);
         }
         else
         {
@@ -113,5 +124,29 @@ public class GameManager : SingletonComponent<GameManager>
 
         isLoading = false;
         yield return new WaitForSeconds(1f);
+    }
+    private void BgmController(int stage)
+    {
+        switch (stage)
+        {
+            case 1:
+                AudioManager.instance.PlayBgm(AudioManager.Bgm.Stage1);
+                break;
+            case 2:
+                AudioManager.instance.PlayBgm(AudioManager.Bgm.Stage2);
+                break;
+            case 3:
+                AudioManager.instance.PlayBgm(AudioManager.Bgm.Stage3);
+                break;
+            case 4:
+                AudioManager.instance.PlayBgm(AudioManager.Bgm.Stage4);
+                break;
+            case 5:
+                AudioManager.instance.PlayBgm(AudioManager.Bgm.Stage5);
+                break;
+            default:
+                Debug.LogWarning($"알 수 없는 스테이지: {stage}. BGM 재생 안 함");
+                break;
+        }
     }
 }
