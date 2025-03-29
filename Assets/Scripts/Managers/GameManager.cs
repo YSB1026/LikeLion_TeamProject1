@@ -1,5 +1,6 @@
 using Singleton.Component;
 using System;
+using System.Collections;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,7 +16,7 @@ public class GameManager : SingletonComponent<GameManager>
     private GameObject currentPortal; // 현재 포털
     private bool isStageCleared = false;
 
-    private int currentStage = 0; // 현재 스테이지
+    [SerializeField] private int currentStage = 0; // 현재 스테이지
     private int maxStage = 5; // 총 스테이지 수
 
     public Vector2 portalSpawnPosition; // 포털 생성 위치
@@ -73,7 +74,29 @@ public class GameManager : SingletonComponent<GameManager>
 
     public void LoadNextStage()
     {
-        if (isLoading) return;  // 이미 로드 중이면 실행하지 않음
+        //if (isLoading) return;  // 이미 로드 중이면 실행하지 않음
+        //isLoading = true;        // 플래그 설정
+
+        //if (currentStage < maxStage)
+        //{
+        //    currentStage++;
+        //    string nextScene = "Stage" + currentStage;
+        //    Debug.Log($"다음 스테이지로 이동: {nextScene}");
+        //    SceneManager.LoadScene(nextScene);
+        //}
+        //else
+        //{
+        //    Debug.Log("모든 스테이지 클리어!");
+        //}
+
+        //isLoading = false;
+
+        if(!isLoading)
+            StartCoroutine(LoadSceneRoutine());
+    }
+
+    private IEnumerator LoadSceneRoutine()
+    {
         isLoading = true;        // 플래그 설정
 
         if (currentStage < maxStage)
@@ -87,5 +110,8 @@ public class GameManager : SingletonComponent<GameManager>
         {
             Debug.Log("모든 스테이지 클리어!");
         }
+
+        isLoading = false;
+        yield return new WaitForSeconds(1f);
     }
 }

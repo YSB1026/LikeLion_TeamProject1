@@ -6,15 +6,13 @@ public class Portal : MonoBehaviour
 
     private void Update()
     {
-        if (isPlayerInPortal && Input.GetKeyDown(KeyCode.F))
-        {
-            GameManager.Instance.LoadNextStage(); // 씬 전환 요청
-        }
-
         if (GameManager.Instance == null)
         {
             Debug.LogError("PortalManager.Instance가 null입니다! 싱글턴이 설정되지 않았습니다.");
-            return;
+        }
+        else if (isPlayerInPortal && Input.GetKeyDown(KeyCode.F))
+        {
+            GameManager.Instance.LoadNextStage(); // 씬 전환 요청
         }
     }
 
