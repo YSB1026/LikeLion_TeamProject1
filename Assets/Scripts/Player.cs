@@ -166,6 +166,7 @@ public class Player : Character
         projectile.Initialize(this);
         projectile.transform.position = transform.position;
         projectile.direction = direction;
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.PlayerThrow);
     }
 
     IEnumerator TakeDamageRoutine()

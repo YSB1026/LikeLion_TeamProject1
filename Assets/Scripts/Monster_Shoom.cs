@@ -15,7 +15,7 @@ public class Monster_Shoom : Monster
     protected SpriteRenderer spriteRenderer;
     protected Animator animator;
     */
-    
+ 
 
     public float findDistance = 3f;
     public float velPower = 1.5f;
@@ -25,10 +25,18 @@ public class Monster_Shoom : Monster
 
     private Rigidbody2D rb;
 
+  
+
     protected override void Death()
     {
         animator.SetBool("isDeath", true);
+        
+        if(!isDeath)
+        {
+            AudioManager.instance.PlaySfx(AudioManager.Sfx.ShoomDie);
+        }
         isDeath = true;
+
         StartCoroutine(ReturnToPoolAfterDelay(0.7f)); // 0.7초후 풀반환
 
         CreateExpOrb();

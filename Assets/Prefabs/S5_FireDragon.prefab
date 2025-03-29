@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1859600818902559671}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.25, y: -1.25, z: 0}
+  m_LocalPosition: {x: -3.25, y: -1.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  health: 1000
+  health: 1
   atkPower: 2
   atkSpeed: 1
   expOrb: []
@@ -170,6 +170,7 @@ MonoBehaviour:
   fireInterval: 3
   balanceAngle: 10
   launcher: {fileID: 6064503447446462602}
+  dieTime: 3
 --- !u!58 &749617687047661223
 CircleCollider2D:
   m_ObjectHideFlags: 0

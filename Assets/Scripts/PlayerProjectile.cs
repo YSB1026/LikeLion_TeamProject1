@@ -35,7 +35,7 @@ public class PlayerProjectile : Projectile
         {
             Monster monster = collision.GetComponent<Monster>();
             monster.TakeDamage(damage);
-
+            AudioManager.instance.PlaySfx(AudioManager.Sfx.Hit);
             //넉백처리
             //보스는 넉백 안되게 만들어도 됨.
             //rigidbody 있으면 add force하면 될 것 같은데

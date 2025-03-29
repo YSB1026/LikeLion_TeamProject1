@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Boss_S5 : Monster
 {
+    
     public GameObject projectileObject; // 발사할 투사체 프리팹
     public GameObject projectileObject2; // 발사할 투사체 프리팹2
 
@@ -16,9 +17,13 @@ public class Boss_S5 : Monster
     public float balanceAngle = 10f; // 발사할 때마다 늘릴 각도 (10도)
 
     public Transform launcher; // 발사 위치 런처
+
+    public float dieTime = 3f;
     private bool prevIsMonsterRight; // 이전 상태 저장 (런처 좌우 조정)
     private bool isMonsterRight = true; // 기본 런쳐 위치
     private float launcherOffset = 3.2f; // 런쳐 보스에서 떨어진 정도
+
+
 
     void Start()
     {
@@ -31,9 +36,13 @@ public class Boss_S5 : Monster
 
     protected override void Death()
     {
+        if(!isDeath)
+        {
+            AudioManager.instance.PlaySfx(AudioManager.Sfx.FireDragonDie);
+        }  
         animator.SetBool("isDeath", true);
         isDeath = true;
-        StartCoroutine(ReturnToPoolAfterDelay(1f)); // 1초후 풀반환
+        StartCoroutine(ReturnToPoolAfterDelay(dieTime)); // ~초후 풀반환
 
 
     }
@@ -75,7 +84,7 @@ public class Boss_S5 : Monster
         if (isMonsterRight != prevIsMonsterRight)
         {
             float xOffset = isMonsterRight ? -launcherOffset : launcherOffset;
-            launcher.position = transform.position + new Vector3(xOffset, 0, 0);
+            launcher.position = transform.position + new Vector3(xOffset, -0.9f, 0);
             prevIsMonsterRight = isMonsterRight;
         }
     }
@@ -120,6 +129,7 @@ public class Boss_S5 : Monster
     {
         Debug.Log("애니메이션 중 특정 시점에서 실행됨!");
         FireProjectiles2(); // 예: 투사체 발사
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.BossThrow);
     }
 
     // 원형 투사체 발사 메서드1
