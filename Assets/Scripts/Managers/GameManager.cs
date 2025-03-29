@@ -20,6 +20,8 @@ public class GameManager : SingletonComponent<GameManager>
 
     public Vector2 portalSpawnPosition; // 포털 생성 위치
 
+    bool isLoading = false;
+
     public bool IsGamePaused { get => isGamePaused; }
     public int Experience { get => experience; }
     public int KillScore { get => killScore; set => killScore = value; }
@@ -71,6 +73,9 @@ public class GameManager : SingletonComponent<GameManager>
 
     public void LoadNextStage()
     {
+        if (isLoading) return;  // 이미 로드 중이면 실행하지 않음
+        isLoading = true;        // 플래그 설정
+
         if (currentStage < maxStage)
         {
             currentStage++;
