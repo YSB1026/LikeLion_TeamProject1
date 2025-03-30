@@ -27,6 +27,10 @@ public class Monster_HW : Monster
     protected override void Death()
     {
         animator.SetBool("isDeath", true);
+        if (!isDeath)
+        {
+            AudioManager.Instance.PlaySfx(AudioManager.Sfx.ShoomDie);
+        }
         isDeath = true;
         StartCoroutine(ReturnToPoolAfterDelay(0.7f)); // 0.7초후 풀반환
 
@@ -115,8 +119,7 @@ public class Monster_HW : Monster
 
             animator.SetTrigger("Attack");
 
-
-            StartCoroutine(AttackCooldown(atkDelay));
+            StartCoroutine(AttackCooldown(atkDelay));  
         }
         else
         {
@@ -128,10 +131,9 @@ public class Monster_HW : Monster
         isAttacking = true; // 공격 중 플래그 설정
 
         yield return new WaitForSeconds(delay); // 공격 속도만큼 대기
+        
+        rb.linearVelocity = Vector2.zero; // 공격 후 속도 초기화
         isAttacking = false; // 공격 가능 상태로 전환
-
-
-
     }
 
 

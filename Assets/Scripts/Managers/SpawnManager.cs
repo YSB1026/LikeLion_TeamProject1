@@ -5,12 +5,16 @@ using UnityEngine;
 public class SpawnManager : SingletonComponent<SpawnManager>
 {
     public GameObject monster;
+    public GameObject monster2;
+    
 
     #region Singleton
     protected override void AwakeInstance()
     {
         PoolManager.Instance.CreatePool(monster, 10);
+        PoolManager.Instance.CreatePool(monster2, 10);
         StartCoroutine(MonsterSpawn(monster, 10));
+        StartCoroutine(MonsterSpawn(monster2, 10));
     }
 
     protected override bool InitInstance()

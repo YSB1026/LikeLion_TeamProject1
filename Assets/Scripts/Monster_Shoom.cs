@@ -15,7 +15,7 @@ public class Monster_Shoom : Monster
     protected SpriteRenderer spriteRenderer;
     protected Animator animator;
     */
- 
+
 
     public float findDistance = 3f;
     public float velPower = 1.5f;
@@ -25,15 +25,15 @@ public class Monster_Shoom : Monster
 
     private Rigidbody2D rb;
 
-  
+
 
     protected override void Death()
     {
         animator.SetBool("isDeath", true);
-        
-        if(!isDeath)
+
+        if (!isDeath)
         {
-            AudioManager.instance.PlaySfx(AudioManager.Sfx.ShoomDie);
+            AudioManager.Instance.PlaySfx(AudioManager.Sfx.ShoomDie);
         }
         isDeath = true;
 
@@ -44,7 +44,7 @@ public class Monster_Shoom : Monster
         GameManager.Instance.KillScore++;
     }
 
-    
+
     protected override void Move()
     {
         if (isDeath == false) // 몬스터가 살아있을 때만
@@ -55,7 +55,7 @@ public class Monster_Shoom : Monster
                 Vector3 direction = (player.transform.position - gameObject.transform.position).normalized;
                 transform.Translate(direction * moveSpeed * Time.deltaTime);
 
-                
+
             }
         }
     }
@@ -96,29 +96,29 @@ public class Monster_Shoom : Monster
     }
     private void Find()
     {
-            float realDistance = Vector3.Distance(transform.position, player.transform.position);
-            if (realDistance <= findDistance)
-            {
-            animator.SetBool("isFound",true);
-            }
-            else
-            {
+        float realDistance = Vector3.Distance(transform.position, player.transform.position);
+        if (realDistance <= findDistance)
+        {
+            animator.SetBool("isFound", true);
+        }
+        else
+        {
             animator.SetBool("isFound", false);
         }
-        
+
     }
 
     // 충돌처리, 추후 플레이어 공격
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if(!isDeath)
+        if (!isDeath)
         {
             if (collider.gameObject.CompareTag("Player"))
             {
                 collider.GetComponent<Player>().TakeDamage(atkPower);
             }
         }
-        
+
     }
 
     //수정 해야 함,
@@ -149,7 +149,7 @@ public class Monster_Shoom : Monster
             rb.linearVelocity = direction * velPower;
 
             animator.SetTrigger("Attack");
-           
+
 
             StartCoroutine(AttackCooldown(atkDelay));
         }
@@ -161,11 +161,10 @@ public class Monster_Shoom : Monster
     IEnumerator AttackCooldown(float delay)
     {
         isAttacking = true; // 공격 중 플래그 설정
-        
+
         yield return new WaitForSeconds(delay); // 공격 속도만큼 대기
+
+        rb.linearVelocity = Vector2.zero; // 공격 후 속도 초기화
         isAttacking = false; // 공격 가능 상태로 전환
-  
-
-
     }
 }

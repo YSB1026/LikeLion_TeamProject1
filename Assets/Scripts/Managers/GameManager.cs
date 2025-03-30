@@ -17,7 +17,7 @@ public class GameManager : SingletonComponent<GameManager>
     private bool isStageCleared = false;
 
     [SerializeField] private int currentStage = 0; // 현재 스테이지
-    private int maxStage = 5; // 총 스테이지 수
+    private int maxStage = 6; // 총 스테이지 수
 
     public Vector2 portalSpawnPosition; // 포털 생성 위치
 
@@ -115,7 +115,7 @@ public class GameManager : SingletonComponent<GameManager>
             string nextScene = "Stage" + currentStage;
             Debug.Log($"다음 스테이지로 이동: {nextScene}");
             SceneManager.LoadScene(nextScene);
-            BgmController(currentStage);
+            
         }
         else
         {
@@ -123,30 +123,7 @@ public class GameManager : SingletonComponent<GameManager>
         }
 
         isLoading = false;
+        AudioManager.Instance.BgmController(currentStage);
         yield return new WaitForSeconds(1f);
-    }
-    private void BgmController(int stage)
-    {
-        switch (stage)
-        {
-            case 1:
-                AudioManager.instance.PlayBgm(AudioManager.Bgm.Stage1);
-                break;
-            case 2:
-                AudioManager.instance.PlayBgm(AudioManager.Bgm.Stage2);
-                break;
-            case 3:
-                AudioManager.instance.PlayBgm(AudioManager.Bgm.Stage3);
-                break;
-            case 4:
-                AudioManager.instance.PlayBgm(AudioManager.Bgm.Stage4);
-                break;
-            case 5:
-                AudioManager.instance.PlayBgm(AudioManager.Bgm.Stage5);
-                break;
-            default:
-                Debug.LogWarning($"알 수 없는 스테이지: {stage}. BGM 재생 안 함");
-                break;
-        }
-    }
+    } 
 }

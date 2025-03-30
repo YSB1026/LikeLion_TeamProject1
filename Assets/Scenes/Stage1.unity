@@ -200,6 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 1907205817970789824, guid: d8a7e6fc4cbcb694da7c4a1aa5e2a0e6, type: 3}
+  monster2: {fileID: 898947562621738638, guid: 22862c0acedbc7544801d6073bdd7be7, type: 3}
 --- !u!4 &490151824
 Transform:
   m_ObjectHideFlags: 0

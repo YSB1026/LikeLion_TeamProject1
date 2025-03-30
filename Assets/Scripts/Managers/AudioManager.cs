@@ -1,8 +1,30 @@
+using Singleton.Component;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : SingletonComponent<AudioManager>
 {
-    public static AudioManager instance;
+    #region Singleton
+    protected override void AwakeInstance()
+    {
+        Init();
+
+    }
+
+    protected override bool InitInstance()
+    {
+        return true;
+    }
+
+    protected override void ReleaseInstance()
+    {
+
+    }
+    #endregion
+
+    //public static AudioManager instance;
+
 
     [Header("#BGM")]
     public AudioClip[] bgmClips;
@@ -20,11 +42,11 @@ public class AudioManager : MonoBehaviour
     public enum Sfx { PlayerThrow, Hit, ShoomDie, FireDragonDie, BossThrow }
     
 
-    private void Awake()
-    {
-        instance = this;
-        Init();
-    }
+    //private void Awake()
+    //{
+    //    instance = this;
+    //    Init();
+    //}
 
     void Init()
     {
@@ -68,6 +90,32 @@ public class AudioManager : MonoBehaviour
 
         
     }
+    public void BgmController(int stage)
+    {
+       
+        switch (stage)
+        {
+            case 1:
+                PlayBgm(Bgm.Stage1);
+                break;
+            case 2:
+                PlayBgm(Bgm.Stage2);
+                break;
+            case 3:
+                PlayBgm(Bgm.Stage3);
+                break;
+            case 4:
+                PlayBgm(Bgm.Stage4);
+                break;
+            case 5:
+                PlayBgm(Bgm.Stage5);
+                break;
+            default:
+                Debug.LogWarning($"알 수 없는 스테이지: {stage}. BGM 재생 안 함");
+                break;
+        }
+    }
+
 
     public void PlayBgm(Bgm bgm)
     {

@@ -38,7 +38,7 @@ public class Boss_S5 : Monster
     {
         if(!isDeath)
         {
-            AudioManager.instance.PlaySfx(AudioManager.Sfx.FireDragonDie);
+            AudioManager.Instance.PlaySfx(AudioManager.Sfx.FireDragonDie);
         }  
         animator.SetBool("isDeath", true);
         isDeath = true;
@@ -129,7 +129,7 @@ public class Boss_S5 : Monster
     {
         Debug.Log("애니메이션 중 특정 시점에서 실행됨!");
         FireProjectiles2(); // 예: 투사체 발사
-        AudioManager.instance.PlaySfx(AudioManager.Sfx.BossThrow);
+        AudioManager.Instance.PlaySfx(AudioManager.Sfx.BossThrow);
     }
 
     // 원형 투사체 발사 메서드1
