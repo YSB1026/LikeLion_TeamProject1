@@ -200,9 +200,9 @@ MonoBehaviour:
   atkPower: 3
   atkSpeed: 3
   expOrb:
-  - {fileID: 1216512752401419504, guid: 546cd67a3a20cc54a9cada46f7006302, type: 3}
-  - {fileID: 4679517580908565434, guid: ef700022fd74836489b93858758f276e, type: 3}
-  - {fileID: 7464157365042307254, guid: 737976d37eb60e0409d9db458a9a1a34, type: 3}
+  - {fileID: 6123331735916846602, guid: ba2daea0edab7c247a01ac08bb6436a9, type: 3}
+  - {fileID: 8887994094148021013, guid: fe84bb38484af184499727e7d1dce040, type: 3}
+  - {fileID: 5116720402251253058, guid: f7c9529d769683b4d97a438f3d0891c8, type: 3}
   attackDistance: 4
   isDeath: 0
   velPower: 3

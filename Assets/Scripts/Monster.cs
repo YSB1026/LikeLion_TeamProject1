@@ -62,7 +62,7 @@ public class Monster : Character
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!isAttack && collision.CompareTag("Player"))
+        if (!isDeath && !isAttack && collision.CompareTag("Player"))
         {
             StartCoroutine(AttackRoutine(collision.GetComponent<Player>()));
         }
@@ -79,14 +79,42 @@ public class Monster : Character
     //수정 해야 함,
     //배열 대신 expOrb로만 구현 하거나, 배열로 구현하고 싶으면,
     //확률적으로 expOrb 0~2를 생성하고싶으면 Random함수로 구현
+    //protected void CreateExpOrb()
+    //{
+    //    if (expOrb.Length == 0) return; // expOrb 배열이 비어 있으면 실행하지 않음
+
+    //    int randomIndex = Random.Range(0, expOrb.Length); // 0 ~ 배열 길이-1 사이에서 랜덤 선택
+
+    //    GameObject expOrbInstance = Instantiate(expOrb[randomIndex], gameObject.transform.position, Quaternion.identity);
+
+    //    Destroy(expOrbInstance, 10f); // 10초 후 제거
+    //}
+
+    // 확률 설정한 랜덤 경험치
     protected void CreateExpOrb()
     {
         if (expOrb.Length == 0) return; // expOrb 배열이 비어 있으면 실행하지 않음
 
-        int randomIndex = Random.Range(0, expOrb.Length); // 0 ~ 배열 길이-1 사이에서 랜덤 선택
+        // 0.0 ~ 1.0 사이의 랜덤 값 생성
+        float randomValue = Random.value;
 
-        GameObject expOrbInstance = Instantiate(expOrb[randomIndex], gameObject.transform.position, Quaternion.identity);
+        // 확률에 따라 인덱스 선택
+        int selectedIndex;
+        if (randomValue < 0.6f)
+        {
+            selectedIndex = 0; // 60% 확률
+        }
+        else if (randomValue < 0.9f) // 0.6 + 0.3
+        {
+            selectedIndex = 1; // 30% 확률
+        }
+        else
+        {
+            selectedIndex = 2; // 10% 확률
+        }
 
+        // 선택된 인덱스로 오브젝트 생성
+        GameObject expOrbInstance = Instantiate(expOrb[selectedIndex], gameObject.transform.position, Quaternion.identity);
         Destroy(expOrbInstance, 10f); // 10초 후 제거
     }
 }

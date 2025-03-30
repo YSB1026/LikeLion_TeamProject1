@@ -108,6 +108,18 @@ PrefabInstance:
       propertyPath: attackDistance
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1323938847313312167, guid: ab20f547ce1761a488b77f99dc2e4ad3, type: 3}
+      propertyPath: 'expOrb.Array.data[0]'
+      value: 
+      objectReference: {fileID: 6123331735916846602, guid: ba2daea0edab7c247a01ac08bb6436a9, type: 3}
+    - target: {fileID: 1323938847313312167, guid: ab20f547ce1761a488b77f99dc2e4ad3, type: 3}
+      propertyPath: 'expOrb.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8887994094148021013, guid: fe84bb38484af184499727e7d1dce040, type: 3}
+    - target: {fileID: 1323938847313312167, guid: ab20f547ce1761a488b77f99dc2e4ad3, type: 3}
+      propertyPath: 'expOrb.Array.data[2]'
+      value: 
+      objectReference: {fileID: 5116720402251253058, guid: f7c9529d769683b4d97a438f3d0891c8, type: 3}
     - target: {fileID: 1687515535742768205, guid: ab20f547ce1761a488b77f99dc2e4ad3, type: 3}
       propertyPath: m_Color.b
       value: 1

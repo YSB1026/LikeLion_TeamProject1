@@ -1138,7 +1138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGamePaused: 0
-  experience: 1000
+  experience: 0
   killScore: 0
   portalPrefab: {fileID: 4710660716068642652, guid: fd3021844c82a354e8500ba2e41a7d63, type: 3}
   currentStage: 0
