@@ -22,6 +22,7 @@ public class SkillTree : MonoBehaviour
     {
         SkillManager.Instance.Skills[index] = new Skill(skillName, 3);
         upgradeBtn.onClick.AddListener(Upgrade);
+        SetDescription();
         SetOriginSkilColor();
     }
 
@@ -34,12 +35,18 @@ public class SkillTree : MonoBehaviour
         }
     }
 
+    private void SetDescription()
+    {
+        for (int i = 0; i < perks.Length; i++)
+        {
+            perks[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = perkDescs[i];
+        }
+    }
     public void SetOriginSkilColor()
     {
         for (int i = 0; i < perks.Length; i++)
         {
             perks[i].GetComponent<Image>().color = new Color32(40, 40, 40, 255);
-            perks[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = perkDescs[0];
             perks[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
         }
     }

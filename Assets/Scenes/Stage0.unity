@@ -1138,7 +1138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGamePaused: 0
-  experience: 0
+  experience: 1000
   killScore: 0
   portalPrefab: {fileID: 4710660716068642652, guid: fd3021844c82a354e8500ba2e41a7d63, type: 3}
   currentStage: 0
@@ -6368,6 +6368,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2725228709253632999, guid: 6b935a3edc979534c9f21b36d717ebae, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2790381292705794687, guid: 6b935a3edc979534c9f21b36d717ebae, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6511,6 +6515,10 @@ PrefabInstance:
     - target: {fileID: 4342689538042524256, guid: 6b935a3edc979534c9f21b36d717ebae, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533222400928208036, guid: 6b935a3edc979534c9f21b36d717ebae, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4565170579054694026, guid: 6b935a3edc979534c9f21b36d717ebae, type: 3}
       propertyPath: m_AnchorMax.y

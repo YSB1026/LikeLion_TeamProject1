@@ -58,7 +58,8 @@ public class Stage2_MonsterBarrel : Monster
                 obj.GetComponent<Player>().TakeDamage(atkPower);
             }
         }
-        PoolManager.Instance.Return(gameObject);
+
+        Death();
     }
 
     private void OnDrawGizmosSelected()
