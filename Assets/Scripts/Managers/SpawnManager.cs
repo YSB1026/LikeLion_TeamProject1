@@ -36,7 +36,7 @@ public class SpawnManager : SingletonComponent<SpawnManager>
             { 2, new MonsterType[] { MonsterType.GoblinTNT, MonsterType.GoblinBarrel } },
             { 3, new MonsterType[] { MonsterType.Ghoul, MonsterType.Skeleton } },
             { 4, new MonsterType[] { MonsterType.Spider, MonsterType.Golem } },
-            { 5, new MonsterType[] { MonsterType.Dragon, MonsterType.Bat, MonsterType.S5_Slime } }
+            { 5, new MonsterType[] { MonsterType.Bat, MonsterType.S5_Slime } }
         };
     }
 
@@ -103,8 +103,8 @@ public class SpawnManager : SingletonComponent<SpawnManager>
     private Vector2 GetRandomPosition()
     {
         Vector2 randomPosition = Vector2.zero;
-        float min = -0.1f;
-        float max = 1.1f;
+        float min = 0.05f;
+        float max = 0.95f;
 
         int flag = Random.Range(0, 4);
         switch (flag)
