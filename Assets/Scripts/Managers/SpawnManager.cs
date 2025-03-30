@@ -59,7 +59,6 @@ public class SpawnManager : SingletonComponent<SpawnManager>
             return;
         }
 
-        GameManager.Instance.TotalMonsterCount += spawnCount;
         MonsterType[] monsters = stageMonsters[currentStage];
 
         foreach (MonsterType monsterType in monsters)
@@ -69,6 +68,8 @@ public class SpawnManager : SingletonComponent<SpawnManager>
             {
                 StartCoroutine(MonsterSpawn(monsterPrefab, spawnCount, delay, amount));
             }
+
+            GameManager.Instance.TotalMonsterCount += spawnCount;
         }
     }
 
@@ -92,6 +93,7 @@ public class SpawnManager : SingletonComponent<SpawnManager>
             {
                 GameObject mob = PoolManager.Instance.Get(prefab);
                 mob.transform.position = GetRandomPosition();
+                mob.GetComponent<Monster>().Initiate();
             }
             count--;
         }

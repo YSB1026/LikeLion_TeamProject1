@@ -8,11 +8,11 @@ public class IceGolem_Monster : Monster
     private bool isAttacking = false; // 공격 중인지 확인
 
     // delay 시간 이후 오브젝트 풀에 리턴하는 코루틴
-    private IEnumerator ReturnToPoolAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        PoolManager.Instance.Return(gameObject);
-    }
+    //private IEnumerator ReturnToPoolAfterDelay(float delay)
+    //{
+    //    yield return new WaitForSeconds(delay);
+    //    PoolManager.Instance.Return(gameObject);
+    //}
 
     void Start()
     {
@@ -62,7 +62,7 @@ public class IceGolem_Monster : Monster
         base.Death();
         animator.SetBool("isDeath", true);
         isDeath = true;
-        StartCoroutine(ReturnToPoolAfterDelay(0.7f)); // 0.7초후 풀반환
+        //StartCoroutine(ReturnToPoolAfterDelay(0.7f)); // 0.7초후 풀반환
 
         CreateExpOrb();
     }
@@ -70,24 +70,23 @@ public class IceGolem_Monster : Monster
     //수정 해야 함,
     //GameObject[] expOrb; 대신 expOrb만 생성하거나,
     //확률적으로 expOrb 0~2를 생성하고싶으면 Random함수로 구현
-    void CreateExpOrb()
-    {
-        GameObject expOrbInstance;
-        if (gameObject.CompareTag("Monster1"))
-        {
-            expOrbInstance = Instantiate(expOrb[0], gameObject.transform.position, Quaternion.identity);
-            Destroy(expOrbInstance, 5f);
-        }
-        else if (gameObject.CompareTag("Monster2"))
-        {
-            expOrbInstance = Instantiate(expOrb[1], gameObject.transform.position, Quaternion.identity);
-            Destroy(expOrbInstance, 5f);
-        }
-        else
-        {
-            expOrbInstance = Instantiate(expOrb[2], gameObject.transform.position, Quaternion.identity);
-            Destroy(expOrbInstance, 5f);
-        }
-
-    }
+    //void CreateExpOrb()
+    //{
+    //    GameObject expOrbInstance;
+    //    if (gameObject.CompareTag("Monster1"))
+    //    {
+    //        expOrbInstance = Instantiate(expOrb[0], gameObject.transform.position, Quaternion.identity);
+    //        Destroy(expOrbInstance, 5f);
+    //    }
+    //    else if (gameObject.CompareTag("Monster2"))
+    //    {
+    //        expOrbInstance = Instantiate(expOrb[1], gameObject.transform.position, Quaternion.identity);
+    //        Destroy(expOrbInstance, 5f);
+    //    }
+    //    else
+    //    {
+    //        expOrbInstance = Instantiate(expOrb[2], gameObject.transform.position, Quaternion.identity);
+    //        Destroy(expOrbInstance, 5f);
+    //    }
+    //}
 }

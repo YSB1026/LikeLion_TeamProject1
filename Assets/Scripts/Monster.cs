@@ -16,14 +16,22 @@ public class Monster : Character
     public float attackDistance = 5f;
 
     protected GameObject player;
-    protected bool isDeath = false;
+    public bool isDeath = false;
     protected bool isAttack = false;
     protected SpriteRenderer spriteRenderer;
     protected Animator animator;
 
+    private int maxHealth;
+    public void Initiate()
+    {
+        isDeath = false;
+        health = maxHealth;
+    }
+
     private void OnEnable()
     {
         player = GameObject.FindWithTag("Player");
+        maxHealth = health;
     }
     void Update()
     {
@@ -36,9 +44,17 @@ public class Monster : Character
         Vector3 direction = (player.transform.position - gameObject.transform.position).normalized;
         transform.Translate(direction * moveSpeed * Time.deltaTime);
     }
-
+    public override void TakeDamage(int damage)
+    {
+        health -= damage;
+        if (health <= 0 && !isDeath)
+        {
+            Death();
+        }
+    }
     protected override void Death()
     {
+        isDeath = true;
         GameManager.Instance.KillScore++;
         PoolManager.Instance.Return(gameObject);
         CreateExpOrb();

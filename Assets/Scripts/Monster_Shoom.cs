@@ -16,7 +16,6 @@ public class Monster_Shoom : Monster
     protected Animator animator;
     */
 
-
     public float findDistance = 3f;
     public float velPower = 1.5f;
 
@@ -24,9 +23,6 @@ public class Monster_Shoom : Monster
     private float atkDelay;
 
     private Rigidbody2D rb;
-
-
-
     protected override void Death()
     {
         animator.SetBool("isDeath", true);
@@ -36,7 +32,6 @@ public class Monster_Shoom : Monster
             AudioManager.Instance.PlaySfx(AudioManager.Sfx.ShoomDie);
         }
         isDeath = true;
-
         StartCoroutine(ReturnToPoolAfterDelay(0.7f)); // 0.7초후 풀반환
         CreateExpOrb();
         GameManager.Instance.KillScore++;
@@ -52,15 +47,13 @@ public class Monster_Shoom : Monster
                 // 플레이어의 위치로 이동
                 Vector3 direction = (player.transform.position - gameObject.transform.position).normalized;
                 transform.Translate(direction * moveSpeed * Time.deltaTime);
-
-
             }
         }
     }
 
     // delay 시간 이후 오브젝트 풀에 리턴하는 코루틴
     private IEnumerator ReturnToPoolAfterDelay(float delay)
-    {
+    { 
         yield return new WaitForSeconds(delay);
         PoolManager.Instance.Return(gameObject);
     }

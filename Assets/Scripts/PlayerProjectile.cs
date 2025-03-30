@@ -34,6 +34,8 @@ public class PlayerProjectile : Projectile
         if (collision.CompareTag("Monster"))
         {
             Monster monster = collision.GetComponent<Monster>();
+            if (monster.isDeath) return;
+
             monster.TakeDamage(damage);
             AudioManager.Instance.PlaySfx(AudioManager.Sfx.Hit);
             //넉백처리

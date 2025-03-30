@@ -76,6 +76,7 @@ public class GameManager : SingletonComponent<GameManager>
     public IEnumerator CreatePortalForCurrentStage()
     {
         Debug.Log($"tot : {TotalMonsterCount}");
+        isStageCleared = TotalMonsterCount == KillScore;
         while (!isStageCleared)
         {
             isStageCleared = TotalMonsterCount == KillScore;

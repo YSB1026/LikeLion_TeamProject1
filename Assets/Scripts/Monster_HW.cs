@@ -23,24 +23,16 @@ public class Monster_HW : Monster
     private float atkDelay;
 
     private Rigidbody2D rb;
-
- 
-
-
-
     protected override void Death()
     {
-        animator.SetBool("isDeath", true);
-        if (!isDeath)
-        {
-            AudioManager.Instance.PlaySfx(AudioManager.Sfx.ShoomDie);
-        }
         isDeath = true;
+        animator.SetBool("isDeath", isDeath);
+
+        AudioManager.Instance.PlaySfx(AudioManager.Sfx.ShoomDie);
         StartCoroutine(ReturnToPoolAfterDelay(0.7f)); // 0.7초후 풀반환
 
-        CreateExpOrb();
-
         GameManager.Instance.KillScore++;
+        CreateExpOrb();
     }
     protected override void Move()
     {
