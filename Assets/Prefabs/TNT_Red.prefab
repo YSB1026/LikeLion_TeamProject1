@@ -26,11 +26,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: f991700a842c16b4c8b7e4ca4077ce65, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 4.355023
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: f991700a842c16b4c8b7e4ca4077ce65, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 8.799101
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: f991700a842c16b4c8b7e4ca4077ce65, type: 3}
       propertyPath: m_LocalPosition.z
@@ -114,7 +114,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.1513927, y: -0.03446746}
+  m_Offset: {x: -0.1513927, y: 0.78069544}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -124,7 +124,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.4848323, y: 2.0095015}
+  m_Size: {x: 1.4848323, y: 1.891654}
   m_EdgeRadius: 0
 --- !u!114 &1477680231849467460
 MonoBehaviour:
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  health: 4
+  health: 5
   atkPower: 1
   atkSpeed: 2
   expOrb:
