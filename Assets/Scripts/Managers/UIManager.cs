@@ -23,6 +23,9 @@ public class UIManager : SingletonComponent<UIManager>
     [SerializeField] private GameObject deathMessagePanel;
     [SerializeField] private TextMeshProUGUI killScoreText;
 
+    [Header("Skill Tree")]
+    [SerializeField] private SkillTree[] skillTree;
+
     public bool IsMenuOpen { get => isMenuOpen; }
     public bool IsSkillTreeOpen { get => isSkillTreeOpen; }
     public bool IsEscapeMenuOpen { get => isEscapeMenuOpen; }
@@ -108,5 +111,13 @@ public class UIManager : SingletonComponent<UIManager>
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void ResetAllSkillsColor()
+    {
+        for (int i = 0; i < skillTree.Length; i++)
+        {
+            skillTree[i].SetOriginSkilColor();
+        }
     }
 }

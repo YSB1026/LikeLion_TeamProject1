@@ -147,6 +147,7 @@ public class GameManager : SingletonComponent<GameManager>
         if (!Player.Instance.isAlive)
         {
             UIManager.Instance.ToggleDeathMessage();
+            UIManager.Instance.ResetAllSkillsColor();
         }
         SpawnManager.Instance.StopRoutine();
         SkillManager.Instance.ResetAllSkills();
@@ -167,6 +168,5 @@ public class GameManager : SingletonComponent<GameManager>
         Player.Instance.knockbackPower = playerInitStatus.knockbackPower;
         Player.Instance.projectilePenetration = playerInitStatus.projectilePenetration;
         Player.Instance.SetMaxHealth(playerInitStatus.health);
-
     }
 }

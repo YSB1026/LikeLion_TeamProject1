@@ -22,12 +22,7 @@ public class SkillTree : MonoBehaviour
     {
         SkillManager.Instance.Skills[index] = new Skill(skillName, 3);
         upgradeBtn.onClick.AddListener(Upgrade);
-        perks[0].GetComponent<Image>().color = new Color32(40, 40, 40, 255);
-        perks[0].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = perkDescs[0];
-        perks[1].GetComponent<Image>().color = new Color32(40, 40, 40, 255);
-        perks[1].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = perkDescs[1];
-        perks[2].GetComponent<Image>().color = new Color32(40, 40, 40, 255);
-        perks[2].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = perkDescs[2];
+        SetOriginSkilColor();
     }
 
     public void Upgrade()
@@ -36,6 +31,16 @@ public class SkillTree : MonoBehaviour
         {
             perks[SkillManager.Instance.Skills[index].Level - 1].GetComponent<Image>().color = new Color32(255, 255, 255, 255);
             perks[SkillManager.Instance.Skills[index].Level - 1].transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color32(0, 0, 0, 255);
+        }
+    }
+
+    public void SetOriginSkilColor()
+    {
+        for (int i = 0; i < perks.Length; i++)
+        {
+            perks[i].GetComponent<Image>().color = new Color32(40, 40, 40, 255);
+            perks[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = perkDescs[0];
+            perks[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
         }
     }
 }
