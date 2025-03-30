@@ -1,11 +1,13 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class IceGolem_Monster : Monster
 {
     public float attackCooldown = 2f;
     private float attackTimer;
     private bool isAttacking = false; // 공격 중인지 확인
+    public NavMeshAgent navMeshAgent = null;
 
     // delay 시간 이후 오브젝트 풀에 리턴하는 코루틴
     //private IEnumerator ReturnToPoolAfterDelay(float delay)
@@ -19,12 +21,27 @@ public class IceGolem_Monster : Monster
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         attackTimer = 0f;
+        SetUp();
+    }
+    private void SetUp()
+    {
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.updateRotation = false;
+        navMeshAgent.updateUpAxis = false;
+
+        if(navMeshAgent == null)
+        {
+            Debug.LogError("네비없음");
+        }
+        if (player == null) {
+            Debug.LogError("플레이어 없음");
+        }
     }
 
     void Update()
     {
         //base.Move();
-
+        navMeshAgent.SetDestination(player.transform.position); 
         if (attackTimer > 0)
         {
             attackTimer -= Time.deltaTime; // 공격 쿨타임 감소
@@ -59,34 +76,8 @@ public class IceGolem_Monster : Monster
 
     protected override void Death()
     {
-        base.Death();
         animator.SetBool("isDeath", true);
-        isDeath = true;
-        //StartCoroutine(ReturnToPoolAfterDelay(0.7f)); // 0.7초후 풀반환
 
-        CreateExpOrb();
+        base.Death();
     }
-
-    //수정 해야 함,
-    //GameObject[] expOrb; 대신 expOrb만 생성하거나,
-    //확률적으로 expOrb 0~2를 생성하고싶으면 Random함수로 구현
-    //void CreateExpOrb()
-    //{
-    //    GameObject expOrbInstance;
-    //    if (gameObject.CompareTag("Monster1"))
-    //    {
-    //        expOrbInstance = Instantiate(expOrb[0], gameObject.transform.position, Quaternion.identity);
-    //        Destroy(expOrbInstance, 5f);
-    //    }
-    //    else if (gameObject.CompareTag("Monster2"))
-    //    {
-    //        expOrbInstance = Instantiate(expOrb[1], gameObject.transform.position, Quaternion.identity);
-    //        Destroy(expOrbInstance, 5f);
-    //    }
-    //    else
-    //    {
-    //        expOrbInstance = Instantiate(expOrb[2], gameObject.transform.position, Quaternion.identity);
-    //        Destroy(expOrbInstance, 5f);
-    //    }
-    //}
 }

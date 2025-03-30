@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Spider_Shoot : Monster
 {
@@ -10,7 +11,26 @@ public class Spider_Shoot : Monster
     [Header("참조 컴포넌트")]
     public Transform firePoint;          //미사일이 발사될 위치
     private float shootTimer;           //발사 타이머
-    
+
+    private NavMeshAgent navMeshAgent;
+
+    private void SetUp()
+    {
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.updateRotation = false;
+        navMeshAgent.updateUpAxis = false;
+
+        if (navMeshAgent == null)
+        {
+            Debug.LogError("네비없음");
+        }
+        if (player == null)
+        {
+            Debug.LogError("플레이어 없음");
+        }
+    }
+
+
     void Start()
     {
         //필요한 컴포넌트 초기화
@@ -24,16 +44,12 @@ public class Spider_Shoot : Monster
                 Debug.LogError("SpriteRenderer가 존재하지 않습니다!", this);
             }
         }
-        //player = GameObject.FindWithTag("Player");
-        //if (player == null)
-        //{
-        //    Debug.LogError("Player 오브젝트를 찾을 수 없습니다!", this);
-        //}
+        SetUp();
     }
     void Update()
     {
         if (player == null) return;     //플레이어가 없으면 실행하지 않음
-        //base.Move();
+        navMeshAgent.SetDestination(player.transform.position);
 
         if (spriteRenderer != null)
         {
@@ -56,7 +72,6 @@ public class Spider_Shoot : Monster
                 Shoot();            //미사일 발사
                 shootTimer = shootingInterval; //타이머 리셋
             }
-
         }
     }
     //미사일 발사 함수

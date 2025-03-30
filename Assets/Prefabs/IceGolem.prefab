@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 9052391330827565045}
   m_Layer: 7
   m_Name: IceGolem
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,7 +153,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.75, y: 2.6666667}
+    oldSize: {x: 1.2916666, y: 1.5833334}
     newSize: {x: 3.75, y: 2.6666667}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -208,6 +208,7 @@ MonoBehaviour:
   attackDistance: 5
   isDeath: 0
   attackCooldown: 2
+  navMeshAgent: {fileID: 0}
 --- !u!195 &9064571128115401593
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -242,3 +243,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ac1499719d6204398b278e020e57f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  navMeshAgent: {fileID: 0}

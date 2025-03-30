@@ -1254,7 +1254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5255341840601947699, guid: 773bf76a76c24ec4e85e77b3f4dd43f3, type: 3}
       propertyPath: health
-      value: 1000
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5255341840601947699, guid: 773bf76a76c24ec4e85e77b3f4dd43f3, type: 3}
       propertyPath: atkPower

@@ -4,23 +4,23 @@ using UnityEngine.AI;
 public class EnemyFSM : MonoBehaviour
 {
     private Transform target;
-    private NavMeshAgent navMeshAgent;
+    public NavMeshAgent navMeshAgent;
 
-    public void SetUp()
+    public void SetUp(Transform player)
     {
         //this.target = target;
-        target = GameObject.FindWithTag("Player").transform;
+        target = player;
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.updateRotation = false;
         navMeshAgent.updateUpAxis = false;
     }
-    private void Awake()
-    {
-        SetUp();
-    }
+    //private void Awake()
+    //{
+    //    SetUp();
+    //}
 
-    private void Update()
-    {
-        navMeshAgent.SetDestination(target.position);
-    }
+    //private void Update()
+    //{
+    //    navMeshAgent.SetDestination(target.position);
+    //}
 }
