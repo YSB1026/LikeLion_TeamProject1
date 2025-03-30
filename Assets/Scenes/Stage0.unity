@@ -680,7 +680,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -50, y: -242}
+  m_AnchoredPosition: {x: 630, y: -242}
   m_SizeDelta: {x: 675.906, y: 132.5271}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &512730136
@@ -1149,7 +1149,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -50, y: -242}
+  m_AnchoredPosition: {x: 321, y: -242}
   m_SizeDelta: {x: 675.906, y: 132.5271}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &951437224
@@ -1415,7 +1415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGamePaused: 0
-  experience: 1000
+  experience: 0
   killScore: 0
   portalPrefab: {fileID: 4710660716068642652, guid: fd3021844c82a354e8500ba2e41a7d63, type: 3}
   currentStage: 0
@@ -1542,7 +1542,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -50, y: -242}
+  m_AnchoredPosition: {x: 118, y: -242}
   m_SizeDelta: {x: 675.906, y: 132.5271}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1620411571
@@ -1678,7 +1678,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -50, y: -242}
+  m_AnchoredPosition: {x: 475, y: -242}
   m_SizeDelta: {x: 675.906, y: 132.5271}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1874740068
@@ -7065,6 +7065,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4437891681150398687, guid: 6b935a3edc979534c9f21b36d717ebae, type: 3}
+      propertyPath: 'perkDescs.Array.data[0]'
+      value: "\uCD5C\uB300 \uCCB4\uB825 +5"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4437891681150398687, guid: 6b935a3edc979534c9f21b36d717ebae, type: 3}
+      propertyPath: 'perkDescs.Array.data[1]'
+      value: "\uCD5C\uB300 \uCCB4\uB825 +10"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4437891681150398687, guid: 6b935a3edc979534c9f21b36d717ebae, type: 3}
+      propertyPath: 'perkDescs.Array.data[2]'
+      value: "\uCD5C\uB300 \uCCB4\uB825 +15, \uC8FC\uBCC0 \uB300\uBBF8\uC9C0"
+      objectReference: {fileID: 0}
     - target: {fileID: 4533222400928208036, guid: 6b935a3edc979534c9f21b36d717ebae, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -7292,6 +7304,18 @@ PrefabInstance:
     - target: {fileID: 6783924912787736456, guid: 6b935a3edc979534c9f21b36d717ebae, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042619415952855419, guid: 6b935a3edc979534c9f21b36d717ebae, type: 3}
+      propertyPath: 'perkDescs.Array.data[0]'
+      value: "\uD22C\uC0AC\uCCB4 \uC18D\uB3C4 +30%"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042619415952855419, guid: 6b935a3edc979534c9f21b36d717ebae, type: 3}
+      propertyPath: 'perkDescs.Array.data[1]'
+      value: "\uD22C\uC0AC\uCCB4 \uC18D\uB3C4 +60%"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042619415952855419, guid: 6b935a3edc979534c9f21b36d717ebae, type: 3}
+      propertyPath: 'perkDescs.Array.data[2]'
+      value: "\uD22C\uC0AC\uCCB4 \uC18D\uB3C4 +90%, \uAD00\uD1B5 \uCD94\uAC00"
       objectReference: {fileID: 0}
     - target: {fileID: 7661741101487482318, guid: 6b935a3edc979534c9f21b36d717ebae, type: 3}
       propertyPath: m_AnchorMax.y

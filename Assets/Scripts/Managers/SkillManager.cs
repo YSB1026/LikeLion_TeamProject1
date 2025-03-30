@@ -58,12 +58,12 @@ public class SkillManager : SingletonComponent<SkillManager>
                 break;
 
             case "ProjectileSpeed"://투사체 속도
-                player.projectileSpeed = 10f * (1f + skill.Level * 0.2f);
+                player.projectileSpeed = 10f * (1f + skill.Level * 0.3f);
                 if (skill.hasPerk) player.projectilePenetration += 2; // 특전: 투사체 관통 증가
                 break;
 
             case "MaxHealthIncrease"://최대체력 증가
-                player.SetMaxHealth(2 + skill.Level);
+                player.SetMaxHealth(5 + skill.Level * 5);
                 // 특전: 주변 데미지
                 break;
         }
