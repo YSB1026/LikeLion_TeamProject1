@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  health: 2
+  health: 10
   atkPower: 2
   atkSpeed: 1
   expOrb:

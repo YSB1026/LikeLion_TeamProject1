@@ -5,12 +5,6 @@ using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 public class Monster : Character
 {
-    /* 수정해야함.
-    public float moveSpeed = 5f; //이동 속도
-    public int health = 2; //체력
-    public int atkPower = 2; //공격력
-    public float atkSpeed = 1f; //공격 속도
-    */
     [Header("몬스터 속성")]
     public GameObject[] expOrb;
     public float attackDistance = 5f;
@@ -22,6 +16,9 @@ public class Monster : Character
     protected Animator animator;
 
     private int maxHealth;
+
+    public GameObject heal;
+
     public void Initiate()
     {
         isDeath = false;
@@ -33,10 +30,12 @@ public class Monster : Character
     {
         player = GameObject.FindWithTag("Player");
     }
+
     private void Awake()
     {
         maxHealth = health;
     }
+
     void Update()
     {
         Move();
@@ -48,6 +47,7 @@ public class Monster : Character
         Vector3 direction = (player.transform.position - gameObject.transform.position).normalized;
         transform.Translate(direction * moveSpeed * Time.deltaTime);
     }
+
     public override void TakeDamage(int damage)
     {
         health -= damage;
@@ -56,12 +56,14 @@ public class Monster : Character
             Death();
         }
     }
+
     protected override void Death()
     {
         isDeath = true;
         GameManager.Instance.KillScore++;
         PoolManager.Instance.Return(gameObject);
         CreateExpOrb();
+        //CreateHeal();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -79,20 +81,6 @@ public class Monster : Character
         yield return new WaitForSeconds(2.5f);
         isAttack = false;
     }
-
-    //수정 해야 함,
-    //배열 대신 expOrb로만 구현 하거나, 배열로 구현하고 싶으면,
-    //확률적으로 expOrb 0~2를 생성하고싶으면 Random함수로 구현
-    //protected void CreateExpOrb()
-    //{
-    //    if (expOrb.Length == 0) return; // expOrb 배열이 비어 있으면 실행하지 않음
-
-    //    int randomIndex = Random.Range(0, expOrb.Length); // 0 ~ 배열 길이-1 사이에서 랜덤 선택
-
-    //    GameObject expOrbInstance = Instantiate(expOrb[randomIndex], gameObject.transform.position, Quaternion.identity);
-
-    //    Destroy(expOrbInstance, 10f); // 10초 후 제거
-    //}
 
     // 확률 설정한 랜덤 경험치
     protected void CreateExpOrb()
@@ -121,4 +109,14 @@ public class Monster : Character
         GameObject expOrbInstance = Instantiate(expOrb[selectedIndex], gameObject.transform.position, Quaternion.identity);
         Destroy(expOrbInstance, 10f); // 10초 후 제거
     }
+
+    //protected void CreateHeal()
+    //{
+    //    // 10% 확률로 heal 오브젝트 생성
+    //    if (Random.value > 0.1f)
+    //    {
+    //        GameObject healInstance = Instantiate(heal, gameObject.transform.position, Quaternion.identity);
+    //        Destroy(healInstance, 10f); // 10초 후 제거
+    //    }
+    //}
 }

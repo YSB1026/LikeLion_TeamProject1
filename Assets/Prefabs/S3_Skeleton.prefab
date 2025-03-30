@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2.5
-  health: 5
+  health: 7
   atkPower: 3
   atkSpeed: 3
   expOrb:
@@ -206,6 +206,7 @@ MonoBehaviour:
   - {fileID: 5116720402251253058, guid: f7c9529d769683b4d97a438f3d0891c8, type: 3}
   attackDistance: 4
   isDeath: 0
+  heal: {fileID: 0}
   velPower: 3
 --- !u!70 &2864236834429878912
 CapsuleCollider2D:

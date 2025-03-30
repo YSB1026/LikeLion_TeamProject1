@@ -3,30 +3,27 @@ using UnityEngine;
 
 public class Spider_Missile : MonoBehaviour
 {
-    public float speed = 5f;    //미사일 속도
-    public float lifeTime = 2f; //미사일 생존 시간
-    public int damage = 0;     //미사일 데미지 0으로 초기화
-    public float webDuration = 2f; //거미줄 지속시간
+    public float speed = 5f;    // 미사일 속도
+    public float lifeTime = 2f; // 미사일 생존 시간
+    public int damage = 0;      // 미사일 데미지 0으로 초기화
+    public float webDuration = 2f; // 거미줄 지속시간
 
-    private Vector2 direction;  //미사일 이동 방향
+    private Vector2 direction;  // 미사일 이동 방향
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private bool hasCollided = false; // 충돌 여부 확인
 
-    private float originalSpeed;
     public float speedReductionFactor = 0.5f;
     private Player player;
-    private bool hasSlowedDown = false;
 
     [Header("거미줄 마지막 프레임 스프라이트")]
     public Sprite lastWebSprite;   // 가장 큰 거미줄 이미지
-
 
     void Start()
     {
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        Destroy(gameObject, lifeTime);  //일정 시간 후 미사일 제거     
+        Destroy(gameObject, lifeTime);  // 일정 시간 후 미사일 제거     
     }
 
     public void SetDamage(int monsterDamage)
@@ -38,6 +35,7 @@ public class Spider_Missile : MonoBehaviour
     {
         direction = dir.normalized;
     }
+
     void Update()
     {
         transform.Translate(direction * speed * Time.deltaTime);
@@ -47,29 +45,29 @@ public class Spider_Missile : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (!hasSlowedDown)
+            if (!hasCollided)
             {
                 player = collision.GetComponent<Player>();
-                originalSpeed = player.moveSpeed; // 원래 속도 저장
-                player.moveSpeed *= speedReductionFactor; // 속도 감소
-                hasSlowedDown = true;
+                if (player != null)
+                {
+                    player.ApplySlowEffect(speedReductionFactor);
+                }
+                hasCollided = true;
+                speed = 0;
+
+                collision.GetComponent<Player>().TakeDamage(damage);
+
+                // 마지막 프레임 유지
+                StartCoroutine(HoldLastFrame());
             }
-            hasCollided = true;
-            speed = 0;
-
-            collision.GetComponent<Player>().TakeDamage(damage);
-
-            // 마지막 프레임 유지
-            StartCoroutine(HoldLastFrame());
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
-        // 플레이어와 충돌이 끝나면 초기화
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && player != null)
         {
-            player.moveSpeed = originalSpeed;
-            hasSlowedDown = false;
+            player.RemoveSlowEffect(speedReductionFactor);
         }
     }
 

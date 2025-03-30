@@ -44,6 +44,8 @@ public class Player : Character
     [SerializeField] private GameObject auraEffect;
     [SerializeField] private Slider healthBar;
 
+    private int slowEffectCount = 0; // 속도 감소 효과의 개수
+
     public enum SkillType
     {
         AttackPower,
@@ -95,11 +97,11 @@ public class Player : Character
         int diff = maxHp - maxHealth;
         maxHealth = maxHp;
         healthBar.maxValue = maxHealth;
-        if(diff > 0)
+        if (diff > 0)
         {
             health += diff;
         }
-        else if(health > maxHealth)
+        else if (health > maxHealth)
         {
             health = maxHealth;
         }
@@ -211,7 +213,7 @@ public class Player : Character
 
     private void HandleSkillLevelUp()
     {
-        if(UIManager.Instance.IsSkillTreeOpen)
+        if (UIManager.Instance.IsSkillTreeOpen)
         {
             Skill skill = null;
             //추후에 UI로 변경
@@ -241,9 +243,9 @@ public class Player : Character
 
     private void KeyInput()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(!UIManager.Instance.IsEscapeMenuOpen && !UIManager.Instance.IsMenuOpen)
+            if (!UIManager.Instance.IsEscapeMenuOpen && !UIManager.Instance.IsMenuOpen)
             {
                 UIManager.Instance.ToggleEscapeMenu();
             }
@@ -255,7 +257,7 @@ public class Player : Character
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if(CanAct() || UIManager.Instance.IsSkillTreeOpen)
+            if (CanAct() || UIManager.Instance.IsSkillTreeOpen)
             {
                 UIManager.Instance.ToggleSkillTree();
             }
@@ -264,13 +266,36 @@ public class Player : Character
 
     private bool CanAct()
     {
-        if(GameManager.Instance.IsGamePaused || !isAlive)
+        if (GameManager.Instance.IsGamePaused || !isAlive)
         {
             return false;
         }
         else
         {
             return true;
+        }
+    }
+
+    public void ApplySlowEffect(float speedReductionFactor)
+    {
+        if (slowEffectCount == 0)
+        {
+            moveSpeed *= speedReductionFactor;
+        }
+        slowEffectCount++;
+        Debug.Log($"ApplySlowEffect: slowEffectCount = {slowEffectCount}");
+    }
+
+    public void RemoveSlowEffect(float speedReductionFactor)
+    {
+        if (slowEffectCount > 0)
+        {
+            slowEffectCount--;
+            if (slowEffectCount == 0)
+            {
+                moveSpeed /= speedReductionFactor;
+            }
+            Debug.Log($"RemoveSlowEffect: slowEffectCount = {slowEffectCount}");
         }
     }
 }

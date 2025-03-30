@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  health: 2
+  health: 15
   atkPower: 2
   atkSpeed: 1
   expOrb:
@@ -209,6 +209,7 @@ MonoBehaviour:
   - {fileID: 5116720402251253058, guid: f7c9529d769683b4d97a438f3d0891c8, type: 3}
   attackDistance: 5
   isDeath: 0
+  heal: {fileID: 0}
   attackCooldown: 2
   navMeshAgent: {fileID: 0}
 --- !u!195 &9064571128115401593
@@ -221,7 +222,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1.55
-  m_Speed: 2.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
