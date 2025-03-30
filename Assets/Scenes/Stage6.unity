@@ -851,7 +851,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2752844616316120635, guid: 6b74acd3c025fa745b9a22e1eb830bf0, type: 3}
       propertyPath: health
-      value: 1000
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2752844616316120635, guid: 6b74acd3c025fa745b9a22e1eb830bf0, type: 3}
       propertyPath: atkPower

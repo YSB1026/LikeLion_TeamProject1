@@ -90,7 +90,14 @@ public class GameManager : SingletonComponent<GameManager>
             StartGame();
         }
         AudioManager.Instance.BgmController(currentStage);
-        SpawnManager.Instance.SpawnMonsters(currentStage);
+        if (killScore < 101)
+        {
+            SpawnManager.Instance.SpawnMonsters(currentStage);
+        }
+        else
+        {
+            SpawnManager.Instance.SpawnMonsters(currentStage, isBoss : true);
+        }
         StartCoroutine(CreatePortalForCurrentStage());
     }
 
@@ -101,6 +108,7 @@ public class GameManager : SingletonComponent<GameManager>
         while (!isStageCleared)
         {
             isStageCleared = TotalMonsterCount == KillScore;
+            if (killScore == 100) SpawnManager.Instance.SpawnBoss();
             yield return null;
         }
         yield return null;

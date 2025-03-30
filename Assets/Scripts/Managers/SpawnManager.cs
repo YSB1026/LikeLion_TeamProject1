@@ -51,7 +51,7 @@ public class SpawnManager : SingletonComponent<SpawnManager>
     }
     #endregion
 
-    public void SpawnMonsters(int currentStage, int spawnCount = 10, float delay = 1f, int amount = 1)
+    public void SpawnMonsters(int currentStage, bool isBoss = false, int spawnCount = 10, float delay = 1f, int amount = 1)
     {
         if (!stageMonsters.ContainsKey(currentStage))
         {
@@ -68,9 +68,9 @@ public class SpawnManager : SingletonComponent<SpawnManager>
             {
                 StartCoroutine(MonsterSpawn(monsterPrefab, spawnCount, delay, amount));
             }
-
             GameManager.Instance.TotalMonsterCount += spawnCount;
         }
+        if (isBoss) GameManager.Instance.TotalMonsterCount++;
     }
 
     private GameObject GetMonsterPrefab(MonsterType type)
@@ -97,6 +97,11 @@ public class SpawnManager : SingletonComponent<SpawnManager>
             }
             count--;
         }
+    }
+
+    public void SpawnBoss()
+    {
+        Instantiate(monsterPrefabs[(int)MonsterType.Dragon], new Vector3(0,0,0), Quaternion.identity);
     }
 
     //무작위 스폰 위치를 반환하는 메서드
