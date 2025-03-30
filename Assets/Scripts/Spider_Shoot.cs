@@ -4,7 +4,7 @@ using UnityEngine.AI;
 public class Spider_Shoot : Monster
 {
     [Header("적 캐릭터 속성")]
-    public float detectionRange = 3f;   //플레이어를 감지할 수있는 최대 거리
+    public float detectionRange = 5f;   //플레이어를 감지할 수있는 최대 거리
     public float shootingInterval = 2f;  //미사일 발사 사이의 대기 시간
     public GameObject missilePrefab;     //발사할 미사일 프리팹
 
