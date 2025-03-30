@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Stage2_MonsterBarrel : Monster
 {
@@ -21,9 +22,28 @@ public class Stage2_MonsterBarrel : Monster
 
     private float distanceToPlayer;
     private bool hasExploded = false;
+
+    private NavMeshAgent navMeshAgent = null;
+    private void SetUp()
+    {
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.updateRotation = false;
+        navMeshAgent.updateUpAxis = false;
+
+        if (navMeshAgent == null)
+        {
+            Debug.LogError("네비없음");
+        }
+        if (player == null)
+        {
+            Debug.LogError("플레이어 없음");
+        }
+    }
+
     private void Start()
     {
         animator = GetComponent<Animator>();
+        SetUp();
     }
     private void Update()
     {
@@ -35,7 +55,7 @@ public class Stage2_MonsterBarrel : Monster
         }
         else if(!hasExploded)
         {
-            base.Move();
+            navMeshAgent.SetDestination(player.transform.position);
             animator.SetBool("isMove", true);
         }
     }

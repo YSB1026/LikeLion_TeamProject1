@@ -35,7 +35,6 @@ public class GameManager : SingletonComponent<GameManager>
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
 
-
         playerInitStatus = new PlayerInitStatus
         {
             atkPower = Player.Instance.atkPower,
