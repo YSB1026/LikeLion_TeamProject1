@@ -25,6 +25,8 @@ public class GameManager : SingletonComponent<GameManager>
 
     public bool IsGamePaused { get => isGamePaused; }
     public int Experience { get => experience; }
+    public int TotalMonsterCount { get; set; } = 0; //spawn manager에서 += 해줍니다.
+    //total monster count랑 kill score 비교해서 같으면 clear인걸로 해두긴 했습니다. 더 좋은 방법 있을 겁니다.
     public int KillScore { get => killScore; set => killScore = value; }
 
     #region Singleton
@@ -65,11 +67,21 @@ public class GameManager : SingletonComponent<GameManager>
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        CreatePortalForCurrentStage();
+        //CreatePortalForCurrentStage();
+        AudioManager.Instance.BgmController(currentStage);
+        SpawnManager.Instance.SpawnMonsters(currentStage);
+        StartCoroutine(CreatePortalForCurrentStage());
     }
 
-    public void CreatePortalForCurrentStage()
+    public IEnumerator CreatePortalForCurrentStage()
     {
+        Debug.Log($"tot : {TotalMonsterCount}");
+        while (!isStageCleared)
+        {
+            isStageCleared = TotalMonsterCount == KillScore;
+            yield return null;
+        }
+        yield return null;
         if (currentStage <= maxStage)
         {
             // 포털 프리팹을 현재 스테이지 위치에 생성
@@ -80,50 +92,31 @@ public class GameManager : SingletonComponent<GameManager>
 
     public void LoadNextStage()
     {
-        //if (isLoading) return;  // 이미 로드 중이면 실행하지 않음
-        //isLoading = true;        // 플래그 설정
-
-        //if (currentStage < maxStage)
-        //{
-        //    currentStage++;
-        //    string nextScene = "Stage" + currentStage;
-        //    Debug.Log($"다음 스테이지로 이동: {nextScene}");
-        //    SceneManager.LoadScene(nextScene);
-        //}
-        //else
-        //{
-        //    Debug.Log("모든 스테이지 클리어!");
-        //}
-
-        //isLoading = false;
-
+        //클리어 안됐을 때 포탈 생성 안 되게하면 코루틴으로 안해도됨.
         if (!isLoading)
         {
             StartCoroutine(LoadSceneRoutine());
-
         }
-
     }
 
     private IEnumerator LoadSceneRoutine()
     {
-        isLoading = true;        // 플래그 설정
+        isLoading = true;
 
         if (currentStage < maxStage)
         {
             currentStage++;
-            string nextScene = "Stage" + currentStage;
+            string nextScene = $"Stage{currentStage}";
             Debug.Log($"다음 스테이지로 이동: {nextScene}");
-            SceneManager.LoadScene(nextScene);
-            
+
+            yield return SceneManager.LoadSceneAsync(nextScene);
         }
         else
         {
             Debug.Log("모든 스테이지 클리어!");
         }
 
-        isLoading = false;
-        AudioManager.Instance.BgmController(currentStage);
         yield return new WaitForSeconds(1f);
-    } 
+        isLoading = false;
+    }
 }

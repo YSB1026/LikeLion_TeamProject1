@@ -38,9 +38,7 @@ public class Monster_Shoom : Monster
         isDeath = true;
 
         StartCoroutine(ReturnToPoolAfterDelay(0.7f)); // 0.7초후 풀반환
-
         CreateExpOrb();
-
         GameManager.Instance.KillScore++;
     }
 
@@ -106,22 +104,6 @@ public class Monster_Shoom : Monster
             animator.SetBool("isFound", false);
         }
 
-    }
-
-   
-
-    //수정 해야 함,
-    //배열 대신 expOrb로만 구현 하거나, 배열로 구현하고 싶으면,
-    //확률적으로 expOrb 0~2를 생성하고싶으면 Random함수로 구현
-    void CreateExpOrb()
-    {
-        if (expOrb.Length == 0) return; // expOrb 배열이 비어 있으면 실행하지 않음
-
-        int randomIndex = Random.Range(0, expOrb.Length); // 0 ~ 배열 길이-1 사이에서 랜덤 선택
-
-        GameObject expOrbInstance = Instantiate(expOrb[randomIndex], gameObject.transform.position, Quaternion.identity);
-
-        Destroy(expOrbInstance, 5f); // 5초 후 제거
     }
 
     void Attack()

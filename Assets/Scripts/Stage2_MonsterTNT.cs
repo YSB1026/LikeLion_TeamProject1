@@ -55,7 +55,7 @@ public class Stage2_MonsterTNT : Monster
     protected override void Death()
     {
         StopAttackRoutnie();
-        PoolManager.Instance.Return(gameObject);
+        base.Death();
     }
 
     private void CalcPlayerDistance()

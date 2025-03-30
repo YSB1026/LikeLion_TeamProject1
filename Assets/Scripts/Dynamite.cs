@@ -37,7 +37,6 @@ public class Dynamite : Projectile
         go.GetComponent<Explosion>().SetDamage(damage);
         PoolManager.Instance.Return(gameObject);
     }
-
     protected override void Move()
     {
         rb.linearVelocity = direction * projectileSpeed;

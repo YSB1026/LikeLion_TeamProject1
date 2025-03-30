@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using Random = UnityEngine.Random;
 public class Monster : Character
 {
     /* 수정해야함.
@@ -41,6 +41,7 @@ public class Monster : Character
     {
         GameManager.Instance.KillScore++;
         PoolManager.Instance.Return(gameObject);
+        CreateExpOrb();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -57,5 +58,19 @@ public class Monster : Character
         player.TakeDamage(atkPower);
         yield return new WaitForSeconds(2.5f);
         isAttack = false;
+    }
+
+    //수정 해야 함,
+    //배열 대신 expOrb로만 구현 하거나, 배열로 구현하고 싶으면,
+    //확률적으로 expOrb 0~2를 생성하고싶으면 Random함수로 구현
+    protected void CreateExpOrb()
+    {
+        if (expOrb.Length == 0) return; // expOrb 배열이 비어 있으면 실행하지 않음
+
+        int randomIndex = Random.Range(0, expOrb.Length); // 0 ~ 배열 길이-1 사이에서 랜덤 선택
+
+        GameObject expOrbInstance = Instantiate(expOrb[randomIndex], gameObject.transform.position, Quaternion.identity);
+
+        Destroy(expOrbInstance, 10f); // 10초 후 제거
     }
 }

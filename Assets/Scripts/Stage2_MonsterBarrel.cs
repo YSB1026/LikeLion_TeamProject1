@@ -58,8 +58,7 @@ public class Stage2_MonsterBarrel : Monster
                 obj.GetComponent<Player>().TakeDamage(atkPower);
             }
         }
-        //PoolManager.Instance.Return(gameObject);
-        base.Death();
+        PoolManager.Instance.Return(gameObject);
     }
 
     private void OnDrawGizmosSelected()
@@ -67,5 +66,10 @@ public class Stage2_MonsterBarrel : Monster
         // 폭발 범위 시각화 (디버깅 용도)
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, explosionRadius);
+    }
+
+    protected override void Death()
+    {
+        base.Death();
     }
 }
