@@ -38,7 +38,7 @@ public class Stage2_MonsterBarrel : Monster
         {
             Debug.LogError("플레이어 없음");
         }
-    }
+    } 
 
     private void Start()
     {
@@ -49,11 +49,11 @@ public class Stage2_MonsterBarrel : Monster
     {
         distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
-        if (distanceToPlayer <= detonationDistance)
+        if (distanceToPlayer <= detonationDistance && !hasExploded)
         {
             Explode();
         }
-        else if(!hasExploded)
+        else if(distanceToPlayer > detonationDistance)
         {
             navMeshAgent.SetDestination(player.transform.position);
             animator.SetBool("isMove", true);
