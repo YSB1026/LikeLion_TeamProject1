@@ -23,7 +23,7 @@ public class IceGolem_Monster : Monster
 
     void Update()
     {
-        base.Move();
+        //base.Move();
 
         if (attackTimer > 0)
         {

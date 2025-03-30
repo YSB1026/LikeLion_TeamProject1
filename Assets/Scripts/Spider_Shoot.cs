@@ -24,16 +24,16 @@ public class Spider_Shoot : Monster
                 Debug.LogError("SpriteRenderer가 존재하지 않습니다!", this);
             }
         }
-        player = GameObject.FindWithTag("Player");
-        if (player == null)
-        {
-            Debug.LogError("Player 오브젝트를 찾을 수 없습니다!", this);
-        }
+        //player = GameObject.FindWithTag("Player");
+        //if (player == null)
+        //{
+        //    Debug.LogError("Player 오브젝트를 찾을 수 없습니다!", this);
+        //}
     }
     void Update()
     {
         if (player == null) return;     //플레이어가 없으면 실행하지 않음
-        base.Move();
+        //base.Move();
 
         if (spriteRenderer != null)
         {

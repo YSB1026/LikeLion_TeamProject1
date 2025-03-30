@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1740299040220093033}
   - component: {fileID: 1341894343350146697}
   - component: {fileID: 9064571128115401593}
+  - component: {fileID: 9052391330827565045}
   m_Layer: 7
   m_Name: IceGolem
   m_TagString: Untagged
@@ -205,6 +206,7 @@ MonoBehaviour:
   atkSpeed: 1
   expOrb: []
   attackDistance: 5
+  isDeath: 0
   attackCooldown: 2
 --- !u!195 &9064571128115401593
 NavMeshAgent:
@@ -228,3 +230,15 @@ NavMeshAgent:
   m_BaseOffset: 1.3333334
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 0
+--- !u!114 &9052391330827565045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8018771044445961681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ac1499719d6204398b278e020e57f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
