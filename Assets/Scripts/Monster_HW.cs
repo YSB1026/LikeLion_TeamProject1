@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Monster_HW : Monster
@@ -22,6 +23,9 @@ public class Monster_HW : Monster
     private float atkDelay;
 
     private Rigidbody2D rb;
+
+ 
+
 
 
     protected override void Death()
@@ -76,14 +80,20 @@ public class Monster_HW : Monster
         Attack();
     }
 
-    // 충돌처리, 추후 플레이어 공격
-    void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.gameObject.CompareTag("Player"))
-        {
-            collider.GetComponent<Player>().TakeDamage(atkPower);
-        }  
-    }
+    // 충돌처리
+    //void OnTriggerEnter2D(Collider2D collider)
+    //{
+    //    if (collider.gameObject.CompareTag("Player"))
+    //    {
+
+    //        collider.GetComponent<Player>().TakeDamage(atkPower);
+
+
+    //    }
+    //}
+
+    
+
 
     private void AtkDelay()
     {
@@ -109,8 +119,7 @@ public class Monster_HW : Monster
         float realDistance = Vector3.Distance(transform.position, player.transform.position);
         if (realDistance <= attackDistance && isAttacking == false)
         {
-            isAttack = true;
-
+            
             // 플레이어 방향 계산
             Vector3 direction = (player.transform.position - transform.position).normalized;
 
@@ -119,11 +128,11 @@ public class Monster_HW : Monster
 
             animator.SetTrigger("Attack");
 
-            StartCoroutine(AttackCooldown(atkDelay));  
+            StartCoroutine(AttackCooldown(atkDelay));
         }
         else
         {
-            isAttack = false;
+            
         }
     }
     IEnumerator AttackCooldown(float delay)
@@ -131,7 +140,7 @@ public class Monster_HW : Monster
         isAttacking = true; // 공격 중 플래그 설정
 
         yield return new WaitForSeconds(delay); // 공격 속도만큼 대기
-        
+
         rb.linearVelocity = Vector2.zero; // 공격 후 속도 초기화
         isAttacking = false; // 공격 가능 상태로 전환
     }

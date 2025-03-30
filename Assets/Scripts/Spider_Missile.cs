@@ -5,7 +5,7 @@ public class Spider_Missile : MonoBehaviour
 {
     public float speed = 5f;    //미사일 속도
     public float lifeTime = 2f; //미사일 생존 시간
-    public int damage = 10;     //미사일 데미지
+    public int damage = 0;     //미사일 데미지 0으로 초기화
     public float webDuration = 2f; //거미줄 지속시간
 
     private Vector2 direction;  //미사일 이동 방향
@@ -27,6 +27,11 @@ public class Spider_Missile : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         Destroy(gameObject, lifeTime);  //일정 시간 후 미사일 제거     
+    }
+
+    public void SetDamage(int monsterDamage)
+    {
+        damage = monsterDamage;
     }
 
     public void SetDirection(Vector2 dir)
@@ -52,7 +57,8 @@ public class Spider_Missile : MonoBehaviour
             hasCollided = true;
             speed = 0;
 
-            
+            collision.GetComponent<Player>().TakeDamage(damage);
+
             // 마지막 프레임 유지
             StartCoroutine(HoldLastFrame());
         }

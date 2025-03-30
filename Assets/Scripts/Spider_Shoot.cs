@@ -45,7 +45,7 @@ public class Spider_Shoot : Monster
         if (distanceToPlayer <= detectionRange)
         {
             //플레이어 방향으로 스프라이트 회전
-            spriteRenderer.flipX = (player.transform.position.x < transform.position.x);
+            spriteRenderer.flipX = (player.transform.position.x > transform.position.x);
 
 
             //미사일 발사 로직
@@ -64,6 +64,8 @@ public class Spider_Shoot : Monster
     {
         //미사일 생성
         GameObject missile = Instantiate(missilePrefab, firePoint.position, Quaternion.identity);
+
+        missile.GetComponent<Spider_Missile>().SetDamage(atkPower);
 
         //플레이어 방향으로 발사 방향 설정
         Vector2 direction = (player.transform.position - firePoint.position).normalized;

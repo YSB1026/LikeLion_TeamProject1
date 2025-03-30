@@ -174,5 +174,5 @@ MonoBehaviour:
   lifeTime: 2
   damage: 10
   webDuration: 2
-  speedReductionFactor: 0.5
+  speedReductionFactor: 0.3
   lastWebSprite: {fileID: -860337381, guid: ab16b9dd555c14841b44a5d8a269a789, type: 3}

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -40,5 +41,21 @@ public class Monster : Character
     {
         GameManager.Instance.KillScore++;
         PoolManager.Instance.Return(gameObject);
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (!isAttack && collision.CompareTag("Player"))
+        {
+            StartCoroutine(AttackRoutine(collision.GetComponent<Player>()));
+        }
+    }
+
+    IEnumerator AttackRoutine(Player player)
+    {
+        isAttack = true;
+        player.TakeDamage(atkPower);
+        yield return new WaitForSeconds(2.5f);
+        isAttack = false;
     }
 }

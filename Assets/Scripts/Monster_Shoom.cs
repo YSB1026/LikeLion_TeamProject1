@@ -108,18 +108,7 @@ public class Monster_Shoom : Monster
 
     }
 
-    // 충돌처리, 추후 플레이어 공격
-    void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (!isDeath)
-        {
-            if (collider.gameObject.CompareTag("Player"))
-            {
-                collider.GetComponent<Player>().TakeDamage(atkPower);
-            }
-        }
-
-    }
+   
 
     //수정 해야 함,
     //배열 대신 expOrb로만 구현 하거나, 배열로 구현하고 싶으면,
@@ -140,8 +129,7 @@ public class Monster_Shoom : Monster
         float realDistance = Vector3.Distance(transform.position, player.transform.position);
         if (realDistance <= attackDistance && isAttacking == false)
         {
-            isAttack = true;
-
+          
             // 플레이어 방향 계산
             Vector3 direction = (player.transform.position - transform.position).normalized;
 
@@ -155,7 +143,7 @@ public class Monster_Shoom : Monster
         }
         else
         {
-            isAttack = false;
+            
         }
     }
     IEnumerator AttackCooldown(float delay)
