@@ -26,6 +26,9 @@ public class UIManager : SingletonComponent<UIManager>
     [Header("Skill Tree")]
     [SerializeField] private SkillTree[] skillTree;
 
+    [Header("Clear Message UI")]
+    [SerializeField] private GameObject ClearMessage;
+
     public bool IsMenuOpen { get => isMenuOpen; }
     public bool IsSkillTreeOpen { get => isSkillTreeOpen; }
     public bool IsEscapeMenuOpen { get => isEscapeMenuOpen; }
@@ -119,5 +122,14 @@ public class UIManager : SingletonComponent<UIManager>
         {
             skillTree[i].SetOriginSkilColor();
         }
+    }
+    public void ShowClearText()
+    {
+        ClearMessage.SetActive(true);
+    }
+
+    public void HideClearText()
+    {
+        ClearMessage.SetActive(false);
     }
 }

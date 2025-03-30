@@ -109,6 +109,7 @@ public class GameManager : SingletonComponent<GameManager>
             // 포털 프리팹을 현재 스테이지 위치에 생성
             Instantiate(portalPrefab, portalSpawnPosition, Quaternion.identity);
             Debug.Log($"Stage {currentStage}에 포털이 생성되었습니다.");
+            UIManager.Instance.ShowClearText();
         }
     }
 
@@ -132,6 +133,7 @@ public class GameManager : SingletonComponent<GameManager>
             Debug.Log($"다음 스테이지로 이동: {nextScene}");
 
             yield return SceneManager.LoadSceneAsync(nextScene);
+            UIManager.Instance.HideClearText();
         }
         else
         {
