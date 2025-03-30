@@ -126,4 +126,9 @@ public class SpawnManager : SingletonComponent<SpawnManager>
 
         return randomPosition;
     }
+
+    public void StopRoutine()
+    {
+        StopAllCoroutines();
+    }
 }

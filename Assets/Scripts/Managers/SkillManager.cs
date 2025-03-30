@@ -68,4 +68,12 @@ public class SkillManager : SingletonComponent<SkillManager>
                 break;
         }
     }
+
+    public void ResetAllSkills()
+    {
+        for (int i = 0; i < skills.Length; i++)
+        {
+            skills[i].ResetLevel();
+        }
+    }
 }

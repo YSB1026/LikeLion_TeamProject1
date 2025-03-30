@@ -112,6 +112,7 @@ public class AudioManager : SingletonComponent<AudioManager>
                 break;
             default:
                 Debug.LogWarning($"알 수 없는 스테이지: {stage}. BGM 재생 안 함");
+                bgmPlayer.Stop();
                 break;
         }
     }

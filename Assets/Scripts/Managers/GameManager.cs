@@ -29,11 +29,24 @@ public class GameManager : SingletonComponent<GameManager>
     //total monster count랑 kill score 비교해서 같으면 clear인걸로 해두긴 했습니다. 더 좋은 방법 있을 겁니다.
     public int KillScore { get => killScore; set => killScore = value; }
 
+    private PlayerInitStatus playerInitStatus;
     #region Singleton
     protected override void AwakeInstance()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
 
+
+        playerInitStatus = new PlayerInitStatus
+        {
+            atkPower = Player.Instance.atkPower,
+            health = Player.Instance.health,
+            maxHealth = Player.Instance.maxHealth,
+            atkSpeed = Player.Instance.atkSpeed,
+            evasionChance = Player.Instance.evasionChance,
+            projectileSpeed = Player.Instance.projectileSpeed,
+            knockbackPower = Player.Instance.knockbackPower,
+            projectilePenetration = Player.Instance.projectilePenetration
+        };
     }
 
     protected override bool InitInstance()
@@ -68,6 +81,14 @@ public class GameManager : SingletonComponent<GameManager>
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         //CreatePortalForCurrentStage();
+        if (scene.name == "MainMenu")
+        {
+            currentStage = 0;
+        }
+        else if(scene.name == "Stage0")
+        {
+            StartGame();
+        }
         AudioManager.Instance.BgmController(currentStage);
         SpawnManager.Instance.SpawnMonsters(currentStage);
         StartCoroutine(CreatePortalForCurrentStage());
@@ -119,5 +140,33 @@ public class GameManager : SingletonComponent<GameManager>
 
         yield return new WaitForSeconds(1f);
         isLoading = false;
+    }
+
+    private void StartGame()
+    {
+        if (!Player.Instance.isAlive)
+        {
+            UIManager.Instance.ToggleDeathMessage();
+        }
+        SpawnManager.Instance.StopRoutine();
+        SkillManager.Instance.ResetAllSkills();
+
+        //experience = 0;
+        KillScore = 0;
+        TotalMonsterCount = 0;
+        UpdateExp(-experience);
+
+        Player.Instance.transform.position = new Vector3(0, 0, 0);
+        Player.Instance.isAlive = true;
+        Player.Instance.atkPower = playerInitStatus.atkPower;
+        Player.Instance.health = playerInitStatus.health;
+        Player.Instance.maxHealth = playerInitStatus.maxHealth;
+        Player.Instance.atkSpeed = playerInitStatus.atkSpeed;
+        Player.Instance.evasionChance = playerInitStatus.evasionChance;
+        Player.Instance.projectileSpeed = playerInitStatus.projectileSpeed;
+        Player.Instance.knockbackPower = playerInitStatus.knockbackPower;
+        Player.Instance.projectilePenetration = playerInitStatus.projectilePenetration;
+        Player.Instance.SetMaxHealth(playerInitStatus.health);
+
     }
 }

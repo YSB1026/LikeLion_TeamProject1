@@ -33,4 +33,9 @@ public class Skill
     {
         return expThresholds[Level];
     }
+
+    public void ResetLevel()
+    {
+        Level = 0;
+    }
 }

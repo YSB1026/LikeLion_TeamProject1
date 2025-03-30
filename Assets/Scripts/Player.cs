@@ -1,9 +1,23 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+public struct PlayerInitStatus
+{
+    public int moveSpeed;
+    public int health;
+    public int maxHealth;
+    public int atkPower;
+    public float atkSpeed;
+    public float evasionChance;
+    public float projectileSpeed;
+    public float knockbackPower;
+    public int projectilePenetration;
+}
+
 
 public class Player : Character
 {
+    public static Player Instance;
     /*
     Character.cs에서 상속받음
     public float moveSpeed = 5f; //이동 속도
@@ -15,7 +29,6 @@ public class Player : Character
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private float moveX, moveY;
-    private bool isAlive = true; //플레이어 생존 여부
     private Coroutine takeDamageRoutine = null;
     [Header("플레이어 속성")]
     public int maxHealth;//플레이어 최대 체력
@@ -23,6 +36,7 @@ public class Player : Character
     public float projectileSpeed = 10f; //플레이어 투사체 속도
     public float knockbackPower = 1f; //플레이어 투사체 넉백
     public int projectilePenetration = 1; //플레이어 투사체 관통력
+    public bool isAlive = true; //플레이어 생존 여부
 
     [Header("참조")]
     [SerializeField] private GameObject projectilePrefab;
@@ -40,6 +54,14 @@ public class Player : Character
 
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         maxHealth = health; //최대체력 초기화
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -109,7 +131,6 @@ public class Player : Character
     {
         //플레이어 사망처리
         isAlive = false;
-        StopAllCoroutines();
         auraEffect.SetActive(false);
         UIManager.Instance.ToggleDeathMessage();
     }
