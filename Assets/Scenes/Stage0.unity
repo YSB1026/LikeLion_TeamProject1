@@ -979,6 +979,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4141685240145733450, guid: 773bf76a76c24ec4e85e77b3f4dd43f3, type: 3}
   m_PrefabInstance: {fileID: 2008449742}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &796755516 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1254456800681301902, guid: 6b935a3edc979534c9f21b36d717ebae, type: 3}
+  m_PrefabInstance: {fileID: 3187748721419570510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &983610022
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,6 +1165,7 @@ Transform:
   - {fileID: 983610025}
   - {fileID: 519420032}
   - {fileID: 201990374}
+  - {fileID: 796755516}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1570184246
@@ -1297,7 +1303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5255341840601947699, guid: 773bf76a76c24ec4e85e77b3f4dd43f3, type: 3}
       propertyPath: atkPower
-      value: 33
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5255341840601947699, guid: 773bf76a76c24ec4e85e77b3f4dd43f3, type: 3}
       propertyPath: maxHealth
@@ -6074,7 +6080,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1373400604}
     m_Modifications:
     - target: {fileID: 804526050856801596, guid: 6b935a3edc979534c9f21b36d717ebae, type: 3}
       propertyPath: m_AnchorMax.y
@@ -6926,7 +6932,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 288661943}
-  - {fileID: 3187748721419570510}
   - {fileID: 4828375282924147330}
   - {fileID: 1373400604}
   - {fileID: 1570184248}

@@ -14,6 +14,7 @@ public class PlayerProjectile : Projectile
 
     public void Initialize(Player player)
     {
+        projectileSpeed = player.projectileSpeed;
         damage = player.atkPower;
         knockbackPower = player.knockbackPower;
         pentration = player.projectilePenetration;

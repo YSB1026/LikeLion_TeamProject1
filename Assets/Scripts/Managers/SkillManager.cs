@@ -63,7 +63,7 @@ public class SkillManager : SingletonComponent<SkillManager>
                 break;
 
             case "MaxHealthIncrease"://최대체력 증가
-                player.SetMaxHealth(2 + skill.Level);
+                player.SetMaxHealth(5 + skill.Level);
                 // 특전: 주변 데미지
                 break;
         }

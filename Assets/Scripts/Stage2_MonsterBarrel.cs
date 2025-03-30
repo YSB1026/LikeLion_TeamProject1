@@ -16,12 +16,11 @@ public class Stage2_MonsterBarrel : Monster
     */
 
     [Header("폭발 설정")]
-    public float explosionRadius = 2.5f; // 폭발 반경
+    public float explosionRadius = 4.5f; // 폭발 반경
     public float detonationDistance = 2.0f; // 플레이어와 이 거리 내에 들어오면 폭발
 
-    private bool hasExploded = false;
     private float distanceToPlayer;
-
+    private bool hasExploded = false;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -30,7 +29,7 @@ public class Stage2_MonsterBarrel : Monster
     {
         distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
-        if (distanceToPlayer <= detonationDistance && !hasExploded)
+        if (distanceToPlayer <= detonationDistance)
         {
             Explode();
         }
@@ -44,8 +43,8 @@ public class Stage2_MonsterBarrel : Monster
     private void Explode()
     {
         hasExploded = true;
-        animator.SetBool("hasExploded", hasExploded);
         animator.SetBool("isMove", false);
+        animator.SetBool("hasExploded", hasExploded);
     }
 
     public void DestroyBarrel()//애니메이션 이벤트로 호출
@@ -58,8 +57,7 @@ public class Stage2_MonsterBarrel : Monster
                 obj.GetComponent<Player>().TakeDamage(atkPower);
             }
         }
-
-        Death();
+        base.Death();
     }
 
     private void OnDrawGizmosSelected()

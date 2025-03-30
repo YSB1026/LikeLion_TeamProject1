@@ -30,6 +30,7 @@ public class Player : Character
     private SpriteRenderer spriteRenderer;
     private float moveX, moveY;
     private Coroutine takeDamageRoutine = null;
+    //private Coroutine fireRoutine = null;
     [Header("플레이어 속성")]
     public int maxHealth;//플레이어 최대 체력
     public float evasionChance = 0f; //플레이어 회피 확률
@@ -221,6 +222,8 @@ public class Player : Character
             if (skill != null)
             {
                 SkillManager.Instance.TryLevelUpSkill(skill);
+                //StopCoroutine(fireRoutine);
+                //fireRoutine = StartCoroutine(FireProjectile());
             }
         }
     }
