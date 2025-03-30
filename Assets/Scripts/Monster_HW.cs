@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Monster_HW : Monster
 {
@@ -21,8 +22,10 @@ public class Monster_HW : Monster
 
     private bool isAttacking;
     private float atkDelay;
+    private NavMeshAgent navMeshAgent;
 
     private Rigidbody2D rb;
+
     protected override void Death()
     {
         isDeath = true;
@@ -41,8 +44,9 @@ public class Monster_HW : Monster
             if (isAttack == false) // 몬스터가 공격중이 아닐 때
             {
                 // 플레이어의 위치로 이동
-                Vector3 direction = (player.transform.position - gameObject.transform.position).normalized;
-                transform.Translate(direction * moveSpeed * Time.deltaTime);
+                //Vector3 direction = (player.transform.position - gameObject.transform.position).normalized;
+                //transform.Translate(direction * moveSpeed * Time.deltaTime);
+                navMeshAgent.SetDestination(player.transform.position);
 
                 // 플레이어의 위치에 따라 스프라이트 방향 설정, 몬스터가 왼쪽에 있으면 flip
                 spriteRenderer.flipX = transform.position.x < player.transform.position.x;
@@ -56,10 +60,25 @@ public class Monster_HW : Monster
         yield return new WaitForSeconds(delay);
         PoolManager.Instance.Return(gameObject);
     }
+    private void SetUp()
+    {
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.updateRotation = false;
+        navMeshAgent.updateUpAxis = false;
 
+        if (navMeshAgent == null)
+        {
+            Debug.LogError("네비없음");
+        }
+        if (player == null)
+        {
+            Debug.LogError("플레이어 없음");
+        }
+    }
 
     void Start()
     {
+        SetUp();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();

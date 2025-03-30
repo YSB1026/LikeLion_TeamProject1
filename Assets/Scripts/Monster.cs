@@ -26,11 +26,15 @@ public class Monster : Character
     {
         isDeath = false;
         health = maxHealth;
+        Debug.Log($"{name} health: {health}");
     }
 
     private void OnEnable()
     {
         player = GameObject.FindWithTag("Player");
+    }
+    private void Awake()
+    {
         maxHealth = health;
     }
     void Update()

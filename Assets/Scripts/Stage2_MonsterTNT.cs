@@ -22,7 +22,7 @@ public class Stage2_MonsterTNT : Monster
     private float distance;//플레이어와의 거리
     private Coroutine attackRoutine = null;
     private Vector2 attackDirection;
-    private void Awake()
+    private void Start()
     {
         animator = GetComponent<Animator>();
         attackDistance = 12;

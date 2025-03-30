@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Monster_Shoom : Monster
 {
@@ -23,6 +24,7 @@ public class Monster_Shoom : Monster
     private float atkDelay;
 
     private Rigidbody2D rb;
+    private NavMeshAgent navMeshAgent;
     protected override void Death()
     {
         animator.SetBool("isDeath", true);
@@ -45,8 +47,9 @@ public class Monster_Shoom : Monster
             if (isAttack == false) // 몬스터가 공격중이 아닐 때
             {
                 // 플레이어의 위치로 이동
-                Vector3 direction = (player.transform.position - gameObject.transform.position).normalized;
-                transform.Translate(direction * moveSpeed * Time.deltaTime);
+                //Vector3 direction = (player.transform.position - gameObject.transform.position).normalized;
+                //transform.Translate(direction * moveSpeed * Time.deltaTime);
+                navMeshAgent.SetDestination(player.transform.position);
             }
         }
     }
@@ -58,9 +61,25 @@ public class Monster_Shoom : Monster
         PoolManager.Instance.Return(gameObject);
     }
 
+    private void SetUp()
+    {
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.updateRotation = false;
+        navMeshAgent.updateUpAxis = false;
+
+        if (navMeshAgent == null)
+        {
+            Debug.LogError("네비없음");
+        }
+        if (player == null)
+        {
+            Debug.LogError("플레이어 없음");
+        }
+    }
 
     void Start()
     {
+        SetUp();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();

@@ -21,7 +21,7 @@ public class Stage2_MonsterBarrel : Monster
 
     private float distanceToPlayer;
     private bool hasExploded = false;
-    private void Awake()
+    private void Start()
     {
         animator = GetComponent<Animator>();
     }
