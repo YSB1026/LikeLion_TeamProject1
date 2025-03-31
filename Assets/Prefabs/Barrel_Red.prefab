@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b88347261425f342805d553bc6d6a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 3
   health: 3
   atkPower: 1
   atkSpeed: 1
@@ -114,8 +114,8 @@ MonoBehaviour:
   attackDistance: 5
   isDeath: 0
   heal: {fileID: 0}
-  explosionRadius: 3.5
-  detonationDistance: 1.5
+  explosionRadius: 2
+  detonationDistance: 4
 --- !u!61 &7100940130572690412
 BoxCollider2D:
   m_ObjectHideFlags: 0

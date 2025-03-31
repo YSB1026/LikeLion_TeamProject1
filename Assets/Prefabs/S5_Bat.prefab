@@ -181,9 +181,10 @@ MonoBehaviour:
   - {fileID: 6123331735916846602, guid: ba2daea0edab7c247a01ac08bb6436a9, type: 3}
   - {fileID: 8887994094148021013, guid: fe84bb38484af184499727e7d1dce040, type: 3}
   - {fileID: 5116720402251253058, guid: f7c9529d769683b4d97a438f3d0891c8, type: 3}
-  attackDistance: 5
+  attackDistance: 6
   isDeath: 0
-  velPower: 3
+  heal: {fileID: 0}
+  velPower: 2
 --- !u!95 &8459225222928755919
 Animator:
   serializedVersion: 7

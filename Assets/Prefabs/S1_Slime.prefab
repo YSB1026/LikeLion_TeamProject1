@@ -98,19 +98,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1323938847313312167, guid: ab20f547ce1761a488b77f99dc2e4ad3, type: 3}
       propertyPath: atkSpeed
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1323938847313312167, guid: ab20f547ce1761a488b77f99dc2e4ad3, type: 3}
       propertyPath: velPower
-      value: 1.5
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1323938847313312167, guid: ab20f547ce1761a488b77f99dc2e4ad3, type: 3}
       propertyPath: moveSpeed
-      value: 1.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1323938847313312167, guid: ab20f547ce1761a488b77f99dc2e4ad3, type: 3}
       propertyPath: attackDistance
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1323938847313312167, guid: ab20f547ce1761a488b77f99dc2e4ad3, type: 3}
       propertyPath: 'expOrb.Array.data[0]'
@@ -241,7 +241,7 @@ NavMeshAgent:
   m_Height: 2.6666667
   m_BaseOffset: 1.3333334
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!4 &6267828831942228415 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6234051743836775923, guid: ab20f547ce1761a488b77f99dc2e4ad3, type: 3}

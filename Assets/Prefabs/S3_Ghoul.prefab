@@ -129,16 +129,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   health: 10
-  atkPower: 3
+  atkPower: 2
   atkSpeed: 2
   expOrb:
   - {fileID: 6123331735916846602, guid: ba2daea0edab7c247a01ac08bb6436a9, type: 3}
   - {fileID: 8887994094148021013, guid: fe84bb38484af184499727e7d1dce040, type: 3}
   - {fileID: 5116720402251253058, guid: f7c9529d769683b4d97a438f3d0891c8, type: 3}
-  attackDistance: 3
+  attackDistance: 5.5
   isDeath: 0
   heal: {fileID: 0}
-  velPower: 2
+  velPower: 1.8
 --- !u!58 &7846522986206006760
 CircleCollider2D:
   m_ObjectHideFlags: 0

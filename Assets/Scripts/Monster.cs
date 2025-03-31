@@ -60,6 +60,7 @@ public class Monster : Character
     protected override void Death()
     {
         isDeath = true;
+        AudioManager.Instance.PlaySfx(AudioManager.Sfx.ShoomDie);
         GameManager.Instance.KillScore++;
         PoolManager.Instance.Return(gameObject);
         CreateExpOrb();
@@ -107,7 +108,7 @@ public class Monster : Character
 
         // 선택된 인덱스로 오브젝트 생성
         GameObject expOrbInstance = Instantiate(expOrb[selectedIndex], gameObject.transform.position, Quaternion.identity);
-        Destroy(expOrbInstance, 10f); // 10초 후 제거
+        Destroy(expOrbInstance, 15f); // 15초 후 제거
     }
 
     //protected void CreateHeal()

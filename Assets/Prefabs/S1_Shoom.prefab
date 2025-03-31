@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a83d1443788d1d47b2efe65a7df81df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.5
+  moveSpeed: 5
   health: 2
   atkPower: 1
   atkSpeed: 3
@@ -135,11 +135,11 @@ MonoBehaviour:
   - {fileID: 6123331735916846602, guid: ba2daea0edab7c247a01ac08bb6436a9, type: 3}
   - {fileID: 8887994094148021013, guid: fe84bb38484af184499727e7d1dce040, type: 3}
   - {fileID: 5116720402251253058, guid: f7c9529d769683b4d97a438f3d0891c8, type: 3}
-  attackDistance: 3
+  attackDistance: 4.5
   isDeath: 0
   heal: {fileID: 0}
   findDistance: 6
-  velPower: 1.5
+  velPower: 1.4
 --- !u!50 &2009581116400986298
 Rigidbody2D:
   serializedVersion: 5
@@ -224,7 +224,7 @@ NavMeshAgent:
   m_Height: 2.6666667
   m_BaseOffset: 1.3333334
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!1 &7785523448415727575
 GameObject:
   m_ObjectHideFlags: 0
