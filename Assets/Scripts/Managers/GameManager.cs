@@ -1,7 +1,5 @@
 using Singleton.Component;
-using System;
 using System.Collections;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,11 +11,10 @@ public class GameManager : SingletonComponent<GameManager>
 
     [SerializeField] private GameObject portalPrefab; // 포털 프리팹
 
-    private GameObject currentPortal; // 현재 포털
     private bool isStageCleared = false;
 
     [SerializeField] private int currentStage = 0; // 현재 스테이지
-    private int maxStage = 6; // 총 스테이지 수
+    private const int maxStage = 6; // 총 스테이지 수
 
     public Vector2 portalSpawnPosition; // 포털 생성 위치
 
@@ -30,6 +27,7 @@ public class GameManager : SingletonComponent<GameManager>
     public int KillScore { get => killScore; set => killScore = value; }
 
     private PlayerInitStatus playerInitStatus;
+
     #region Singleton
     protected override void AwakeInstance()
     {
