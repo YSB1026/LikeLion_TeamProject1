@@ -113,6 +113,7 @@ MonoBehaviour:
   - {fileID: 5116720402251253058, guid: f7c9529d769683b4d97a438f3d0891c8, type: 3}
   attackDistance: 5
   isDeath: 0
+  heal: {fileID: 0}
   explosionRadius: 3.5
   detonationDistance: 1.5
 --- !u!61 &7100940130572690412
@@ -171,7 +172,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5208333
-  m_Speed: 5
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

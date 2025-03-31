@@ -151,6 +151,7 @@ MonoBehaviour:
   - {fileID: 5116720402251253058, guid: f7c9529d769683b4d97a438f3d0891c8, type: 3}
   attackDistance: 15
   isDeath: 0
+  heal: {fileID: 0}
   dynamite: {fileID: 194928932907846210, guid: 27cd6e779597e4c4a879bddda5bd1af7, type: 3}
 --- !u!195 &4915121493918952053
 NavMeshAgent:
@@ -162,7 +163,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1.328125
-  m_Speed: 3
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
