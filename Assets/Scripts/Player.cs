@@ -42,7 +42,6 @@ public class Player : Character
     [Header("참조")]
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private GameObject auraEffect;
-    [SerializeField] private Slider healthBar;
 
     private int slowEffectCount = 0; // 속도 감소 효과의 개수
 
@@ -107,6 +106,7 @@ public class Player : Character
 
     private void Update()
     {
+        UIManager.Instance.HealthBar.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, -0.8f, 0));
         KeyInput();
         if (CanAct())
         {
@@ -121,7 +121,7 @@ public class Player : Character
     {
         int diff = maxHp - maxHealth;
         maxHealth = maxHp;
-        healthBar.maxValue = maxHealth;
+        UIManager.Instance.HealthBar.maxValue = maxHealth;
         if (diff > 0)
         {
             health += diff;
@@ -135,7 +135,7 @@ public class Player : Character
 
     private void SetHealth(int hp)
     {
-        healthBar.value = hp;
+        UIManager.Instance.HealthBar.value = hp;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

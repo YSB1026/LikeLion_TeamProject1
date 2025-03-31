@@ -3,11 +3,13 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : SingletonComponent<UIManager>
 {
     [SerializeField] private EventSystem eventSystem;
     [SerializeField] private bool isMenuOpen = false;
+    [SerializeField] private Slider healthBar;
     [SerializeField] private TextMeshProUGUI expText;
 
     [Header("Skill UI")]
@@ -30,6 +32,7 @@ public class UIManager : SingletonComponent<UIManager>
     [SerializeField] private GameObject ClearMessage;
 
     public bool IsMenuOpen { get => isMenuOpen; }
+    public Slider HealthBar { get => healthBar; set => healthBar = value; }
     public bool IsSkillTreeOpen { get => isSkillTreeOpen; }
     public bool IsEscapeMenuOpen { get => isEscapeMenuOpen; }
     public bool IsDeathMessageOpen { get => isDeathMessageOpen; }
@@ -37,7 +40,8 @@ public class UIManager : SingletonComponent<UIManager>
     #region Singleton
     protected override void AwakeInstance()
     {
-        
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        Initialize();
     }
 
     protected override bool InitInstance()
@@ -47,9 +51,18 @@ public class UIManager : SingletonComponent<UIManager>
 
     protected override void ReleaseInstance()
     {
-        
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        Destroy(gameObject);
     }
     #endregion
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "MainMenu")
+        {
+            ReleaseSingleton();
+        }
+    }
 
     public void SetExp()
     {
@@ -108,6 +121,7 @@ public class UIManager : SingletonComponent<UIManager>
 
     public void ReturnToMain()
     {
+        ToggleMenu();
         SceneManager.LoadScene("MainMenu");
     }
 
@@ -132,4 +146,6 @@ public class UIManager : SingletonComponent<UIManager>
     {
         ClearMessage.SetActive(false);
     }
+
+
 }

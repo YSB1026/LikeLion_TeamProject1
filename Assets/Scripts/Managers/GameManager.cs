@@ -44,6 +44,8 @@ public class GameManager : SingletonComponent<GameManager>
             knockbackPower = 1,
             projectilePenetration = 1
         };
+
+        Initialize();
     }
 
     protected override bool InitInstance()
@@ -53,7 +55,9 @@ public class GameManager : SingletonComponent<GameManager>
 
     protected override void ReleaseInstance()
     {
-
+        StopAllCoroutines();
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        Destroy(gameObject);
     }
     #endregion
 
@@ -81,20 +85,24 @@ public class GameManager : SingletonComponent<GameManager>
         if (scene.name == "MainMenu")
         {
             currentStage = 0;
+            ReleaseSingleton();
         }
         else if(scene.name == "Stage0")
         {
             StartGame();
         }
-        AudioManager.Instance.BgmController(currentStage);
-        if (killScore < 101)
-        {
-            SpawnManager.Instance.SpawnMonsters(currentStage);
-        }
         else
         {
-            SpawnManager.Instance.SpawnMonsters(currentStage, isBoss : true);
+            if (killScore < 101)
+            {
+                SpawnManager.Instance.SpawnMonsters(currentStage);
+            }
+            else
+            {
+                SpawnManager.Instance.SpawnMonsters(currentStage, isBoss: true);
+            }
         }
+        AudioManager.Instance.BgmController(currentStage);
         StartCoroutine(CreatePortalForCurrentStage());
     }
 

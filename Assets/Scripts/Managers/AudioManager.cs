@@ -9,7 +9,6 @@ public class AudioManager : SingletonComponent<AudioManager>
     protected override void AwakeInstance()
     {
         Init();
-
     }
 
     protected override bool InitInstance()

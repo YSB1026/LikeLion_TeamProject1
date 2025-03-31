@@ -2,6 +2,7 @@ using Singleton.Component;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //Enum의 순서로 넣어주세요
 //shoom, s1_slimem, ... S5_Slime, Bat, Dragon
@@ -30,6 +31,8 @@ public class SpawnManager : SingletonComponent<SpawnManager>
         //StartCoroutine(MonsterSpawn(monster, 10));
         //StartCoroutine(MonsterSpawn(monster2, 10));
 
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
         stageMonsters = new Dictionary<int, MonsterType[]>
         {
             { 1, new MonsterType[] { MonsterType.Shoom, MonsterType.S1_Slime } },
@@ -38,6 +41,8 @@ public class SpawnManager : SingletonComponent<SpawnManager>
             { 4, new MonsterType[] { MonsterType.Spider, MonsterType.Golem } },
             { 5, new MonsterType[] { MonsterType.Bat, MonsterType.S5_Slime } }
         };
+
+        Initialize();
     }
 
     protected override bool InitInstance()
@@ -47,9 +52,19 @@ public class SpawnManager : SingletonComponent<SpawnManager>
 
     protected override void ReleaseInstance()
     {
-        
+        StopAllCoroutines();
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        Destroy(gameObject);
     }
     #endregion
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "MainMenu")
+        {
+            ReleaseSingleton();
+        }
+    }
 
     public void SpawnMonsters(int currentStage, bool isBoss = false, int spawnCount = 10, float delay = 1f, int amount = 1)
     {

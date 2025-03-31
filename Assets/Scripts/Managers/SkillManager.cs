@@ -1,5 +1,6 @@
 using Singleton.Component;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SkillManager : SingletonComponent<SkillManager>
 {
@@ -10,7 +11,8 @@ public class SkillManager : SingletonComponent<SkillManager>
     #region Singleton
     protected override void AwakeInstance()
     {
-
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        Initialize();
     }
 
     protected override bool InitInstance()
@@ -20,9 +22,18 @@ public class SkillManager : SingletonComponent<SkillManager>
 
     protected override void ReleaseInstance()
     {
-        
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        Destroy(gameObject);
     }
     #endregion
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "MainMenu")
+        {
+            ReleaseSingleton();
+        }
+    }
 
     public bool TryLevelUpSkill(Skill skill)
     {
