@@ -5,7 +5,7 @@ public class Skill
     public int Level { get; private set; }
     public int MaxLevel { get; private set; }
     public bool hasPerk => Level == MaxLevel; // 최대 레벨떄 특전(퍽) 활성화
-    public int[] expThresholds = { 10, 100, 500 };//스킬 레벨업 경험치 임계값(필요 경험치)
+    public int[] expThresholds = { 100, 300, 500 };//스킬 레벨업 경험치 임계값(필요 경험치)
 
     public Skill(string skillName, int maxLevel)
     {

@@ -262,7 +262,7 @@ public class Player : Character
         if (SkillManager.Instance.Skills[(int)SkillType.MaxHealthIncrease].hasPerk && !auraEffect.activeSelf) // 최대 체력 특전 && auraEffect가 활성화 돼있지 않을 때
         {
             auraEffect.SetActive(true);
-            auraEffect.GetComponent<PlayerAura>().SetDamage(maxHealth);//최대 체력만큼 데미지
+            auraEffect.GetComponent<PlayerAura>().SetDamage(5);// 5만큼 데미지 최대체력 x
         }
     }
 

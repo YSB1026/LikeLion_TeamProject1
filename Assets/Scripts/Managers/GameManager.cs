@@ -35,7 +35,7 @@ public class GameManager : SingletonComponent<GameManager>
 
         playerInitStatus = new PlayerInitStatus
         {
-            atkPower = 5,
+            atkPower = 1,
             health = 5,
             maxHealth = 2,
             atkSpeed = 1,

@@ -66,7 +66,7 @@ public class SpawnManager : SingletonComponent<SpawnManager>
         }
     }
 
-    public void SpawnMonsters(int currentStage, bool isBoss = false, int spawnCount = 10, float delay = 1f, int amount = 1)
+    public void SpawnMonsters(int currentStage, bool isBoss = false, int spawnCount = 10, float delay = 2f, int amount = 1)
     {
         if (!stageMonsters.ContainsKey(currentStage))
         {
@@ -99,7 +99,7 @@ public class SpawnManager : SingletonComponent<SpawnManager>
     }
 
     //몬스터 스폰 코루틴
-    IEnumerator MonsterSpawn(GameObject prefab, int count, float delay = 1f, int amount = 1)
+    IEnumerator MonsterSpawn(GameObject prefab, int count, float delay = 2f, int amount = 1)
     {
         while(count > 0)
         {
