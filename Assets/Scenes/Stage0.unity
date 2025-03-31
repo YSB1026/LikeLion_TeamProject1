@@ -7627,6 +7627,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MouseCursor
       objectReference: {fileID: 0}
+    - target: {fileID: 7518056365794992400, guid: 762865fe113b3194e84636ed14f2b861, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

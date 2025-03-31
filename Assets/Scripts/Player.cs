@@ -57,6 +57,7 @@ public class Player : Character
 
     private void Awake()
     {
+        Initiate();
         if (Instance == null)
         {
             Instance = this;
@@ -67,12 +68,36 @@ public class Player : Character
         {
             Destroy(gameObject);
         }
-        maxHealth = health; //최대체력 초기화
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         PoolManager.Instance.CreatePool(projectilePrefab, 10);
         StartCoroutine(FireProjectile());
         //auraEffect.SetActive(false);
+    }
+
+    private void Initiate()
+    {
+        moveSpeed = 5;
+        health = 5;
+        atkPower = 2;
+        atkSpeed = 1;
+        maxHealth = health;
+        evasionChance = 0;
+        projectileSpeed = 10;
+        knockbackPower = 1;
+        projectilePenetration = 1;
+        SetMaxHealth(maxHealth);
+
+        // 각 변수 값을 Debug로 출력
+        Debug.Log("Move Speed: " + moveSpeed);
+        Debug.Log("Health: " + health);
+        Debug.Log("Attack Power: " + atkPower);
+        Debug.Log("Attack Speed: " + atkSpeed);
+        Debug.Log("Max Health: " + maxHealth);
+        Debug.Log("Evasion Chance: " + evasionChance);
+        Debug.Log("Projectile Speed: " + projectileSpeed);
+        Debug.Log("Knockback Power: " + knockbackPower);
+        Debug.Log("Projectile Penetration: " + projectilePenetration);
     }
 
     private void Start()

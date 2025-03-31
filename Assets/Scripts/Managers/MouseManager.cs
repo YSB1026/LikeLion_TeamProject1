@@ -28,5 +28,7 @@ public class MouseManager : SingletonComponent<MouseManager>
         mousePos = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
         mousePos.z = 0;
         transform.position = mousePos;
+
+        Debug.Log(transform.position);
     }
 }

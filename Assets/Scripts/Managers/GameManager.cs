@@ -35,14 +35,14 @@ public class GameManager : SingletonComponent<GameManager>
 
         playerInitStatus = new PlayerInitStatus
         {
-            atkPower = Player.Instance.atkPower,
-            health = Player.Instance.health,
-            maxHealth = Player.Instance.maxHealth,
-            atkSpeed = Player.Instance.atkSpeed,
-            evasionChance = Player.Instance.evasionChance,
-            projectileSpeed = Player.Instance.projectileSpeed,
-            knockbackPower = Player.Instance.knockbackPower,
-            projectilePenetration = Player.Instance.projectilePenetration
+            atkPower = 5,
+            health = 5,
+            maxHealth = 2,
+            atkSpeed = 1,
+            evasionChance = 0,
+            projectileSpeed = 10,
+            knockbackPower = 1,
+            projectilePenetration = 1
         };
     }
 

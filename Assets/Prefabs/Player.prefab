@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  health: 2
+  health: 5
   atkPower: 2
   atkSpeed: 1
   maxHealth: 2
@@ -299,6 +299,7 @@ MonoBehaviour:
   projectileSpeed: 10
   knockbackPower: 1
   projectilePenetration: 1
+  isAlive: 1
   projectilePrefab: {fileID: 9078127285163815211, guid: 173fd64c7aff0084eaea64b07a695493, type: 3}
   auraEffect: {fileID: 5870622045842614218}
   healthBar: {fileID: 3879723178924054396}
