@@ -175,7 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   health: 12
-  atkPower: 2
+  atkPower: 1
   atkSpeed: 5
   expOrb:
   - {fileID: 6123331735916846602, guid: ba2daea0edab7c247a01ac08bb6436a9, type: 3}

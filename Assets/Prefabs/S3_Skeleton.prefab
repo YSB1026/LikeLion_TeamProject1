@@ -198,7 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2.5
   health: 7
-  atkPower: 2
+  atkPower: 1
   atkSpeed: 3
   expOrb:
   - {fileID: 6123331735916846602, guid: ba2daea0edab7c247a01ac08bb6436a9, type: 3}
@@ -207,7 +207,7 @@ MonoBehaviour:
   attackDistance: 6
   isDeath: 0
   heal: {fileID: 0}
-  velPower: 3
+  velPower: 2.5
 --- !u!70 &2864236834429878912
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

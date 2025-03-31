@@ -93,22 +93,22 @@ public class Monster : Character
 
         // 확률에 따라 인덱스 선택
         int selectedIndex;
-        if (randomValue < 0.6f)
+        if (randomValue < 0.5f)
         {
-            selectedIndex = 0; // 60% 확률
+            selectedIndex = 0; // 50% 확률
         }
-        else if (randomValue < 0.9f) // 0.6 + 0.3
+        else if (randomValue < 0.85f) // 0.5 + 0.35
         {
-            selectedIndex = 1; // 30% 확률
+            selectedIndex = 1; // 35% 확률
         }
         else
         {
-            selectedIndex = 2; // 10% 확률
+            selectedIndex = 2; // 15% 확률
         }
 
         // 선택된 인덱스로 오브젝트 생성
         GameObject expOrbInstance = Instantiate(expOrb[selectedIndex], gameObject.transform.position, Quaternion.identity);
-        Destroy(expOrbInstance, 15f); // 15초 후 제거
+        Destroy(expOrbInstance, 30f); // 15초 후 제거
     }
 
     //protected void CreateHeal()

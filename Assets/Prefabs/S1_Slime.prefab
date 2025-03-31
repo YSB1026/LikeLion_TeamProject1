@@ -102,7 +102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1323938847313312167, guid: ab20f547ce1761a488b77f99dc2e4ad3, type: 3}
       propertyPath: velPower
-      value: 1.2
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 1323938847313312167, guid: ab20f547ce1761a488b77f99dc2e4ad3, type: 3}
       propertyPath: moveSpeed
@@ -110,7 +110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1323938847313312167, guid: ab20f547ce1761a488b77f99dc2e4ad3, type: 3}
       propertyPath: attackDistance
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1323938847313312167, guid: ab20f547ce1761a488b77f99dc2e4ad3, type: 3}
       propertyPath: 'expOrb.Array.data[0]'

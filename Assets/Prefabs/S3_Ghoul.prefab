@@ -128,8 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  health: 10
-  atkPower: 2
+  health: 9
+  atkPower: 1
   atkSpeed: 2
   expOrb:
   - {fileID: 6123331735916846602, guid: ba2daea0edab7c247a01ac08bb6436a9, type: 3}
